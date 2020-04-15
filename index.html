@@ -4,34 +4,36 @@
 <head>
   <meta charset="utf-8">
   <title>Block Chain Class</title>
+  <script src="index.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163614661-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163614661-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-163614661-1');
-</script>
+    gtag('config', 'UA-163614661-1');
+  </script>
   <style>
     body {
       text-align: center;
+      background-color: cornsilk;
     }
-
+    a.kitty:hover {background-color: transparent;}
     a.text:link {
-      color: rgb(149, 39, 252);
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman' , serif;
+      font-weight: bolder; font-size: large;
+      color: navy;
       background-color: transparent;
       text-decoration: none;
     }
 
     a.text:visited {
-      color: rgb(149, 39, 252);
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman' , serif;
+      font-weight: bolder; font-size: large;
+      color: navy;
       background-color: transparent;
       text-decoration: none;
-    }
-
-    a.text1 {
-      font-style: oblique;
     }
 
     a:link {
@@ -47,17 +49,16 @@
     }
 
     a:hover {
-      color: red;
-      background-color: transparent;
-      text-decoration: underline;
+      background-color: lavenderblush;
+      text-decoration: none;
     }
 
     a:active {
-      color: yellow;
+      color: gray;
       background-color: transparent;
-      text-decoration: underline;
+      text-decoration: none;
     }
-
+    
     table {
       border: 0.8px;
       font-family: monospace;
@@ -75,66 +76,89 @@
     th {
       background-color: white;
     }
-    h1 {
-      font-family: monospace;
-    }
+    h1 {font-family: monospace;}
+    h2 {font-family: monospace;}
+    
+    
   </style>
 </head>
 <!--rgb(112, 126, 253)-->
 
-<body style="background-color: rgb(253, 220, 242);"></body>
+<body style="background-color: rgb(253, 220, 242); "></body>
 
-<h1 style="text-align: center; font-size: 250%;background-color:rgb(112, 126, 253); font-family: cursive;">
-  <a href="https://ds1118.github.io/blockchainclass/" style="text-decoration: none; color: black;">
-  Block Chain Class</a></h1>
+<h1 style="text-align: center; font-size: 250%;background-color:rgb(112, 126, 253); font-family: cursive;height: 50px;"
+  id="title">
+  <a href="index.html" style="text-decoration: none; color: black;">
+    Block Chain Class</a></h1>
 
-<h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">
+<h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">
   <b>Hello!</b>
-</h3>
-<a href="studymemo.txt" target="_blank" title="저장된 Today's Study Plan 보기"><img src="kitty.jpg" alt="kitty" height="100"
+</h2>
+<a href="studyplan.html" target="_blank" title="저장된 Today's Study Plan 보기" class="kitty"><img src="kitty.jpg" alt="kitty" height="100"
     width="100" ; /></a><br /><br>
 Today's Study Plan <br />
-<input size="50px" /> <button>저장</button>
+<input size="50px" id="plan" placeholder="오늘의 공부 계획" /> <input type="button" value="저장"
+  onclick="save(document.getElementById('plan').value)">
+
+</script>
 <br><br>바로가기 ☞ <a href="#c1" class="c">IT 필수 강좌</a> / <a href="#c2" class="c">강의 노트</a> / <a href="#c3" class="c">스마트
   컨트랙</a><br><br>
-<hr /><br><b>
-  <div style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-    <h1 id="c1">IT 필수 강좌</h1><br>
+<input type="button" value="Color Change!" id="button1" onclick="change(document.getElementById('button1').value)"><br>
+
+<script>
+  function change(inputtxt) {
+    var btn1 = "Color Change!"
+
+    if (inputtxt == btn1) {
+      document.querySelector('body').style.backgroundColor = 'rgb(191, 197, 252)';
+      document.getElementById('title').style.backgroundColor = 'white';
+      document.getElementById('title').style.fontFamily = 'Cambria';
+      document.getElementById('button1').value = 'Return';
+    } else {
+      document.querySelector('body').style.backgroundColor = 'rgb(253, 220, 242)';
+      document.getElementById('title').style.backgroundColor = 'rgb(112, 126, 253)';
+      document.getElementById('title').style.fontFamily = 'Cursive';
+      document.getElementById('button1').value = 'Color Change!';
+    }
+  }
+</script>
+<br>
+<hr />
+  
+    <h1 id="c1">IT 필수 강좌</h1>
+    <div style=" font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman' , serif;">
     <h2><a href="https://www.w3schools.com/html/" target="_blank" class="text">HTML</a></h2>
     <h2><a href="https://www.w3schools.com/js/default.asp" target="_blank" class="text">JAVA SCRIPT</a></h2>
     <h2><a href="https://www.w3schools.com/jquery/default.asp" target="_blank" class="text">JQUERY</a></h2>
     <h2><a href="https://www.w3schools.com/cpp/default.asp" target="_blank" class="text">C++</a></h2>
-  </div>
-  <br>
+  </div><br>
   <hr>
-  <div style="font-family:monospace"><br>
-    <h1 id="c2">강의 노트</h1><br>
-    <h2><a href="html.pptx" target="_blank" class="text1">HTML 한 눈에 보기</a></h2><br>
-    <hr><br>
-    <h1 id="c3">스마트 컨트랙</h1><br>
-    <h2><a href="https://solidity.readthedocs.io/en/v0.5.13/" target="_blank" class="text1">솔리디티 언어</a></h2>
-    <h2><a href="https://cryptozombies.io/ko/" target="_blank" class="text1">크립토 좀비</a></h2>
-  </div>
-</b>
-<br><hr><br>
+    <h1 id="c2">강의 노트</h1>
+    <a href="html.pptx" target="_blank">HTML 한 눈에 보기</a><br><br>
+    <hr>
+    <h1 id="c3">스마트 컨트랙</h1>
+    <a href="https://solidity.readthedocs.io/en/v0.5.13/" target="_blank">솔리디티 언어</a></li><br>
+    <a href="https://cryptozombies.io/ko/" target="_blank">크립토 좀비</a></li>
+<br><br>
+<hr>
 <p>
-  <h1>댓글달기 서비스</h2>
-  <ul style="display: inline-block; list-style-type: circle;">
-    <li><a href="https://disqus.com/" target="_blank" style="text-decoration: none;">Disqus</a></li>
+  <h1>댓글달기 서비스</h1>
+  <ul style="display: inline-block; list-style:square ;">
+    <li><a href="https://disqus.com/" target="_blank">Disqus</a></li>
     <li><a href="https://livere.com/" target="_blank">LiveRe</a></li>
   </ul>
-  <h1>채팅 기능 추가</h2>
-  <ul style="display: inline-block;">
+  <h1>채팅 기능 추가</h1>
+  <ul style="display: inline-block; list-style-type: square;">
     <li><a href="https://www.tawk.to/" target="_blank">tawk</a></li>
   </ul>
-  <h1>웹사이트 방문자 분석기</h2>
+  <h1>웹사이트 방문자 분석기</h1>
   <ul style="display: inline-block;list-style-type: square;">
     <li><a href="https://analytics.google.com" target="_blank">구글 analytics</a></li>
   </ul>
 </p>
-<br><hr><br>
+<hr>
 <p>
-  <h2>전공 화학</h2>
+  <h1>전공 화학</h1>
   <ol style="display: inline-block;">
     <li>일반화학<input type="checkbox" name="chem"></li>
     <li>생화학<input type="checkbox" name="chem"></li>
@@ -145,7 +169,7 @@ Today's Study Plan <br />
   </ol>
 </p>
 <p>
-  <h2>공부 목록</h2>
+  <h1>공부 목록</h1>
   <table title="공부 목록">
     <tr>
       <th>언어</th>
@@ -166,11 +190,11 @@ Today's Study Plan <br />
   </table>
 </p><br>
 <p>
-  <h2>여가 활동(택 1)</h2>
+  <h1>여가 활동(택 1)</h1>
   영화/드라마 감상 <input type="radio" name="fruit"> 독서 <input type="radio" name="fruit"> 운동 <input type="radio" name="fruit">
-</p><br>
+</p>
 <hr>
-<p><br>
+<p>
   <h1>유튜브 동영상 시청하기</h1><br>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/t5G1-BZucGs" frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -210,7 +234,9 @@ Today's Study Plan <br />
     s0.parentNode.insertBefore(s1, s0);
   })();
 </script>
+
 <!--End of Tawk.to Script-->
+
 </body>
 
 </html>
