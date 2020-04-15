@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Block Chain Class</title>
-  <script src="index.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics 방문자 분석기-->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163614661-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,20 +17,25 @@
   <style>
     body {
       text-align: center;
-      background-color: cornsilk;
     }
-    a.kitty:hover {background-color: transparent;}
+
+    a.kitty:hover {
+      background-color: transparent;
+    }
+
     a.text:link {
-      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman' , serif;
-      font-weight: bolder; font-size: large;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-weight: bolder;
+      font-size: large;
       color: navy;
       background-color: transparent;
       text-decoration: none;
     }
 
     a.text:visited {
-      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman' , serif;
-      font-weight: bolder; font-size: large;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-weight: bolder;
+      font-size: large;
       color: navy;
       background-color: transparent;
       text-decoration: none;
@@ -58,7 +63,7 @@
       background-color: transparent;
       text-decoration: none;
     }
-    
+
     table {
       border: 0.8px;
       font-family: monospace;
@@ -76,17 +81,21 @@
     th {
       background-color: white;
     }
-    h1 {font-family: monospace;}
-    h2 {font-family: monospace;}
-    
-    
+
+    h1,
+    h2 {
+      font-family: monospace;
+    }
   </style>
 </head>
-<!--rgb(112, 126, 253)-->
+<!--body title background color purple : rgb(112, 126, 253)-->
+<!--body title background color blue : rgb(165, 218, 253);rgb(85, 184, 250)-->
+<!--body background color pink : rgb(253, 220, 242)-->
+<!--body font-family : cursive-->
 
-<body style="background-color: rgb(253, 220, 242); "></body>
+<body style="background-color: cornsilk;"></body>
 
-<h1 style="text-align: center; font-size: 250%;background-color:rgb(112, 126, 253); font-family: cursive;height: 50px;"
+<h1 style="text-align: center; font-size: 250%;background-color:rgb(250, 174, 199); font-family: Cursive;height: 50px;"
   id="title">
   <a href="index.html" style="text-decoration: none; color: black;">
     Block Chain Class</a></h1>
@@ -94,146 +103,284 @@
 <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">
   <b>Hello!</b>
 </h2>
-<a href="studyplan.html" target="_blank" title="저장된 Today's Study Plan 보기" class="kitty"><img src="kitty.jpg" alt="kitty" height="100"
-    width="100" ; /></a><br /><br>
-Today's Study Plan <br />
-<input size="50px" id="plan" placeholder="오늘의 공부 계획" /> <input type="button" value="저장"
-  onclick="save(document.getElementById('plan').value)">
+<a href="html.pptx" target="_blank" title="강의 노트" class="kitty"><img src="kitty.jpg" alt="kitty" height="100"
+    width="100" ; /></a><br />
+<!--시계-->
 
-</script>
-<br><br>바로가기 ☞ <a href="#c1" class="c">IT 필수 강좌</a> / <a href="#c2" class="c">강의 노트</a> / <a href="#c3" class="c">스마트
-  컨트랙</a><br><br>
-<input type="button" value="Color Change!" id="button1" onclick="change(document.getElementById('button1').value)"><br>
+<body onload="printClock()">
+  <span style="font-size: small">현재 시간 :</span><span
+    style="display: inline-block;width:100px; height:50px; line-height:50px; color:rgb(3, 3, 3);font-size:15px; text-align:center;"
+    id="clock">
+  </span><br>
+  Today's Study Plan <br>
+  <table>
 
-<script>
-  function change(inputtxt) {
-    var btn1 = "Color Change!"
+    <td style="border-color: transparent;padding-right: 0%;"><input size="20px" id="plan" placeholder="오늘의 공부 계획"
+        onchange="save(document.getElementById('time').value)" autocomplete="off"></td>
+    <td style="border-color: transparent;padding-left: 1%;width: 20px;"><select name="affselect" style="height:22px"
+        name="time" id="time" onchange="save(document.getElementById('time').value)">
+        <option selected(초기 선택된 항목)>시간</option>
+        <option>10분</option>
+        <option>30분</option>
+        <option>1시간</option>
+        <option>2시간</option>
+        <option>3시간</option>
+        <option>4시간</option>
+        <option>5시간</option>
+        <option>6시간</option>
+        <option>7시간</option>
+        <option>8시간</option>
+        <option>9시간</option>
+        <option>10시간</option>
+    </td>
+  </table>
 
-    if (inputtxt == btn1) {
-      document.querySelector('body').style.backgroundColor = 'rgb(191, 197, 252)';
-      document.getElementById('title').style.backgroundColor = 'white';
-      document.getElementById('title').style.fontFamily = 'Cambria';
-      document.getElementById('button1').value = 'Return';
-    } else {
-      document.querySelector('body').style.backgroundColor = 'rgb(253, 220, 242)';
-      document.getElementById('title').style.backgroundColor = 'rgb(112, 126, 253)';
-      document.getElementById('title').style.fontFamily = 'Cursive';
-      document.getElementById('button1').value = 'Color Change!';
+
+  <input type="button" value="Color Change!" id="button1"
+    onclick="change(document.getElementById('button1').value)"><br>
+  바로가기 ☞ <a href="#c1" class="c">IT 필수 강좌</a> / <a href="#c2" class="c">코딩</a> / <a href="#c3" class="c">스마트 컨트랙</a> /
+  <a href="#c4" class="c">기능 추가하기</a> / <a href="#c5" class="c">자기 주도 학습</a> / <a href="#c6" class="c">휴식 시간</a>
+
+  <br>
+  <script>
+    function save(inputtxt1) {
+      var new1 = "시간"
+
+      if (inputtxt1 !== new1) {
+        var myWindow = window.open("", "", "width=260, height=150");
+        myWindow.document.write('<p style="font-size:small">' + '현재 시간 : ' + Date() + '</p>' + '<hr>' + '<h2 style="text-align:center">Today\'s Study Plan</h2>' + '<p style="text-align:center">' + document.getElementById('plan').value + ' 공부 ' + document.getElementById('time').value + '</p>'
+        )
+        myWindow.blur();
+      }
     }
-  }
-</script>
-<br>
-<hr />
-  
-    <h1 id="c1">IT 필수 강좌</h1>
-    <div style=" font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman' , serif;">
+  </script>
+  <script>
+    function change(inputtxt) {
+      var btn1 = "Color Change!"
+
+      if (inputtxt == btn1) {
+        document.querySelector('body').style.backgroundColor = 'rgb(191, 197, 252)';
+        document.getElementById('title').style.backgroundColor = 'white';
+        document.getElementById('title').style.fontFamily = 'Cambria';
+        document.getElementById('button1').value = 'Return';
+      } else {
+        document.querySelector('body').style.backgroundColor = 'cornsilk';
+        document.getElementById('title').style.backgroundColor = 'rgb(250, 174, 199)';
+        document.getElementById('title').style.fontFamily = 'Cursive';
+        document.getElementById('button1').value = 'Color Change!';
+      }
+    }
+  </script>
+
+  <hr />
+
+  <h1 id="c1">IT 필수 강좌</h1>
+  <div style=" font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman' , serif;">
     <h2><a href="https://www.w3schools.com/html/" target="_blank" class="text">HTML</a></h2>
     <h2><a href="https://www.w3schools.com/js/default.asp" target="_blank" class="text">JAVA SCRIPT</a></h2>
     <h2><a href="https://www.w3schools.com/jquery/default.asp" target="_blank" class="text">JQUERY</a></h2>
     <h2><a href="https://www.w3schools.com/cpp/default.asp" target="_blank" class="text">C++</a></h2>
   </div><br>
   <hr>
-    <h1 id="c2">강의 노트</h1>
-    <a href="html.pptx" target="_blank">HTML 한 눈에 보기</a><br><br>
-    <hr>
-    <h1 id="c3">스마트 컨트랙</h1>
-    <a href="https://solidity.readthedocs.io/en/v0.5.13/" target="_blank">솔리디티 언어</a></li><br>
-    <a href="https://cryptozombies.io/ko/" target="_blank">크립토 좀비</a></li>
-<br><br>
-<hr>
-<p>
-  <h1>댓글달기 서비스</h1>
-  <ul style="display: inline-block; list-style:square ;">
-    <li><a href="https://disqus.com/" target="_blank">Disqus</a></li>
-    <li><a href="https://livere.com/" target="_blank">LiveRe</a></li>
-  </ul>
-  <h1>채팅 기능 추가</h1>
-  <ul style="display: inline-block; list-style-type: square;">
-    <li><a href="https://www.tawk.to/" target="_blank">tawk</a></li>
-  </ul>
-  <h1>웹사이트 방문자 분석기</h1>
-  <ul style="display: inline-block;list-style-type: square;">
-    <li><a href="https://analytics.google.com" target="_blank">구글 analytics</a></li>
-  </ul>
-</p>
-<hr>
-<p>
-  <h1>전공 화학</h1>
-  <ol style="display: inline-block;">
-    <li>일반화학<input type="checkbox" name="chem"></li>
-    <li>생화학<input type="checkbox" name="chem"></li>
-    <li>유기화학<input type="checkbox" name="chem"></li>
-    <li>물리화학<input type="checkbox" name="chem"></li>
-    <li>무기화학<input type="checkbox" name="chem"></li>
-    <li>분석화학<input type="checkbox" name="chem"></li>
-  </ol>
-</p>
-<p>
-  <h1>공부 목록</h1>
-  <table title="공부 목록">
-    <tr>
-      <th>언어</th>
-      <th>교양</th>
-    </tr>
-    <tr>
-      <td>영어</td>
-      <td>요리/커피</td>
-    </tr>
-    <tr>
-      <td>일본어</td>
-      <td>법</td>
-    </tr>
-    <tr>
-      <td>국어 어휘/어법</td>
-      <td>여행</td>
-    </tr>
-  </table>
-</p><br>
-<p>
-  <h1>여가 활동(택 1)</h1>
-  영화/드라마 감상 <input type="radio" name="fruit"> 독서 <input type="radio" name="fruit"> 운동 <input type="radio" name="fruit">
-</p>
-<hr>
-<p>
-  <h1>유튜브 동영상 시청하기</h1><br>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/t5G1-BZucGs" frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
-<div id="disqus_thread"><a href="http://foo.com/bar.html#disqus_thread">Link</a></div>
-<script>
+  <h1 id="c2">코딩</h1>
+  <a href="http://tcpschool.com/" target="_blank">TCP School</a><br>
+  <a href="https://opentutorials.org/course/1" target="_blank">생활코딩</a><br>
+  <a href="https://ko.khanacademy.org/computing" target="_blank">칸아카데미</a>
+  <br><br>
+  <hr>
+  <h1 id="c3">스마트 컨트랙</h1>
+  <a href="https://solidity.readthedocs.io/en/v0.5.13/" target="_blank">솔리디티 언어</a></li><br>
+  <a href="https://cryptozombies.io/ko/" target="_blank">크립토 좀비</a></li>
+  <br><br>
+  <hr>
+  <p>
+    <h1 id="c4">기능 추가하기</h1>
+    <ol style="display:inline-block;">
+      <li>
+        <h2>댓글달기 서비스</h2>
+        <ul style="display: inline-block; list-style:square ;">
+          <li><a href="https://disqus.com/" target="_blank">Disqus</a></li>
+          <li><a href="https://livere.com/" target="_blank">LiveRe</a></li>
+        </ul>
+      </li>
+      <li>
+        <h2>채팅 기능 추가</h2>
+        <ul style="display: inline-block; list-style-type: square;">
+          <li><a href="https://www.tawk.to/" target="_blank">tawk</a></li>
+        </ul>
+      </li>
+      <li>
+        <h2>방문자 분석기</h2>
+        <ul style="display: inline-block;list-style-type: square;">
+          <li><a href="https://analytics.google.com" target="_blank">구글 analytics</a></li>
+        </ul>
+      </li>
+    </ol>
+  </p>
+  <hr>
+  <h1 id="c5">자기 주도 학습</h1>
+  <p style="float: left;">
+    <h2>전공 화학</h2>
+    <ol style="display: inline-block; text-align: left;">
+      <li>일반화학<input type="checkbox" name="chem"></li>
+      <li>생화학<input type="checkbox" name="chem"></li>
+      <li>유기화학<input type="checkbox" name="chem"></li>
+      <li>물리화학<input type="checkbox" name="chem"></li>
+      <li>무기화학<input type="checkbox" name="chem"></li>
+      <li>분석화학<input type="checkbox" name="chem"></li>
+      <li>기기분석<input type="checkbox" name="chem"></li>
+    </ol>
+  </p>
+  <p style="float:right">
+    <h2>IT 기술</h2>
+    <ol style="display: inline-block; text-align: left;">
+      <li>코딩/웹<input type="checkbox" name="chem"></li>
+      <li>언어<input type="checkbox" name="chem"></li>
+      <li>데이터베이스<input type="checkbox" name="chem"></li>
+      <li>서버<input type="checkbox" name="chem"></li>
+      <li>블록체인<input type="checkbox" name="chem"></li>
+      <li>스마트 컨트랙<input type="checkbox" name="chem"></li>
+      <li>비트코인<input type="checkbox" name="chem"></li>
+      <li>이더리움<input type="checkbox" name="chem"></li>
+      <li>인문학<input type="checkbox" name="chem"></li>
+    </ol>
+  </p>
+  <p>
+    <h2>언어 공부</h2>
+    <table title="공부 목록">
+      <tr>
+        <th>언어</th>
+        <th>공부법</th>
+      </tr>
+      <tr>
+        <td>영어/토익</td>
+        <td>단어 암기</td>
+      </tr>
+      <tr>
+        <td>일본어</td>
+        <td>문법 공부</td>
+      </tr>
+      <tr>
+        <td>국어 어휘/어법</td>
+        <td>드라마 보기</td>
+      </tr>
+      <tr>
+        <td>중국어/한자</td>
+        <td>영화 보기</td>
+      </tr>
+      <tr>
+        <td>불어</td>
+        <td>독서/신문 읽기</td>
+      </tr>
+      <tr>
+        <td>독일어</td>
+        <td>지문 독해</td>
+      </tr>
+      <tr>
+        <td>스페인어</td>
+        <td>듣기 반복 훈련</td>
+      </tr>
+    </table>
+  </p><br>
+  <p>
+    <h2>관심 분야(1가지 선택하기)</h2>
+    영화/드라마<input type="radio" name="play"> 문학/인문학<input type="radio" name="play"> 공연/연극/뮤지컬<input type="radio"
+      name="play"> 스포츠/건강<input type="radio" name="play"> 음악/춤<input type="radio" name="play">
+    <br> 요리<input type="radio" name="play"> 카페/디저트<input type="radio" name="play"> 차/커피<input type="radio" name="play">
+    와인/술<input type="radio" name="play">
+    <br>여행<input type="radio" name="play"> 호텔<input type="radio" name="play"> 크루즈<input type="radio" name="play">
+    외국어<input type="radio" name="play">
+    <br>역사/지리<input type="radio" name="play"> 법<input type="radio" name="play"> 시사/상식<input type="radio" name="play">
+    경제<input type="radio" name="play"> 투자(주식/펀드/부동산)<input type="radio" name="play">
+    <br>사업<input type="radio" name="play"> 경영/심리학<input type="radio" name="play"> 기획/홍보<input type="radio" name="play">
+    색채<input type="radio" name="play"> 패션/명품<input type="radio" name="play">
+    <br>환경<input type="radio" name="play"> 과학<input type="radio" name="play"> 의학/제약<input type="radio" name="play"> IT
+    기술<input type="radio" name="play"> 자동차/기차<input type="radio" name="play"> 발명<input type="radio" name="play">
+    <br>마술<input type="radio" name="play"> 도예/꽃꽃이<input type="radio" name="play"> 공예/만들기/DIY/<input type="radio"
+      name="play">
+  </p>
+  <hr>
+  <p>
+    <h1 id="c6">휴식 시간</h1><br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/t5G1-BZucGs" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </p>
+  <div id="disqus_thread"><a href="http://foo.com/bar.html#disqus_thread">Link</a></div>
+  <script>
 
-  /**
-  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-  /*
-  var disqus_config = function () {
-  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  */
-  (function () { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://block-chain-class.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-    Disqus.</a></noscript>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://block-chain-class.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+      Disqus.</a></noscript>
+
+  <script id="dsq-count-scr" src="//block-chain-class.disqus.com/count.js" async></script>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/5e92bb0569e9320caac2bde2/default';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script 메신저 기능-->
+  <!--시계 기능 추가-->
+  <script>
+    function printClock() {
+
+      var clock = document.getElementById("clock");            // 출력할 장소 선택
+      var currentDate = new Date();                                     // 현재시간
+      var calendar = currentDate.getFullYear() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getDate() // 현재 날짜
+      var amPm = 'AM'; // 초기값 AM
+      var currentHours = addZeros(currentDate.getHours(), 2);
+      var currentMinute = addZeros(currentDate.getMinutes(), 2);
+      var currentSeconds = addZeros(currentDate.getSeconds(), 2);
+
+      if (currentHours >= 12) { // 시간이 12보다 클 때 PM으로 세팅, 12를 빼줌
+        amPm = 'PM';
+        currentHours = addZeros(currentHours - 12, 2);
+      }
+
+      if (currentSeconds >= 50) {// 50초 이상일 때 색을 변환해 준다.
+        currentSeconds = '<span style="color:red;">' + currentSeconds + '</span>'
+      }
+      clock.innerHTML = currentHours + ":" + currentMinute + ":" + currentSeconds + " <span style='font-size:10px;'>" + amPm + "</span>"; //날짜를 출력해 줌
+
+      setTimeout("printClock()", 1000);         // 1초마다 printClock() 함수 호출
+    }
+
+    function addZeros(num, digit) { // 자릿수 맞춰주기
+      var zero = '';
+      num = num.toString();
+      if (num.length < digit) {
+        for (i = 0; i < digit - num.length; i++) {
+          zero += '0';
+        }
+      }
+      return zero + num;
+    }
+  </script>
 
 
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5e92bb0569e9320caac2bde2/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+
+
 </body>
 
 </html>
