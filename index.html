@@ -148,7 +148,7 @@
 
       if (inputtxt1 !== new1) {
         var myWindow = window.open("", "", "width=260, height=150");
-        myWindow.document.write('<p style="font-size:small">' + '현재 시간 : ' + Date() + '</p>' + '<hr>' + '<h2 style="text-align:center">Today\'s Study Plan</h2>' + '<p style="text-align:center">' + document.getElementById('plan').value + ' 공부 ' + document.getElementById('time').value + '</p>'
+        myWindow.document.write('<title>오늘의 공부 계획</title>'+'<p style="font-size:small">' + '현재 시간 : ' + Date() + '</p>' + '<hr>' + '<h2 style="text-align:center">Today\'s Study Plan</h2>' + '<p style="text-align:center">' + document.getElementById('plan').value + ' 공부 ' + document.getElementById('time').value + '</p>'
         )
         myWindow.blur();
       }
