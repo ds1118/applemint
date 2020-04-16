@@ -86,32 +86,129 @@
     h2 {
       font-family: monospace;
     }
-    ul.one {list-style:none; margin:0px; padding: 20;}
-    ul.one li{padding-left:9px; padding-right: 9px; font-size: smaller;font-family:Cambria, Cochin; padding-top: 2px;padding-bottom: 2px;}
-.one{display: inline-block;}/* 전체 메뉴를 float 시킴 */
-.one > li{float:left;}   /*1단 메뉴를 일렬로 늘어놓기 */
-.one ul{display:none;position:absolute;left:760px; top: 419px; }  /*2단 메뉴를 숨기고, 절대 위치 */
-.one li:hover > ul {display:block;}  /*1단 메뉴에 마우스 오버했을 때 2단 메뉴 드러내가 */
- 
-ul li a{text-decoration:none; display:block; height: 21px;line-height: 21px;text-align:left;} 
-ul li {background-color:transparent;}  
 
-/*yellow color background #FFE08C */
-.one .go{background-color: transparent; border-top: none;border-bottom: none;border-right: none; border-left:none ;height: 26px;line-height: 26px;font-size: 13px;}
-.one li{border: 2px solid cornsilk;border-collapse:separate; background-color: #FFE08C;margin-inline-start: 5px;}
-.c1:hover{background-color:lavender;}
-.c2:hover{background-color:rgb(207, 160, 221);}
-.c3:hover{background-color:lavender;}
-.c4:hover{background-color:rgb(207, 160, 221);}
-.c5:hover{background-color:lavender;}
-.c6:hover{background-color:rgb(207, 160, 221);}
-.c5-1:hover{background-color:lightsteelblue;}
-.c5-2:hover{background-color:rgb(180, 180, 253);}
-.c5-3:hover{background-color:lightsteelblue;}
-.c5-4:hover{background-color:rgb(180, 180, 253);}
-.one a:hover{background-color: transparent;text-decoration: none;}
-.one > li{border-radius: 15px 15px 0px 0px/ 30px 30px 0px 0px;}
-.one > li ul li{border-radius: 15px 15px 0px 0px/ 30px 30px 0px 0px;}
+    ul.one {
+      list-style: none;
+      margin: 0px;
+      padding: 20;
+    }
+
+    ul.one li {
+      padding-left: 9px;
+      padding-right: 9px;
+      font-size: smaller;
+      font-family: Cambria, Cochin;
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+
+    .one {
+      display: inline-block;
+    }
+
+    /* 전체 메뉴를 float 시킴 */
+    .one>li {
+      float: left;
+    }
+
+    /*1단 메뉴를 일렬로 늘어놓기 */
+    .one ul {
+      display: none;
+      position: absolute;
+      left: 60%;
+      top: 72%;
+    }
+
+    /*2단 메뉴를 숨기고, 절대 위치 */
+    .one li:hover>ul {
+      display: block;
+    }
+
+    /*1단 메뉴에 마우스 오버했을 때 2단 메뉴 드러내가 */
+
+    ul li a {
+      text-decoration: none;
+      display: block;
+      height: 21px;
+      line-height: 21px;
+      text-align: left;
+    }
+
+    ul li {
+      background-color: transparent;
+    }
+
+    /*yellow color background #FFE08C */
+    .one .go {
+      background-color: transparent;
+      border-top: none;
+      border-bottom: none;
+      border-right: none;
+      border-left: none;
+      height: 26px;
+      line-height: 26px;
+      font-size: 13px;
+    }
+
+    .one li {
+      border: 2px solid cornsilk;
+      border-collapse: separate;
+      background-color: #FFE08C;
+      margin-inline-start: 5px;
+    }
+
+    .c1:hover {
+      background-color: lavender;
+    }
+
+    .c2:hover {
+      background-color: rgb(207, 160, 221);
+    }
+
+    .c3:hover {
+      background-color: lavender;
+    }
+
+    .c4:hover {
+      background-color: rgb(207, 160, 221);
+    }
+
+    .c5:hover {
+      background-color: lavender;
+    }
+
+    .c6:hover {
+      background-color: rgb(207, 160, 221);
+    }
+
+    .c5-1:hover {
+      background-color: lightsteelblue;
+    }
+
+    .c5-2:hover {
+      background-color: rgb(180, 180, 253);
+    }
+
+    .c5-3:hover {
+      background-color: lightsteelblue;
+    }
+
+    .c5-4:hover {
+      background-color: rgb(180, 180, 253);
+    }
+
+    .one a:hover {
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    .one>li {
+      border-radius: 15px 15px 0px 0px/ 30px 30px 0px 0px;
+    }
+
+    .one>li ul li {
+      border-radius: 15px 15px 0px 0px/ 30px 30px 0px 0px;
+    }
   </style>
 </head>
 <!--body title background color purple : rgb(112, 126, 253)-->
@@ -161,34 +258,35 @@ ul li {background-color:transparent;}
     </td>
   </table>
 
-    
-    
-    <br>
-    <ul class="one">
-    <li class="go"><b>바로가기 ☞</b></li> 
-    <li class="c1"><a href="#c1" class="c1">IT 필수 강좌</a></li> 
+
+
+  <br>
+  <ul class="one">
+    <li class="go"><b>바로가기 ☞</b></li>
+    <li class="c1"><a href="#c1" class="c1">IT 필수 강좌</a></li>
     <li class="c2"><a href="#c2" class="c2">코딩</a></li>
-    <li class="c3"><a href="#c3" class="c3">스마트 컨트랙</a></li> 
-    <li class="c4"><a href="#c4" class="c4">기능 추가하기</a></li>  
+    <li class="c3"><a href="#c3" class="c3">스마트 컨트랙</a></li>
+    <li class="c4"><a href="#c4" class="c4">기능 추가하기</a></li>
     <li class="c5"><a href="#c5" class="c5">자기 주도 학습</a>
       <ul class="submenu" style="list-style: none;">
-    <li class="c5-1"><a href="#c5-1">전공 화학</a></li>
-    <li class="c5-2"><a href="#c5-2">IT 기술</a></li>
-    <li class="c5-3"><a href="#c5-3">언어 공부</a></li>
-    <li class="c5-4"><a href="#c5-4">관심 분야</a></li>
+        <li class="c5-1"><a href="#c5-1">전공 화학</a></li>
+        <li class="c5-2"><a href="#c5-2">IT 기술</a></li>
+        <li class="c5-3"><a href="#c5-3">언어 공부</a></li>
+        <li class="c5-4"><a href="#c5-4">관심 분야</a></li>
       </ul>
-      </li>  
-    <li class="c6"><a href="#c6" class="c6">휴식 시간</a></li></ul>
-    <br><br><input type="button" value="Color Change!" id="button1"
+    </li>
+    <li class="c6"><a href="#c6" class="c6">휴식 시간</a></li>
+  </ul>
+  <br><br><input type="button" value="Color Change!" id="button1"
     onclick="change(document.getElementById('button1').value)">
-    <br><br>
+  <br><br>
   <script>
     function save(inputtxt1) {
       var new1 = "시간"
 
       if (inputtxt1 !== new1) {
         var myWindow = window.open("", "", "width=260, height=200");
-        myWindow.document.write('<title>오늘의 공부 계획</title>' +'<p style="font-size:small;">' + '현재 시간 : ' + Date() + '</p>' +'<hr>'+'<body style="background-color:lavender">'+'<h2 style="text-align:center">Today\'s Study Plan</h2>' + '<p style="text-align:center;background-color:white;border:1.7px solid purple"><br>' + document.getElementById('plan').value + ' 공부 ' + document.getElementById('time').value + '<br><br></p></body>'
+        myWindow.document.write('<title>오늘의 공부 계획</title>' + '<p style="font-size:small;">' + '현재 시간 : ' + Date() + '</p>' + '<hr>' + '<body style="background-color:lavender">' + '<h2 style="text-align:center">Today\'s Study Plan</h2>' + '<p style="text-align:center;background-color:white;border:1.7px solid purple"><br>' + document.getElementById('plan').value + ' 공부 ' + document.getElementById('time').value + '<br><br></p></body>'
         )
         myWindow.blur();
       }
@@ -325,7 +423,8 @@ ul li {background-color:transparent;}
   <p>
     <h2 id="c5-4">관심 분야(1가지 선택하기)</h2><br>
     영화/드라마<input type="radio" name="play"> 문학/인문학<input type="radio" name="play"> 공연/연극/뮤지컬<input type="radio"
-      name="play"> 스포츠/건강<input type="radio" name="play"> 음악<input type="radio" name="play"> 댄스/무용<input type="radio" name="play">
+      name="play"> 스포츠/건강<input type="radio" name="play"> 음악<input type="radio" name="play"> 댄스/무용<input type="radio"
+      name="play">
     <br> 요리<input type="radio" name="play"> 카페/디저트<input type="radio" name="play"> 차/커피<input type="radio" name="play">
     와인/술<input type="radio" name="play">
     <br>여행<input type="radio" name="play"> 박물관/미술관<input type="radio" name="play"> 호텔<input type="radio" name="play">
@@ -341,7 +440,8 @@ ul li {background-color:transparent;}
     <br>환경<input type="radio" name="play"> 과학<input type="radio" name="play"> 의학/제약<input type="radio" name="play"> IT
     기술<input type="radio" name="play"> 기계<input type="radio" name="play"> 자동차/기차<input type="radio" name="play">
     선박/비행기<input type="radio" name="play"> 건축/설계<input type="radio" name="play"> 발명/특허<input type="radio" name="play">
-    <br>마술<input type="radio" name="play"> 도예/꽃꽂이<input type="radio" name="play"> 공예/만들기/DIY<input type="radio" name="play">
+    <br>마술<input type="radio" name="play"> 도예/꽃꽂이<input type="radio" name="play"> 공예/만들기/DIY<input type="radio"
+      name="play">
     조립/퍼즐<input type="radio" name="play">
   </p>
   <br><br>
