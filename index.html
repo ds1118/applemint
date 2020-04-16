@@ -118,23 +118,23 @@
       left: 60%;
       top: 417px;
     }
-    @media (max-width: 800px) {
+    
+@media (max-width: 800px) {
   .one ul li {
     clear: both;
     display: block;
   }
-  .submenu li a {
+  .dropdown li a {
     display: block;
     width: 100%;
   }
-  .submenu {
+  .dropdown {
     position: relative;
     width: 100%;
     top: 0px;
     /* position: static;; */
   }
 }
-
     /*2단 메뉴를 숨기고, 절대 위치 */
     .one li:hover>ul {
       display: block;
@@ -284,11 +284,11 @@
     <li class="c3"><a href="#c3" class="c3">스마트 컨트랙</a></li>
     <li class="c4"><a href="#c4" class="c4">기능 추가하기</a></li>
     <li class="c5"><a href="#c5" class="c5">자기 주도 학습</a>
-      <ul class="submenu" style="list-style: none;">
+      <ul class="submenu" style="list-style: none;"><div class="dropdown">
         <li class="c5-1"><a href="#c5-1">전공 화학</a></li>
         <li class="c5-2"><a href="#c5-2">IT 기술</a></li>
         <li class="c5-3"><a href="#c5-3">언어 공부</a></li>
-        <li class="c5-4"><a href="#c5-4">관심 분야</a></li>
+        <li class="c5-4"><a href="#c5-4">관심 분야</a></li></div>
       </ul>
     </li>
     <li class="c6"><a href="#c6" class="c6">휴식 시간</a></li>
