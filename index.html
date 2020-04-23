@@ -83,7 +83,8 @@
     }
 
     h1,
-    h2 {
+    h2,
+    h4 {
       font-family: monospace;
     }
 
@@ -118,23 +119,26 @@
       left: 60%;
       top: 417px;
     }
-    
-@media (max-width: 800px) {
-  .one ul li {
-    clear: both;
-    display: block;
-  }
-  .dropdown li a {
-    display: block;
-    width: 100%;
-  }
-  .dropdown {
-    position: relative;
-    width: 100%;
-    top: 0px;
-    /* position: static;; */
-  }
-}
+
+    @media (max-width: 800px) {
+      .one ul li {
+        clear: both;
+        display: block;
+      }
+
+      .dropdown li a {
+        display: block;
+        width: 100%;
+      }
+
+      .dropdown {
+        position: relative;
+        width: 100%;
+        top: 0px;
+        /* position: static;; */
+      }
+    }
+
     /*2단 메뉴를 숨기고, 절대 위치 */
     .one li:hover>ul {
       display: block;
@@ -243,7 +247,7 @@
   <b>Hello!</b>
 </h2>
 <a href="html.pptx" target="_blank" title="강의 노트" class="kitty"><img src="kitty.jpg" alt="kitty" height="100"
-    width="100" ; /></a><br />
+    width="100" /></a><br />
 <!--시계-->
 
 <body onload="printClock()">
@@ -284,11 +288,13 @@
     <li class="c3"><a href="#c3" class="c3">스마트 컨트랙</a></li>
     <li class="c4"><a href="#c4" class="c4">기능 추가하기</a></li>
     <li class="c5"><a href="#c5" class="c5">자기 주도 학습</a>
-      <ul class="submenu" style="list-style: none;"><div class="dropdown">
-        <li class="c5-1"><a href="#c5-1">전공 화학</a></li>
-        <li class="c5-2"><a href="#c5-2">IT 기술</a></li>
-        <li class="c5-3"><a href="#c5-3">언어 공부</a></li>
-        <li class="c5-4"><a href="#c5-4">관심 분야</a></li></div>
+      <ul class="submenu" style="list-style: none;">
+        <div class="dropdown">
+          <li class="c5-1"><a href="#c5-1">전공 화학</a></li>
+          <li class="c5-2"><a href="#c5-2">IT 기술</a></li>
+          <li class="c5-3"><a href="#c5-3">언어 공부</a></li>
+          <li class="c5-4"><a href="#c5-4">관심 분야</a></li>
+        </div>
       </ul>
     </li>
     <li class="c6"><a href="#c6" class="c6">휴식 시간</a></li>
@@ -322,6 +328,7 @@
         document.getElementById('title').style.backgroundColor = 'rgb(250, 174, 199)';
         document.getElementById('title').style.fontFamily = 'Cursive';
         document.getElementById('button1').value = 'Color Change!';
+
       }
     }
   </script>
@@ -441,7 +448,8 @@
     영화/드라마<input type="radio" name="play"> 문학/인문학<input type="radio" name="play"> 공연/연극/뮤지컬<input type="radio"
       name="play"> 스포츠/건강<input type="radio" name="play"> 음악<input type="radio" name="play"> 댄스/무용<input type="radio"
       name="play">
-    <br> 요리/음식<input type="radio" name="play"> 카페/디저트<input type="radio" name="play"> 차/커피<input type="radio" name="play">
+    <br> 요리/음식<input type="radio" name="play"> 카페/디저트<input type="radio" name="play"> 차/커피<input type="radio"
+      name="play">
     와인/술<input type="radio" name="play">
     <br>여행<input type="radio" name="play"> 박물관/미술관<input type="radio" name="play"> 호텔<input type="radio" name="play">
     크루즈<input type="radio" name="play">
@@ -539,8 +547,42 @@
       return zero + num;
     }
   </script>
-
-
+  <br>
+  <hr>
+  <h1><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">문자열</a></h1>
+  <ul style="display: inline-block; text-align: left; font-size: small;">
+    <li><strong>자바스크립트는 <span style="color: red">큰 따옴표""</span> or <span style="color: red">작은 따옴표''</span> 안에 들어있는 문자를
+      문자열로 인식한다.</strong></li>
+    <li><strong>문자열은 <span style="color: red">0번째</span>부터 시작한다.</strong></li>
+  </ul><br>
+  <table style="width: 45%;" class="t">
+    <tr>
+      <th style="width:30%">Properties</th>
+      <th style="width:70%">실행</th>
+    </tr>
+    <tr>
+      <td>"".length</td>
+      <td>문자열 몇글자인지 알려줌</td>
+    </tr>
+    <tr>
+      <th>Methods</th>
+      <th>실행</th>
+    </tr>
+    <tr>
+      <td>"".toUpperCase()</td>
+      <td>문자열을 전부 대문자로 바꿔줌</td>
+    </tr>
+    <tr>
+      <td>"".indexOf('문자')</td>
+      <td>문자열에서 괄호 안의 문자가 몇번째 문자인지 알려줌</td>
+    </tr>
+    <tr>
+      <td>"".trim()</td>
+      <td>문자열의 앞/뒤 공백 없애줌</td>
+    </tr>
+  </table>
+  <br><br>
+  <img src="string.png" />
 
 
 </body>
