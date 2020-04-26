@@ -19,6 +19,10 @@
       text-align: center;
     }
 
+    .IP {
+      color: blue;
+    }
+
     a.kitty:hover {
       background-color: transparent;
     }
@@ -552,7 +556,7 @@
   <h1><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">문자열</a></h1>
   <ul style="display: inline-block; text-align: left; font-size: small;">
     <li><strong>자바스크립트는 <span style="color: red">큰 따옴표""</span> or <span style="color: red">작은 따옴표''</span> 안에 들어있는 문자를
-      문자열로 인식한다.</strong></li>
+        문자열로 인식한다.</strong></li>
     <li><strong>문자열은 <span style="color: red">0번째</span>부터 시작한다.</strong></li>
   </ul><br>
   <table style="width: 45%;" class="t">
@@ -583,6 +587,38 @@
   </table>
   <br><br>
   <img src="string.png" />
+  <br><br><br>
+  <hr>
+
+  <h1>
+    IP 주소
+  </h1>
+  <br>
+  <p>
+    <h2>자신의 PC(Personal Computer) 서버로 접속하기</h2>
+    <ol style="display: inline-block;text-align: left;font-size: smaller;">
+      <li>웹 브라우저를 띄운다</li>
+      <li>주소창에 localhost 혹은 127.0.0.1이라고 입력 한다.</li>
+      <li>주소창에 내 PC의 IP 주소를 입력 한다.</li>
+    </ol>
+    <br><br>
+    <h2>내 PC에 설치된 웹 서버의 IP 주소 : <span class="IP">127.0.0.1</span> = <span class="IP">localhost</span></h2>
+    <ul style="display: inline-block;text-align: left;font-size: smaller;">
+      <li>127.0.0.1은 예약된 IP 주소로 인터넷상에 일반 IP로는 쓰일 수 없는 주소이다.</li>
+      <li>운영체제(OS,Operating System) 자체적으로 제공</li>
+      <li>항상 고정되어 있는 IP(127.0.0.1) 과 호스트네임(localhost)을 갖는다.</li>
+    </ul>
+    <br><br>
+    <h2>내 PC의 IP 주소 확인하기</h2>
+    <ol style="display: inline-block;text-align: left;font-size: smaller;">
+      <li>작업표시줄에서 네트워크 아이콘을 마우스 오른쪽 버튼으로 클릭</li>
+      <li>네트워크 및 인터넷 설정 열기</li>
+      <li>제어판 - 네트워크 및 공유 센터</li>
+      <li>연결 클릭</li>
+      <li>자세히 클릭</li>
+      <li>IPv4 주소를 확인</li>
+    </ol>
+  </p><br><hr><br><br>
 
 
 </body>
