@@ -179,29 +179,44 @@
             }
         </script>
         <br><br><br><br>
-        <input type="button" value="Color Change!" id="button1"
-            onclick="change(document.getElementById('button1').value)">
-        <br><br><br><br>
-        <script type="text/javascript">
-            function change(inputtxt) {
-                var btn1 = "Color Change!"
-
-                if (inputtxt == btn1) {
-                    document.getElementById('button1').value = 'Return';
-                    document.querySelector('body').style.backgroundColor = 'mintcream';
-                    document.querySelector('.note').style.backgroundColor = 'rgba(194, 255, 177, 0.836)';
-                   
-                    
-                } else {
-                    document.getElementById('button1').value = 'Color Change!';
-                    document.querySelector('body').style.backgroundColor = 'white';
-                    document.querySelector('.note').style.backgroundColor = 'rgb(189, 230, 255)';
-                 
-                    
-
-                }
+        <input type="button" value="Color Change!" 
+        onclick="
+        var btn1 = 'Color Change!'
+        var target1 = document.querySelector('body')
+        var target2 = document.querySelector('.note')
+        /*this는 해당하는 onclick이 포함된 태그를 가리킨다*/
+        if (this.value == btn1) {
+            this.value = 'Return';
+            target1.style.backgroundColor = 'mintcream';
+            target2.style.backgroundColor = 'rgba(194, 255, 177, 0.836)';
+            
+            
+            var th = document.querySelectorAll('th');
+            var i=0;
+            while(i<th.length){
+                th[i].style.backgroundColor='white';
+                th[i].style.color='black'
+                i = i+1;
             }
-        </script>
+            
+           
+            
+        } else {
+            this.value = 'Color Change!';
+            target1.style.backgroundColor = 'white';
+            target2.style.backgroundColor = 'rgb(189, 230, 255)';
+            
+            var th = document.querySelectorAll('th');
+            var i=0;
+            while(i<th.length){
+                th[i].style.backgroundColor='black';
+                th[i].style.color='white'
+                i = i+1;
+            }
+        }">
+        <br><br><br><br>
+    
+        
 
         <h1><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">문자열</a>
         </h1>
