@@ -481,6 +481,9 @@
             <li>if문과 같이 <span class="red">while()</span>문도 괄호 안에 <span class="red">true/false</span> 둘 중 하나가 들어간다.</li>
             <li>true인 동안은 중괄호 안에 있는 코드들이 하나하나 실행된다.</li>
             <li>반복되는 코드가 몇 번 실행되는지 적어놓는 역할을 하는 것이 변수 i</li>
+            <li>i = i + 1; 반복문이 실행될 때마다 i 값을 1씩 증가시키는 것.</li> 
+            <li>i(새로운 i 값) = i(기존의 i 값) + 1</li>
+            <li>기존의 i 값에 1을 더한 결과를 i의 새로운 값으로 준다는 뜻</li>
             <li>마지막까지 가면 다시 괄호 안의 값이 true/false 인지 확인한 후 역시나 true면 반복적으로 실행된다.</li>
             <li>while(false)가 되면 그때 끝나면서 while문 바깥쪽에 있는 코드가 실행된다.</li>
         </ol>
@@ -558,9 +561,30 @@
         </table>
 
 
-        <br><br>
+        <br><br><hr>
+        <h1>배열+반복문</h1>
+        <script>
+            var website = ['naver','google','daum','facebook'];
+            document.write('<ol style="display:inline-block;text-align:left">');
+            document.write('<li>'+website[0]+'</li>');
+            document.write('<li>'+website[1]+'</li>');
+            document.write('<li>'+website[2]+'</li>');
+            document.write('<li>'+website[3]+'</li>');
+            document.write('</ol>');
+        </script>
+        <h3>반복문</h3>
+        <script>
+            website.push('nate','youtube')
+        </script>
+        <script>
+           var i = 0;
+           document.write('<ol style="display:inline-block;text-align:left">')
+            while(i < website.length) {console.log(i);
+                document.write('<li>' + website[i] + '</li>');
+                i=i+1;}
+                document.write('</ol>')
+        </script>
         
-
     </body>
 
 </html>
