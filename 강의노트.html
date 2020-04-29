@@ -128,8 +128,11 @@
         .red {
             color: red
         }
-        .loop:hover{background-color: lavender;color: black;} 
-        
+
+        .loop:hover {
+            background-color: lavender;
+            color: black;
+        }
     </style>
 </head>
 
@@ -205,7 +208,7 @@
             document.getElementsByClassName('loop')[0].style.backgroundColor = 'lavender';
             document.getElementsByClassName('loop')[0].style.color = 'black';
             }
-            function mouseOut1() {console.log('loop6');
+            function mouseOut1() {console.log('loop1');
             document.getElementsByClassName('loop')[0].style.backgroundColor = 'white';
             document.getElementsByClassName('loop')[0].style.color = 'black';
             }
@@ -215,10 +218,19 @@
             document.getElementsByClassName('loop')[1].style.backgroundColor = 'lavender';
             document.getElementsByClassName('loop')[1].style.color = 'black';
             }
-            function mouseOut2() {console.log('loop6');
+            function mouseOut2() {console.log('loop2');
             document.getElementsByClassName('loop')[1].style.backgroundColor = 'white';
             document.getElementsByClassName('loop')[1].style.color = 'black';
             }
+            var sky = document.querySelectorAll('.skyblue')
+            var i = 0;
+            while (i < sky.length) {
+                console.log(sky[i]);
+                sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(112, 126, 253)'; }
+                sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
+                i = i + 1
+            }
+            
             
            
             
@@ -236,28 +248,23 @@
             };
             
            
-            document.getElementsByClassName('loop')[0].onmouseover = function() {mouseOver1()};
-            document.getElementsByClassName('loop')[0].onmouseout = function() {mouseOut1()};
-            function mouseOver1() {
-            document.getElementsByClassName('loop')[0].style.backgroundColor = 'lavender';
-            document.getElementsByClassName('loop')[0].style.color = 'black';
+        var loop2 = document.querySelectorAll('.loop')
+        var i=0;
+        while(i<loop2.length){
+        console.log(loop2[i]);
+        loop2[i].onmouseover=function(){this.style.color='black';this.style.backgroundColor='lavender'};
+        loop2[i].onmouseout=function(){this.style.color='white';this.style.backgroundColor='black'};
+        i=i+1;
+        }    
+        var sky = document.querySelectorAll('.skyblue')
+            var i = 0;
+            while (i < sky.length) {
+                console.log(sky[i]);
+                sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(85, 184, 250)'; }
+                sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
+                i = i + 1
             }
-            function mouseOut1() {console.log('loop6');
-            document.getElementsByClassName('loop')[0].style.backgroundColor = 'black';
-            document.getElementsByClassName('loop')[0].style.color = 'white';
-            }
-            document.getElementsByClassName('loop')[1].onmouseover = function() {mouseOver2()};
-            document.getElementsByClassName('loop')[1].onmouseout = function() {mouseOut2()};
-            function mouseOver2() {
-            document.getElementsByClassName('loop')[1].style.backgroundColor = 'lavender';
-            document.getElementsByClassName('loop')[1].style.color = 'black';
-            }
-            function mouseOut2() {console.log('loop6');
-            document.getElementsByClassName('loop')[1].style.backgroundColor = 'black';
-            document.getElementsByClassName('loop')[1].style.color = 'white';
-            }
-       
-          
+           
             
         }">
         <br><br><br><br>
@@ -363,7 +370,7 @@
             <li>Programmer - 순서를 만드는 사람</li>
         </ul>
         <h3>if/else 조건문</h3><br>
-        <a href="조건문.html" title="예제" target="_blank">if(Boolean 데이터 타입) {1} else {2}</span></a><br><br>
+        <a href="조건문.html" title="예제" target="_blank" class="ifelse">if(Boolean 데이터 타입) {1} else {2}</span></a><br><br>
         <ul style="display: inline-block;text-align: left;">
             <li>if(<span class="blue">true</span>) {<span class="red">1</span>} else {<span class="red">2</span>} - 1 실행
                 2
@@ -481,7 +488,7 @@
             <li>if문과 같이 <span class="red">while()</span>문도 괄호 안에 <span class="red">true/false</span> 둘 중 하나가 들어간다.</li>
             <li>true인 동안은 중괄호 안에 있는 코드들이 하나하나 실행된다.</li>
             <li>반복되는 코드가 몇 번 실행되는지 적어놓는 역할을 하는 것이 변수 i</li>
-            <li>i = i + 1; 반복문이 실행될 때마다 i 값을 1씩 증가시키는 것.</li> 
+            <li>i = i + 1; 반복문이 실행될 때마다 i 값을 1씩 증가시키는 것.</li>
             <li>i(새로운 i 값) = i(기존의 i 값) + 1</li>
             <li>기존의 i 값에 1을 더한 결과를 i의 새로운 값으로 준다는 뜻</li>
             <li>마지막까지 가면 다시 괄호 안의 값이 true/false 인지 확인한 후 역시나 true면 반복적으로 실행된다.</li>
@@ -504,7 +511,7 @@
             }
         </script>
 
-   
+
         <script>
             function loop() {
                 var myWindow = window.open("", "", "width=260, height=240px");
@@ -526,8 +533,8 @@
         <br>
         <table>
             <tr>
-                <th onclick="normal()" class="loop" id="demo">기본 방법</th>
-                <th onclick="loop()" class="loop" >반복문</th>
+                <th onclick="normal()" class="loop">기본 방법</th>
+                <th onclick="loop()" class="loop">반복문</th>
             </tr>
             <tr>
                 <td style="text-align: left;padding: 20px;" title="기본 방법 code">
@@ -561,32 +568,48 @@
         </table>
 
 
-        <br><br><hr>
+        <br><br>
+        <hr>
         <h1>배열+반복문</h1><br>
         <span><b>배열</b></span><br>
         <script>
-            var website = ['naver','google','daum','facebook'];
+            var website = ['naver', 'google', 'daum', 'facebook'];
             document.write('<ol style="display:inline-block;text-align:left">');
-            document.write('<li>'+website[0]+'</li>');
-            document.write('<li>'+website[1]+'</li>');
-            document.write('<li>'+website[2]+'</li>');
-            document.write('<li>'+website[3]+'</li>');
+            document.write('<li>' + website[0] + '</li>');
+            document.write('<li>' + website[1] + '</li>');
+            document.write('<li>' + website[2] + '</li>');
+            document.write('<li>' + website[3] + '</li>');
             document.write('</ol>');
         </script>
         <br><br>
         <span><b>배열+반복문</b></span><br>
         <script>
-            website.push('nate','youtube')
+            website.push('nate', 'youtube')
+            website.splice(2, 1)
         </script>
         <script>
-           var i = 0;
-           document.write('<ol style="display:inline-block;text-align:left">')
-            while(i < website.length) {console.log(i);
-                document.write('<li>' + website[i] + '</li>');
-                i=i+1;}
-                document.write('</ol>')
+            var i = 0;
+            document.write('<ol style="display:inline-block;text-align:left">')
+            while (i < website.length) {
+                console.log(i);
+                document.write('<li><a href="https://www.' + website[i] + '.com" target="_blank" class="skyblue">' + website[i] + '</li>');
+                i = i + 1;
+            }
+            document.write('</ol>')
         </script>
-        <br><br><hr>
+        <script>
+            var sky = document.querySelectorAll('.skyblue')
+            var i = 0;
+            while (i < sky.length) {
+                console.log(sky[i]);
+                sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(85, 184, 250)'; }
+                sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
+                i = i + 1
+            }
+
+        </script>
+        <br><br>
+        <hr>
     </body>
 
 </html>
