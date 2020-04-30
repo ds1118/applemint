@@ -133,7 +133,23 @@
             background-color: lavender;
             color: black;
         }
-        
+
+        #notetitle:hover {
+            background-color: transparent;
+        }
+
+        .obj {
+            background-color: rgb(85, 200, 250);
+            border: 2px solid whitesmoke;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            width: 25px;
+            text-align: center;
+            display: inline-block;
+            padding:0%;
+        }
     </style>
 </head>
 
@@ -141,7 +157,7 @@
     <br>
     <span class="note"
         style="background-color: rgb(189, 230, 255);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;height: 50px;font-size: 230%;">
-        강의 노트</span><br>
+        <a href="강의노트.html" id="notetitle">강의 노트</a></span><br>
 
     <body onload="printClock()">
         <span style="font-size: small">현재 시간 :</span><span
@@ -186,90 +202,97 @@
         </script>
         <br><br><br><br>
         <input type="button" value="Color Change!" onclick="colorchange(this);">
+
         <script>
-        function colorchange(self){var btn1 = 'Color Change!'
-        var target1 = document.querySelector('body')
-        var target2 = document.querySelector('.note')
-        /*this는 해당하는 onclick이 포함된 태그를 가리킨다*/
-        if (self.value == btn1) {
-            self.value = 'Return';
-            target1.style.backgroundColor = 'mintcream';
-            target2.style.backgroundColor = 'rgba(194, 255, 177, 0.836)';
-            var th = document.querySelectorAll('th');
-            var i=0;
-            while(i<th.length){
-                th[i].style.backgroundColor='white';
-                th[i].style.color='black'
-                i = i+1;
-            console.log('th')};
-            console.log('loop1');
-            
-            document.getElementsByClassName('loop')[0].onmouseover = function() {mouseOver1()};
-            document.getElementsByClassName('loop')[0].onmouseout = function() {mouseOut1()};
-            function mouseOver1() {
-            document.getElementsByClassName('loop')[0].style.backgroundColor = 'lavender';
-            document.getElementsByClassName('loop')[0].style.color = 'black';
+            function bodybackgroundcolor(color) {
+                var target1 = document.querySelector('body');
+                target1.style.backgroundColor = color;
             }
-            function mouseOut1() {console.log('loop1');
-            document.getElementsByClassName('loop')[0].style.backgroundColor = 'white';
-            document.getElementsByClassName('loop')[0].style.color = 'black';
+            function notebackgroundcolor(color) {
+                var target2 = document.querySelector('.note');
+                target2.style.backgroundColor = color;
             }
-            document.getElementsByClassName('loop')[1].onmouseover = function() {mouseOver2()};
-            document.getElementsByClassName('loop')[1].onmouseout = function() {mouseOut2()};
-            function mouseOver2() {
-            document.getElementsByClassName('loop')[1].style.backgroundColor = 'lavender';
-            document.getElementsByClassName('loop')[1].style.color = 'black';
+        </script>
+        <script>
+            function colorchange(self) {
+                var btn1 = 'Color Change!'
+
+                /*this는 해당하는 onclick이 포함된 태그를 가리킨다*/
+                if (self.value == btn1) {
+                    self.value = 'Return';
+                    bodybackgroundcolor('mintcream');
+                    notebackgroundcolor('rgba(194, 255, 177, 0.836)');
+                    var th = document.querySelectorAll('th');
+                    var i = 0;
+                    while (i < th.length) {
+                        th[i].style.backgroundColor = 'white';
+                        th[i].style.color = 'black'
+                        i = i + 1;
+                    }
+                    var loop1 = document.querySelectorAll('.loop');
+                    var i = 0;
+                    while (i < loop1.length) {
+                        loop1[i].onmouseover = function () { this.style.backgroundColor = 'lavender'; this.style.color = 'black'; };
+                        loop1[i].onmouseout = function () { this.style.backgroundColor = 'white'; this.style.color = 'black'; };
+                        i = i + 1;
+                    }
+                    var sky = document.querySelectorAll('.skyblue')
+                    var i = 0;
+                    while (i < sky.length) {
+                        console.log(sky[i]);
+                        sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(112, 126, 253)'; }
+                        sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
+                        i = i + 1;
+                    }
+                    var object2 = document.querySelectorAll('.obj');
+                    var i = 0;
+                    while (i < object2.length) {
+                        object2[i].style.backgroundColor = 'lightgreen';
+                        object2[i].style.border = '2px solid white'
+                        i = i + 1;
+                    }
+                } else {
+                    self.value = 'Color Change!';
+                    /*target1.style.backgroundColor = 'white';*/
+                    bodybackgroundcolor('white');
+                    notebackgroundcolor('rgb(189, 230, 255)');
+
+                    var th = document.querySelectorAll('th');
+                    var i = 0;
+                    while (i < th.length) {
+                        th[i].style.backgroundColor = 'black';
+                        th[i].style.color = 'white';
+                        i = i + 1;
+                    };
+
+
+                    var loop2 = document.querySelectorAll('.loop')
+                    var i = 0;
+                    while (i < loop2.length) {
+                        console.log(loop2[i]);
+                        loop2[i].onmouseover = function () { this.style.color = 'black'; this.style.backgroundColor = 'lavender'; console.log(this) };
+                        loop2[i].onmouseout = function () { this.style.color = 'white'; this.style.backgroundColor = 'black'; console.log(this) };
+                        i = i + 1;
+                    }
+                    var sky = document.querySelectorAll('.skyblue')
+                    var i = 0;
+                    while (i < sky.length) {
+                        console.log(sky[i]);
+                        sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(85, 184, 250)'; }
+                        sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
+                        i = i + 1
+                    }
+                    var object2 = document.querySelectorAll('.obj');
+                    var i = 0;
+                    while (i < object2.length) {
+                        object2[i].style.backgroundColor = 'rgb(85, 200, 250)';
+                        object2[i].style.border = '2px solid whitesmoke'
+                        i = i + 1;
+                    }
+
+                }
             }
-            function mouseOut2() {console.log('loop2');
-            document.getElementsByClassName('loop')[1].style.backgroundColor = 'white';
-            document.getElementsByClassName('loop')[1].style.color = 'black';
-            }
-            var sky = document.querySelectorAll('.skyblue')
-            var i = 0;
-            while (i < sky.length) {
-                console.log(sky[i]);
-                sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(112, 126, 253)'; }
-                sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
-                i = i + 1
-            }
-            
-            
-           
-            
-        } else {
-            self.value = 'Color Change!';
-            target1.style.backgroundColor = 'white';
-            target2.style.backgroundColor = 'rgb(189, 230, 255)';
-            
-            var th = document.querySelectorAll('th');
-            var i=0;
-            while(i<th.length){
-                th[i].style.backgroundColor='black';
-                th[i].style.color='white';
-                i = i+1;
-            };
-            
-           
-        var loop2 = document.querySelectorAll('.loop')
-        var i=0;
-        while(i<loop2.length){
-        console.log(loop2[i]);
-        loop2[i].onmouseover=function(){this.style.color='black';this.style.backgroundColor='lavender';console.log(this)};
-        loop2[i].onmouseout=function(){this.style.color='white';this.style.backgroundColor='black';console.log(this)};
-        i=i+1;
-        }    
-        var sky = document.querySelectorAll('.skyblue')
-            var i = 0;
-            while (i < sky.length) {
-                console.log(sky[i]);
-                sky[i].onmouseover = function () {this.style.backgroundColor = 'rgb(85, 184, 250)'; }
-                sky[i].onmouseout = function () {this.style.backgroundColor = 'transparent'; }
-                i = i + 1
-            }
-           
-            
-        }}
-    </script>
+        </script>
         <br><br><br><br>
 
 
@@ -413,10 +436,8 @@
         <h3>3) get</h3>
         <h4>배열에서 데이터 가져오기</h4>
         <script>
-            document.write("<span class='blue'>document.write(<b>fruit[0]</b>+'&lt;br&gt;')</span>&nbsp;" + fruit[0] + "<br>")
-            document.write("<span class='blue'>document.write(<b>fruit[1]</b>+'&lt;br&gt;')</span>&nbsp;" + fruit[1] + "<br>")
-            document.write("<span class='blue'>document.write(<b>fruit[2]</b>+'&lt;br&gt;')</span>&nbsp;" + fruit[2] + "<br>")
-            document.write("<span class='blue'>document.write(<b>fruit[3]</b>+'&lt;br&gt;')</span>&nbsp;" + fruit[3] + "<br>")
+            function write(i) { document.write("<span class='blue'>document.write(<b>fruit[" + i + "]</b>+'&lt;br&gt;')</span>&nbsp;" + fruit[i] + "<br>") }
+            write(0); write(1); write(2); write(3);
         </script>
         <br>
         <h3>4) count</h3>
@@ -479,10 +500,8 @@
         <br>
         <ul style="display:inline-block;">
             <script>
-                document.write('<li>1</li>');
-                document.write('<li>2</li>');
-                document.write('<li>3</li>');
-                document.write('<li>4</li>');
+                function writeli(i) { document.write('<li>' + i + '</li>'); }
+                writeli(1); writeli(2); writeli(3); writeli(4);
             </script>
         </ul><br>
 
@@ -577,10 +596,11 @@
         <script>
             var website = ['naver', 'google', 'daum', 'facebook'];
             document.write('<ol style="display:inline-block;text-align:left">');
-            document.write('<li>' + website[0] + '</li>');
-            document.write('<li>' + website[1] + '</li>');
-            document.write('<li>' + website[2] + '</li>');
-            document.write('<li>' + website[3] + '</li>');
+            function writewebsite(i) { document.write('<li>' + website[i] + '</li>'); }
+            writewebsite(0);
+            writewebsite(1);
+            writewebsite(2);
+            writewebsite(3);
             document.write('</ol>');
         </script>
         <br><br>
@@ -611,7 +631,83 @@
         </script>
         <br><br>
         <hr>
-        <h1>함수</h1>
+        <h1>함수&객체</h1>
+        <h3>함수</h3>
+        <ul style="display: inline-block;text-align: left;">
+            <li>function 함수이름(매개변수){실행되는 코드들;}</li>
+            <li>var 함수이름 = function(매개변수) {}</li>
+            <li>매개변수로 this를 사용하여 함수가 담긴 해당 태그를 선택한다.</li>
+        </ul>
+        <h3 style="text-align: center;">객체</h3>
+        <script>
+            function clickme(txt) {
+                document.getElementById("object1").innerHTML = txt;
+            } 
+        </script>
+        <p id="object1"></p>
+        <input class="obj" type="button" value="1"
+            onclick="clickme('객체에 담긴 함수를 Method / 객체에 담긴 데이터를 가지고 오는 key값을 Property라고 한다.')">
+        <input class="obj" type="button" value="2" onclick="clickme('객체는 중괄호{ } 안에 담긴다.')">
+        <input class="obj" type="button" value="3"
+            onclick="clickme('var 객체이름 = {&lsquo;Property1&rsquo; : 데이터1, &lsquo;Property2&rsquo; : 데이터2}')">
+        <input class="obj" type="button" value="4" onclick="clickme('객체내 Property는 , 로 구분한다.')">
+        <input class="obj" type="button" value="5" onclick="clickme('데이터 값으로 숫자, 문자열, 배열, 함수 등을 담을 수 있다.')">
+        <input class="obj" type="button" value="6"
+            onclick="clickme('for(var key in 객체이름) {코드;} : 객체의 모든 property를 가져와서 중괄호 내의 코드를 실행한다.')">
+        <input class="obj" type="button" value="7"
+            onclick="clickme('객체내 데이터 가져오기 : 객체이름.Property(띄어쓰기 안됨) / 객체이름[&lsquo;Property(띄어쓰기 됨)&rsquo;]')">
+        <input class="obj" type="button" value="8"
+            onclick="clickme('객체 데이터에 함수 담기 : 객체이름.함수이름 = function(){코드;} / 객체이름[&lsquo;함수이름&rsquo;] = function(){코드;}')">
+        <input class="obj" type="button" value="9" onclick="clickme('함수 실행하기 : 객체이름.함수이름();')">
+        <input class="obj" type="button" value="10" onclick="clickme('객체를 사용해서 복잡하고 많은 함수들을 정리정돈 한다.')">
+
+
+        <br><br>
+        <h3>객체 book</h3>
+        <script>
+            var book = { '지리의 힘': '팀 마샬', '더 해빙': '이서윤, 홍주연' };
+            book['1cm 다이빙'] = '태수, 문정';
+            book.언컨택트 = '김용섭';
+            document.write('<ol style="text-align: left;display: inline-block;">');
+            for (var key in book) { document.write('<li><b>도서명 : </b>' + key + ' &nbsp;<b>저자 : </b>' + book[key] + '</li>') };
+            document.write('</ol>');
+            document.write('<br>')
+
+        </script>
+
+        <script>
+            function code() {
+                alert("\nvar book = {\n'지리의 힘' : '팀 마샬' , \n'더 해빙' : '이서윤, 홍주연'\n} ;\nbook['1cm 다이빙'] = '태수, 문정' ;\nbook.언컨택트 = '김용섭' ;\ndocument.write('<ol>') ;\nfor(var key in book)\n{\n document.write\n('<li><b>도서명 : </b>'+key+\n' &nbsp;<b>저자 : </b>'+book[key]+'</li>')\n} ;\ndocument.write('</ol>') ;\n")
+            }
+        </script>
+        <br>
+        <input type="button" value="book code 보기" onclick="code()"><br><br><br>
+        <h3>객체 func</h3><br>
+        <div>
+            <script>
+                var func = { date: function () { document.write(Date()) }, write: function () { document.write('메소드 : 객체에 들어있는 함수 데이터') } };
+                func['bookfunction'] = function () { for (var key in book) { document.write('<b>도서명 : </b>' + key + ' &nbsp;<b>저자 : </b>' + book[key] + '<br>') }; }
+                func.br = function () { document.write('<br>') }
+                func.date(); func.br()
+                func.write(); func.br()
+                func.bookfunction(); func.br()
+            </script>
+        </div><br>
+        <input type="button" value="func code 보기" id="code" onclick="object(this)"><br><br>
+        <div id="object" style="width: 425px;display: inline-block;text-align: left;"></div><br><br><br><br><br><br><br>
+        <script>
+            function object(txt) {
+                if (txt.value == "func code 보기") {
+                    document.getElementById('code').value = "func code 숨기기";
+                    document.getElementById('object').innerHTML = "var func = {<br> date: function () <br>{ document.write( Date() ) } ,<br>write : function () <br>{ document.write('메소드 : 객체에 들어있는 함수 데이터') } <br>};<br>func['bookfunction'] = function () <br>{ for (var key in book) <br>{ document.write('&lt;b>도서명 : &lt;/b>' + key +<br>'&lt;b>저자 : &lt;/b>' + book[key] + '&lt;br>') }<br>}<br>func.br = function () { document.write('&lt;br>') }<br>func.date(); func.br()<br>func.write(); func.br()<br>func.bookfunction(); func.br()"
+                }
+                else {
+                    txt.value = "func code 보기"
+                    document.getElementById('object').innerHTML = ""
+                }
+            }
+        </script>
+
     </body>
 
 </html>
