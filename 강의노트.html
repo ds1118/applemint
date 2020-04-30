@@ -185,13 +185,14 @@
             }
         </script>
         <br><br><br><br>
-        <input type="button" value="Color Change!" onclick="
-        var btn1 = 'Color Change!'
+        <input type="button" value="Color Change!" onclick="colorchange(this);">
+        <script>
+        function colorchange(self){var btn1 = 'Color Change!'
         var target1 = document.querySelector('body')
         var target2 = document.querySelector('.note')
         /*this는 해당하는 onclick이 포함된 태그를 가리킨다*/
-        if (this.value == btn1) {
-            this.value = 'Return';
+        if (self.value == btn1) {
+            self.value = 'Return';
             target1.style.backgroundColor = 'mintcream';
             target2.style.backgroundColor = 'rgba(194, 255, 177, 0.836)';
             var th = document.querySelectorAll('th');
@@ -236,7 +237,7 @@
            
             
         } else {
-            this.value = 'Color Change!';
+            self.value = 'Color Change!';
             target1.style.backgroundColor = 'white';
             target2.style.backgroundColor = 'rgb(189, 230, 255)';
             
@@ -253,21 +254,22 @@
         var i=0;
         while(i<loop2.length){
         console.log(loop2[i]);
-        loop2[i].onmouseover=function(){this.style.color='black';this.style.backgroundColor='lavender'};
-        loop2[i].onmouseout=function(){this.style.color='white';this.style.backgroundColor='black'};
+        loop2[i].onmouseover=function(){this.style.color='black';this.style.backgroundColor='lavender';console.log(this)};
+        loop2[i].onmouseout=function(){this.style.color='white';this.style.backgroundColor='black';console.log(this)};
         i=i+1;
         }    
         var sky = document.querySelectorAll('.skyblue')
             var i = 0;
             while (i < sky.length) {
                 console.log(sky[i]);
-                sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(85, 184, 250)'; }
-                sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
+                sky[i].onmouseover = function () {this.style.backgroundColor = 'rgb(85, 184, 250)'; }
+                sky[i].onmouseout = function () {this.style.backgroundColor = 'transparent'; }
                 i = i + 1
             }
            
             
-        }">
+        }}
+    </script>
         <br><br><br><br>
 
 
