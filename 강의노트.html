@@ -133,6 +133,7 @@
             background-color: lavender;
             color: black;
         }
+        
     </style>
 </head>
 
@@ -567,7 +568,6 @@
             </tr>
         </table>
 
-
         <br><br>
         <hr>
         <h1>배열+반복문</h1><br>
@@ -592,7 +592,7 @@
             document.write('<ol style="display:inline-block;text-align:left">')
             while (i < website.length) {
                 console.log(i);
-                document.write('<li><a href="https://www.' + website[i] + '.com" target="_blank" class="skyblue">' + website[i] + '</li>');
+                document.write('<li><a href="https://www.' + website[i] + '.com" target="_blank" class="skyblue">' + website[i] + '</a></li>');
                 i = i + 1;
             }
             document.write('</ol>')
@@ -606,10 +606,10 @@
                 sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
                 i = i + 1
             }
-
         </script>
         <br><br>
         <hr>
+        <h1>함수</h1>
     </body>
 
 </html>
