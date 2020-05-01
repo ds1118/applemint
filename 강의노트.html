@@ -3,179 +3,11 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>강의 노트</title>
-    <style>
-        body {
-            text-align: center;
-            background-color: white;
-        }
-
-        .IP {
-            color: blue;
-        }
-
-        a.kitty:hover {
-            background-color: transparent;
-        }
-
-        a.text:link {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-weight: bolder;
-            font-size: large;
-            color: navy;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        a.text:visited {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-weight: bolder;
-            font-size: large;
-            color: navy;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        a:link {
-            color: black;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: black;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        a:hover {
-            background-color: lavenderblush;
-            text-decoration: none;
-        }
-
-        a:active {
-            color: gray;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        table {
-            border: 0.8px;
-            font-family: monospace;
-            border-collapse: collapse;
-            margin: auto
-        }
-
-        th,
-        td {
-            padding: 10px;
-            width: 100px;
-            border: 0.5px solid black
-        }
-
-        th {
-            background-color: whitesmoke;
-            color: black;
-        }
-
-        h1,
-        h2,
-        h4 {
-            font-family: monospace;
-        }
-
-        @media (max-width: 800px) {
-            .one ul li {
-                clear: both;
-                display: block;
-            }
-
-            .dropdown li a {
-                display: block;
-                width: 100%;
-            }
-
-            .dropdown {
-                position: relative;
-                width: 100%;
-                top: 0px;
-                /* position: static;; */
-            }
-        }
-
-        /*2단 메뉴를 숨기고, 절대 위치 */
-        .one li:hover>ul {
-            display: block;
-        }
-
-        /*1단 메뉴에 마우스 오버했을 때 2단 메뉴 드러내가 */
-
-        ul li a {
-            text-decoration: none;
-            display: block;
-            height: 21px;
-            line-height: 21px;
-            text-align: left;
-        }
-
-        ul li {
-            background-color: transparent;
-        }
-
-        .blue {
-            color: blue;
-        }
-
-        .red {
-            color: red
-        }
-
-        .loop:hover {
-            background-color: lavenderblush;
-            color: black;
-        }
-
-        #notetitle:hover {
-            background-color: transparent;
-        }
-
-        #notetitle {
-            border: 3px solid whitesmoke;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            padding: 1%;
-
-        }
-
-        .obj {
-            background-color: rgb(143, 220, 253);
-            border: 2px solid whitesmoke;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-            width: 25px;
-            height: 22px;
-            text-align: center;
-            display: inline-block;
-            padding: 0%;
-        }
-
-        #changecolor {
-            background-color: black;
-            color: white;
-            border: 2px solid whitesmoke;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<!--title blue color : rgb(189, 230, 255)-->
-<!--title yellow color : rgb(253, 255, 140)-->
 
 <body>
     <br>
@@ -189,194 +21,20 @@
             id="clock">
         </span>
         <input type="button" value="Yellow" onclick="colorchange(this);" id="changecolor">
-
-
-        <!--시계 기능 추가-->
-        <script>
-            function printClock() {
-
-                var clock = document.getElementById("clock");            // 출력할 장소 선택
-                var currentDate = new Date();                                     // 현재시간
-                var calendar = currentDate.getFullYear() + "-" + (currentDate.getMonth() + 1) + "-" + currentDate.getDate() // 현재 날짜
-                var amPm = 'AM'; // 초기값 AM
-                var currentHours = addZeros(currentDate.getHours(), 2);
-                var currentMinute = addZeros(currentDate.getMinutes(), 2);
-                var currentSeconds = addZeros(currentDate.getSeconds(), 2);
-
-                if (currentHours >= 12) { // 시간이 12보다 클 때 PM으로 세팅, 12를 빼줌
-                    amPm = 'PM';
-                    currentHours = addZeros(currentHours - 12, 2);
-                }
-
-                if (currentSeconds >= 50) {// 50초 이상일 때 색을 변환해 준다.
-                    currentSeconds = '<span style="color:red;">' + currentSeconds + '</span>'
-                }
-                clock.innerHTML = currentHours + ":" + currentMinute + ":" + currentSeconds + " <span style='font-size:10px;'>" + amPm + "</span>"; //날짜를 출력해 줌
-
-                setTimeout("printClock()", 1000);         // 1초마다 printClock() 함수 호출
-            }
-
-            function addZeros(num, digit) { // 자릿수 맞춰주기
-                var zero = '';
-                num = num.toString();
-                if (num.length < digit) {
-                    for (i = 0; i < digit - num.length; i++) {
-                        zero += '0';
-                    }
-                }
-                return zero + num;
-            }
-        </script>
-
-
-
-        <script>
-            function bodybackgroundcolor(color) {
-                var target1 = document.querySelector('body');
-                target1.style.backgroundColor = color;
-            }
-            function notebackgroundcolor(color) {
-                var target2 = document.querySelector('.note');
-                target2.style.backgroundColor = color;
-            }
-        </script>
-        <script>
-            function colorchange(self) {
-                var btn1 = 'Yellow'
-                var btn2 = 'Mint'
-                var btn3 = 'Blue'
-
-                /*this는 해당하는 onclick이 포함된 태그를 가리킨다*/
-                if (self.value == btn1) {
-                    self.value = 'Mint';
-                    bodybackgroundcolor('mintcream');/*'rgb(150, 250, 160)'*/
-                    notebackgroundcolor('rgb(150, 250, 160)');
-                    var th = document.querySelectorAll('th');
-                    var i = 0;
-                    while (i < th.length) {
-                        th[i].style.backgroundColor = 'white';
-                        th[i].style.color = 'black'
-                        i = i + 1;
-                    }
-                    var loop1 = document.querySelectorAll('.loop');
-                    var i = 0;
-                    while (i < loop1.length) {
-                        loop1[i].onmouseover = function () { this.style.backgroundColor = 'black'; this.style.color = 'white'; };
-                        loop1[i].onmouseout = function () { this.style.backgroundColor = 'white'; this.style.color = 'black'; };
-                        i = i + 1;
-                    }
-                    var sky = document.querySelectorAll('.skyblue')
-                    var i = 0;
-                    while (i < sky.length) {
-                        console.log(sky[i]);
-                        sky[i].onmouseover = function () { this.style.backgroundColor = 'rgba(194, 255, 177, 0.836)'; }
-                        sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
-                        i = i + 1;
-                    }
-                    var object2 = document.querySelectorAll('.obj');
-                    var i = 0;
-                    while (i < object2.length) {
-                        object2[i].style.backgroundColor = 'rgb(230, 270, 50)'; 'rgb(150, 250, 110)'
-                        object2[i].style.border = '2px solid white';
-                        object2[i].style.color = 'black';
-                        i = i + 1;
-                    }
-                } else if (self.value == btn2) {
-                    self.value = 'Blue';
-                    /*target1.style.backgroundColor = 'white';*/
-                    bodybackgroundcolor('rgb(214, 240, 252)');
-                    notebackgroundcolor('rgb(85, 200, 250)');
-
-                    var th = document.querySelectorAll('th');
-                    var i = 0;
-                    while (i < th.length) {
-                        th[i].style.backgroundColor = 'white';
-                        th[i].style.color = 'black';
-                        i = i + 1;
-                    };
-
-
-                    var loop2 = document.querySelectorAll('.loop')
-                    var i = 0;
-                    while (i < loop2.length) {
-                        console.log(loop2[i]);
-                        loop2[i].onmouseover = function () { this.style.color = 'black'; this.style.backgroundColor = 'whitesmoke'; console.log(this) };
-                        loop2[i].onmouseout = function () { this.style.color = 'black'; this.style.backgroundColor = 'white'; console.log(this) };
-                        i = i + 1;
-                    }
-                    var sky = document.querySelectorAll('.skyblue')
-                    var i = 0;
-                    while (i < sky.length) {
-                        console.log(sky[i]);
-                        sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(112, 126, 253)'; }/*'rgb(85, 150, 250)'*/
-                        sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
-                        i = i + 1
-                    }
-                    var object2 = document.querySelectorAll('.obj');
-                    var i = 0;
-                    while (i < object2.length) {
-                        object2[i].style.backgroundColor = 'rgb(85, 184, 250)';/*'rgb(143, 220, 253)'*/
-                        object2[i].style.border = '2px solid white';
-                        object2[i].style.color = 'black';
-                        i = i + 1;
-                    }
-
-                } else {
-                    self.value = 'Yellow';
-                    /*target1.style.backgroundColor = 'white';*/
-                    bodybackgroundcolor('white');
-                    notebackgroundcolor('rgb(251, 253, 116)');
-
-                    var th = document.querySelectorAll('th');
-                    var i = 0;
-                    while (i < th.length) {
-                        th[i].style.backgroundColor = 'whitesmoke';
-                        th[i].style.color = 'black';
-                        i = i + 1;
-                    };
-
-
-                    var loop2 = document.querySelectorAll('.loop')
-                    var i = 0;
-                    while (i < loop2.length) {
-                        console.log(loop2[i]);
-                        loop2[i].onmouseover = function () { this.style.color = 'black'; this.style.backgroundColor = 'lavenderblush'; console.log(this) }; 'rgb(112, 126, 253)'
-                        loop2[i].onmouseout = function () { this.style.color = 'black'; this.style.backgroundColor = 'whitesmoke'; console.log(this) };
-                        i = i + 1;
-                    }
-                    var sky = document.querySelectorAll('.skyblue')
-                    var i = 0;
-                    while (i < sky.length) {
-                        console.log(sky[i]);
-                        sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(85, 150, 250)'; }
-                        sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
-                        i = i + 1
-                    }
-                    var object2 = document.querySelectorAll('.obj');
-                    var i = 0;
-                    while (i < object2.length) {
-                        object2[i].style.backgroundColor = 'rgb(143, 220, 253)';
-                        object2[i].style.border = '2px solid whitesmoke'
-                        object2[i].style.color = 'black';
-                        i = i + 1;
-                    }
-                }
-            }
-        </script>
+        <script src="clock.js"></script>
+        <script src="colorchange.js"></script>
         <br><br><br><br>
-
-
-
-        <h1><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">문자열</a>
+        <h1><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+                target="_blank">문자열</a>
         </h1>
-        <ul style="display: inline-block; text-align: left; font-size: small;">
-            <li><strong>자바스크립트는 <span style="color: red">큰 따옴표""</span> or <span style="color: red">작은 따옴표''</span> 안에
+        <ul style="font-size: small;">
+            <li><strong>자바스크립트는 <span class="red">큰 따옴표""</span> or <span class="red">작은 따옴표''</span> 안에
                     들어있는
                     문자를
                     문자열로 인식한다.</strong></li>
-            <li><strong>문자열은 <span style="color: red">0번째</span>부터 시작한다.</strong></li>
+            <li><strong>문자열은 <span class="red">0번째</span>부터 시작한다.</strong></li>
         </ul><br>
-        <table style="width: 45%;" class="t">
+        <table style="width: 45%;">
             <tr>
                 <th style="width:30%">Properties</th>
                 <th style="width:70%">실행</th>
@@ -406,28 +64,27 @@
         <img src="string.png" />
         <br><br><br>
         <hr>
-
         <h1>
             IP 주소
         </h1>
         <br>
         <p>
             <h2>자신의 PC(Personal Computer) 서버로 접속하기</h2>
-            <ol style="display: inline-block;text-align: left;font-size: smaller;">
+            <ol style="font-size: smaller;">
                 <li>웹 브라우저를 띄운다</li>
                 <li>주소창에 localhost 혹은 127.0.0.1이라고 입력 한다.</li>
                 <li>주소창에 내 PC의 IP 주소를 입력 한다.</li>
             </ol>
             <br><br>
             <h2>내 PC에 설치된 웹 서버의 IP 주소 : <span class="IP">127.0.0.1</span> = <span class="IP">localhost</span></h2>
-            <ul style="display: inline-block;text-align: left;font-size: smaller;">
+            <ul style="font-size: smaller;">
                 <li>127.0.0.1은 예약된 IP 주소로 인터넷상에 일반 IP로는 쓰일 수 없는 주소이다.</li>
                 <li>운영체제(OS,Operating System) 자체적으로 제공</li>
                 <li>항상 고정되어 있는 IP(127.0.0.1) 과 호스트네임(localhost)을 갖는다.</li>
             </ul>
             <br><br>
             <h2>내 PC의 IP 주소 확인하기</h2>
-            <ol style="display: inline-block;text-align: left;font-size: smaller;">
+            <ol style="font-size: smaller;">
                 <li>작업표시줄에서 네트워크 아이콘을 마우스 오른쪽 버튼으로 클릭</li>
                 <li>네트워크 및 인터넷 설정 열기</li>
                 <li>제어판 - 네트워크 및 공유 센터</li>
@@ -449,10 +106,10 @@
             1&gt;2
             <script>document.write(1 > 2)</script><br>
             <br>
-            <ul style="display: inline-block; text-align: left;font-size: smaller;">
+            <ul style=" font-size: smaller;">
                 <li>비교연산자는 좌항과 우항의 관계에 따라서 true/false 둘 중 하나의 값을 만들어낸다.</li>
-                <li>비교연산자의 <span style="color: red; font-weight: bold;">Boolean</span> 데이터 타입은 <span
-                        style="color: red; font-weight: bold;">true/false</span> 단 2개의 데이터로 이루어져 있다.</li>
+                <li>비교연산자의 <span style="font-weight: bold" class="red">Boolean</span> 데이터 타입은 <span
+                    style="font-weight: bold" class="red">true/false</span> 단 2개의 데이터로 이루어져 있다.</li>
             </ul>
             <br>
             <br>
@@ -460,14 +117,14 @@
         <hr>
         <h1>조건문</h1>
         <h3>Conditional Statements</h3>
-        <ul style="display: inline-block;text-align: left;">
+        <ul>
             <li>Program - 시간의 흐름에 따른 순서</li>
             <li>Programming - 순서를 만드는 행위</li>
             <li>Programmer - 순서를 만드는 사람</li>
         </ul>
         <h3>if/else 조건문</h3><br>
         <a href="조건문.html" title="예제" target="_blank" class="ifelse">if(Boolean 데이터 타입) {1} else {2}</span></a><br><br>
-        <ul style="display: inline-block;text-align: left;">
+        <ul>
             <li>if(<span class="blue">true</span>) {<span class="red">1</span>} else {<span class="red">2</span>} - 1 실행
                 2
                 무시
@@ -481,7 +138,7 @@
         <h1><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array"
                 target="_blank">
                 배열 Array</a></h1>
-        <ul style="display: inline-block;text-align: left;font-size: small;">
+        <ul style="font-size: small;">
             <li>index를 정할 때 : <b>index[0]</b>은 첫번째 자리에 있는 값, <b>index[1]</b>은 두번째 자리에 있는 값</li>
             <li>배열에 들어있는 데이터가 몇 개인가를 체크할 때 : 개수는 1부터 센다 <b>length</b></li>
         </ul>
@@ -523,11 +180,12 @@
         <br><br>
         <hr>
         <h1><a href="https://entitycode.com/" target="_blank">특수기호 Entity Code</a></h1>
-        <ul style="display: inline-block;text-align: left;font-size: small;">
+        <ul style="font-size: small;">
             <li><b>Entity Code :</b> Html 문서에서 특수 문자를 입력하기 위해 사용하는 코드</li>
             <li><span class="red" style="font-weight: bold;">문자식</span> 표현과 <span class="red"
                     style="font-weight: bold;">숫자식</span> 표현이 있고 <u>같은 특수 문자</u>를 나타낸다.</li>
-        </ul> <br><br>
+        </ul> 
+        <br><br>
         <table>
             <tr>
                 <th>기호</th>
@@ -568,15 +226,14 @@
             순서대로 실행되는 것이 프로그램의 기본적인 실행 순서<br>
             반복문은 <span class="blue">조건문(if문)</span>과 함께 순서대로 실행되는 프로그램의 실행 순서의 흐름을 제어하는 제어문</span>
         <br>
-        <ul style="display:inline-block;">
+        <ul>
             <script>
-                function writeli(i) { document.write('<li>' + i + '</li>'); }
                 writeli(1); writeli(2); writeli(3); writeli(4);
             </script>
-        </ul><br>
-
+        </ul>
+        <br>
         <h3>반복문의 기본 문법 - for/while 반복문의 키워드</h3>
-        <ol style="text-align: left;font-size: small;display: inline-block;">
+        <ol style="font-size: small;">
             <li>if문과 같이 <span class="red">while()</span>문도 괄호 안에 <span class="red">true/false</span> 둘 중 하나가 들어간다.</li>
             <li>true인 동안은 중괄호 안에 있는 코드들이 하나하나 실행된다.</li>
             <li>반복되는 코드가 몇 번 실행되는지 적어놓는 역할을 하는 것이 변수 i</li>
@@ -586,46 +243,16 @@
             <li>마지막까지 가면 다시 괄호 안의 값이 true/false 인지 확인한 후 역시나 true면 반복적으로 실행된다.</li>
             <li>while(false)가 되면 그때 끝나면서 while문 바깥쪽에 있는 코드가 실행된다.</li>
         </ol>
-
         <br><br>
         <div style="display: inline-block;">
             <span style="font-size: small;">ex) 2번째와 3번째에 실행되어야 되는 명령을 3번 반복해서 실행하기</span>
-        </div><br><br>
+        </div>
+        <br><br>
         <table>
             <tr>
                 <th onclick="repeatfunc.normal()" class="loop">기본 방법</th>
                 <th onclick="repeatfunc.loop()" class="loop">반복문</th>
             </tr>
-            <script>/*객체에 (함수) 메소드 담아서 실행시키기*/
-                var repeatfunc = {
-                    normal: function () {
-                        var myWindow = window.open("", "", "width=260, height=240px");
-                        myWindow.document.write('<title>기본 방법</title>'
-                            + '<body style="background-color:lavender;text-align:center">'
-                            + '<h2 style="text-align:center;font-family:monospace">기본 방법</h2>'
-                            + '<ul style="display:inline-block"><li>1</li><li>2</li><li>3</li><li>2</li><li>3</li><li>2</li><li>3</li><li>4</li></ul></body>'
-                        )
-                        myWindow.blur();
-                    },
-                    loop: function () {
-                        var myWindow = window.open("", "", "width=260, height=240px");
-                        myWindow.document.write('<title>반복문</title>'
-                            + '<body style="background-color:lavender;text-align:center">'
-                            + '<h2 style="text-align:center;font-family:monospace">반복문</h2>'
-                        )
-                        myWindow.document.write('<ul style="display:inline-block"><li>1</li>');
-                        var i = 0;
-                        while (i < 3) {
-                            myWindow.document.write('<li>2</li>');
-                            myWindow.document.write('<li>3</li>');
-                            i = i + 1;
-                        }
-                        myWindow.document.write('<li>4</li></ul></body>')
-                        myWindow.blur();
-                    }
-                }
-
-            </script>
             <tr>
                 <td style="text-align: left;padding: 20px;" title="기본 방법 code">
                     &lt;ul><br>
@@ -686,31 +313,17 @@
             }
             document.write('</ol>')
         </script>
-        <script>
-            var sky = document.querySelectorAll('.skyblue')
-            var i = 0;
-            while (i < sky.length) {
-                console.log(sky[i]);
-                sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(85, 150, 250)'; }/*'rgb(85, 184, 250)'*/
-                sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
-                i = i + 1
-            }
-        </script>
+
         <br><br>
         <hr>
         <h1>함수&객체</h1>
         <h3>함수</h3>
-        <ul style="display: inline-block;text-align: left;">
+        <ul>
             <li>function 함수이름(매개변수){실행되는 코드들;}</li>
             <li>var 함수이름 = function(매개변수) {}</li>
             <li>매개변수로 this를 사용하여 함수가 담긴 해당 태그를 선택한다.</li>
         </ul>
-        <h3 style="text-align: center;">객체</h3>
-        <script>
-            function clickme(txt) {
-                document.getElementById("object1").innerHTML = txt;
-            } 
-        </script>
+        <h3>객체</h3>
         <p id="object1"></p>
         <input class="obj" type="button" value="1"
             onclick="clickme('객체에 담긴 함수를 Method / 객체에 담긴 데이터를 가지고 오는 key값을 Property라고 한다.')">
@@ -731,30 +344,20 @@
 
         <br><br>
         <h3>객체 book</h3>
+        <script src="object.js"></script>
         <script>
-            var book = { '지리의 힘': '팀 마샬', '더 해빙': '이서윤, 홍주연' };
-            book['1cm 다이빙'] = '태수, 문정';
-            book.언컨택트 = '김용섭';
-            document.write('<ol style="text-align: left;display: inline-block;">');
-            for (var key in book) { document.write('<li><b>도서명 : </b>' + key + ' &nbsp;<b>저자 : </b>' + book[key] + '</li>') };
-            document.write('</ol>');
-            document.write('<br>')
-
-        </script>
-
-        <script>
-            function code() {
-                alert("\nvar book = {\n'지리의 힘' : '팀 마샬' , \n'더 해빙' : '이서윤, 홍주연'\n} ;\nbook['1cm 다이빙'] = '태수, 문정' ;\nbook.언컨택트 = '김용섭' ;\ndocument.write('<ol>') ;\nfor(var key in book)\n{\n document.write\n('<li><b>도서명 : </b>'+key+\n' &nbsp;<b>저자 : </b>'+book[key]+'</li>')\n} ;\ndocument.write('</ol>') ;\n")
+            document.write('<ol style="display: inline-block;">')
+            for (var key in book) {
+                document.write('<li><b>도서명 : </b>' + key + ' &nbsp;<b>저자 : </b>' + book[key] + '</li>')
             }
+            document.write('</ol>')
+            document.write('<br>')
         </script>
         <br>
         <input type="button" value="book code 보기" onclick="code()"><br><br><br>
         <h3>객체 func</h3><br>
         <div>
             <script>
-                var func = { date: function () { document.write(Date()) }, write: function () { document.write('메소드 : 객체에 들어있는 함수 데이터') } };
-                func['bookfunction'] = function () { for (var key in book) { document.write('<b>도서명 : </b>' + key + ' &nbsp;<b>저자 : </b>' + book[key] + '<br>') }; }
-                func.br = function () { document.write('<br>') }
                 func.date(); func.br()
                 func.write(); func.br()
                 func.bookfunction(); func.br()
@@ -762,19 +365,6 @@
         </div><br>
         <input type="button" value="func code 보기" id="code" onclick="object(this)"><br><br>
         <div id="object" style="width: 425px;display: inline-block;text-align: left;"></div><br><br><br><br><br><br><br>
-        <script>
-            function object(txt) {
-                if (txt.value == "func code 보기") {
-                    document.getElementById('code').value = "func code 숨기기";
-                    document.getElementById('object').innerHTML = "var func = {<br> date: function () <br>{ document.write( Date() ) } ,<br>write : function () <br>{ document.write('메소드 : 객체에 들어있는 함수 데이터') } <br>};<br>func['bookfunction'] = function () <br>{ for (var key in book) <br>{ document.write('&lt;b>도서명 : &lt;/b>' + key +<br>'&lt;b>저자 : &lt;/b>' + book[key] + '&lt;br>') }<br>}<br>func.br = function () { document.write('&lt;br>') }<br>func.date(); func.br()<br>func.write(); func.br()<br>func.bookfunction(); func.br()"
-                }
-                else {
-                    txt.value = "func code 보기"
-                    document.getElementById('object').innerHTML = ""
-                }
-            }
-        </script>
-
     </body>
 
 </html>
