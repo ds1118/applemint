@@ -109,7 +109,7 @@ ul.one li {
   left: 60.5%;
   top: 400px;
 }
-
+/*
 @media (max-width: 800px) {
   .one ul li {
     clear: both;
@@ -125,9 +125,9 @@ ul.one li {
     position: relative;
     width: 100%;
     top: 0px;
-    /* position: static;; */
+    /position: static;;/
   }
-}
+}*/
 
 /*2단 메뉴를 숨기고, 절대 위치 */
 .one li:hover > ul {
