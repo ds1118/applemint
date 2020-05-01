@@ -139,6 +139,16 @@
             background-color: transparent;
         }
 
+        #notetitle {
+            border: 3px solid whitesmoke;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            padding: 1%;
+
+        }
+
         .obj {
             background-color: rgb(143, 220, 253);
             border: 2px solid whitesmoke;
@@ -151,6 +161,16 @@
             text-align: center;
             display: inline-block;
             padding: 0%;
+        }
+
+        #changecolor {
+            background-color: black;
+            color: white;
+            border: 2px solid whitesmoke;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
         }
     </style>
 </head>
@@ -168,6 +188,9 @@
             style="display: inline-block;width:100px; height:50px; line-height:50px; color:rgb(3, 3, 3);font-size:15px; text-align:center;"
             id="clock">
         </span>
+        <input type="button" value="Yellow" onclick="colorchange(this);" id="changecolor">
+
+
         <!--시계 기능 추가-->
         <script>
             function printClock() {
@@ -204,8 +227,8 @@
                 return zero + num;
             }
         </script>
-        <br><br><br><br>
-        <input type="button" value="Yellow" onclick="colorchange(this);">
+
+
 
         <script>
             function bodybackgroundcolor(color) {
