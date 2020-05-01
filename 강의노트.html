@@ -567,44 +567,42 @@
         <br><br>
         <div style="display: inline-block;">
             <span style="font-size: small;">ex) 2번째와 3번째에 실행되어야 되는 명령을 3번 반복해서 실행하기</span>
-        </div><br>
-        <script>
-            function normal() {
-                var myWindow = window.open("", "", "width=260, height=240px");
-                myWindow.document.write('<title>기본 방법</title>'
-                    + '<body style="background-color:lavender;text-align:center">'
-                    + '<h2 style="text-align:center;font-family:monospace">기본 방법</h2>'
-                    + '<ul style="display:inline-block"><li>1</li><li>2</li><li>3</li><li>2</li><li>3</li><li>2</li><li>3</li><li>4</li></ul></body>'
-                )
-                myWindow.blur();
-            }
-        </script>
-
-
-        <script>
-            function loop() {
-                var myWindow = window.open("", "", "width=260, height=240px");
-                myWindow.document.write('<title>반복문</title>'
-                    + '<body style="background-color:lavender;text-align:center">'
-                    + '<h2 style="text-align:center;font-family:monospace">반복문</h2>'
-                )
-                myWindow.document.write('<ul style="display:inline-block"><li>1</li>');
-                var i = 0;
-                while (i < 3) {
-                    myWindow.document.write('<li>2</li>');
-                    myWindow.document.write('<li>3</li>');
-                    i = i + 1;
-                }
-                myWindow.document.write('<li>4</li></ul></body>')
-                myWindow.blur();
-            }
-        </script>
-        <br>
+        </div><br><br>
         <table>
             <tr>
-                <th onclick="normal()" class="loop">기본 방법</th>
-                <th onclick="loop()" class="loop">반복문</th>
+                <th onclick="repeatfunc.normal()" class="loop">기본 방법</th>
+                <th onclick="repeatfunc.loop()" class="loop">반복문</th>
             </tr>
+            <script>/*객체에 (함수) 메소드 담아서 실행시키기*/
+                var repeatfunc = {
+                    normal: function () {
+                        var myWindow = window.open("", "", "width=260, height=240px");
+                        myWindow.document.write('<title>기본 방법</title>'
+                            + '<body style="background-color:lavender;text-align:center">'
+                            + '<h2 style="text-align:center;font-family:monospace">기본 방법</h2>'
+                            + '<ul style="display:inline-block"><li>1</li><li>2</li><li>3</li><li>2</li><li>3</li><li>2</li><li>3</li><li>4</li></ul></body>'
+                        )
+                        myWindow.blur();
+                    },
+                    loop: function () {
+                        var myWindow = window.open("", "", "width=260, height=240px");
+                        myWindow.document.write('<title>반복문</title>'
+                            + '<body style="background-color:lavender;text-align:center">'
+                            + '<h2 style="text-align:center;font-family:monospace">반복문</h2>'
+                        )
+                        myWindow.document.write('<ul style="display:inline-block"><li>1</li>');
+                        var i = 0;
+                        while (i < 3) {
+                            myWindow.document.write('<li>2</li>');
+                            myWindow.document.write('<li>3</li>');
+                            i = i + 1;
+                        }
+                        myWindow.document.write('<li>4</li></ul></body>')
+                        myWindow.blur();
+                    }
+                }
+
+            </script>
             <tr>
                 <td style="text-align: left;padding: 20px;" title="기본 방법 code">
                     &lt;ul><br>
@@ -635,7 +633,6 @@
                 </td>
             </tr>
         </table>
-
         <br><br>
         <hr>
         <h1>배열+반복문</h1><br>
