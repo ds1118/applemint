@@ -7,6 +7,7 @@
     <style>
         body {
             text-align: center;
+            background-color: white;
         }
 
         .IP {
@@ -73,8 +74,8 @@
         }
 
         th {
-            background-color: black;
-            color: white;
+            background-color: whitesmoke;
+            color: black;
         }
 
         h1,
@@ -130,7 +131,7 @@
         }
 
         .loop:hover {
-            background-color: lavender;
+            background-color: lavenderblush;
             color: black;
         }
 
@@ -139,24 +140,27 @@
         }
 
         .obj {
-            background-color: rgb(85, 200, 250);
+            background-color: rgb(143, 220, 253);
             border: 2px solid whitesmoke;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
             width: 25px;
+            height: 22px;
             text-align: center;
             display: inline-block;
-            padding:0%;
+            padding: 0%;
         }
     </style>
 </head>
+<!--title blue color : rgb(189, 230, 255)-->
+<!--title yellow color : rgb(253, 255, 140)-->
 
 <body>
     <br>
     <span class="note"
-        style="background-color: rgb(189, 230, 255);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;height: 50px;font-size: 230%;">
+        style="background-color: rgb(251, 253, 116);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;height: 50px;font-size: 230%;">
         <a href="강의노트.html" id="notetitle">강의 노트</a></span><br>
 
     <body onload="printClock()">
@@ -201,7 +205,7 @@
             }
         </script>
         <br><br><br><br>
-        <input type="button" value="Color Change!" onclick="colorchange(this);">
+        <input type="button" value="Yellow" onclick="colorchange(this);">
 
         <script>
             function bodybackgroundcolor(color) {
@@ -215,13 +219,15 @@
         </script>
         <script>
             function colorchange(self) {
-                var btn1 = 'Color Change!'
+                var btn1 = 'Yellow'
+                var btn2 = 'Mint'
+                var btn3 = 'Blue'
 
                 /*this는 해당하는 onclick이 포함된 태그를 가리킨다*/
                 if (self.value == btn1) {
-                    self.value = 'Return';
-                    bodybackgroundcolor('mintcream');
-                    notebackgroundcolor('rgba(194, 255, 177, 0.836)');
+                    self.value = 'Mint';
+                    bodybackgroundcolor('mintcream');/*'rgb(150, 250, 160)'*/
+                    notebackgroundcolor('rgb(150, 250, 160)');
                     var th = document.querySelectorAll('th');
                     var i = 0;
                     while (i < th.length) {
@@ -232,7 +238,7 @@
                     var loop1 = document.querySelectorAll('.loop');
                     var i = 0;
                     while (i < loop1.length) {
-                        loop1[i].onmouseover = function () { this.style.backgroundColor = 'lavender'; this.style.color = 'black'; };
+                        loop1[i].onmouseover = function () { this.style.backgroundColor = 'black'; this.style.color = 'white'; };
                         loop1[i].onmouseout = function () { this.style.backgroundColor = 'white'; this.style.color = 'black'; };
                         i = i + 1;
                     }
@@ -240,28 +246,29 @@
                     var i = 0;
                     while (i < sky.length) {
                         console.log(sky[i]);
-                        sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(112, 126, 253)'; }
+                        sky[i].onmouseover = function () { this.style.backgroundColor = 'rgba(194, 255, 177, 0.836)'; }
                         sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
                         i = i + 1;
                     }
                     var object2 = document.querySelectorAll('.obj');
                     var i = 0;
                     while (i < object2.length) {
-                        object2[i].style.backgroundColor = 'lightgreen';
-                        object2[i].style.border = '2px solid white'
+                        object2[i].style.backgroundColor = 'rgb(230, 270, 50)'; 'rgb(150, 250, 110)'
+                        object2[i].style.border = '2px solid white';
+                        object2[i].style.color = 'black';
                         i = i + 1;
                     }
-                } else {
-                    self.value = 'Color Change!';
+                } else if (self.value == btn2) {
+                    self.value = 'Blue';
                     /*target1.style.backgroundColor = 'white';*/
-                    bodybackgroundcolor('white');
-                    notebackgroundcolor('rgb(189, 230, 255)');
+                    bodybackgroundcolor('rgb(214, 240, 252)');
+                    notebackgroundcolor('rgb(85, 200, 250)');
 
                     var th = document.querySelectorAll('th');
                     var i = 0;
                     while (i < th.length) {
-                        th[i].style.backgroundColor = 'black';
-                        th[i].style.color = 'white';
+                        th[i].style.backgroundColor = 'white';
+                        th[i].style.color = 'black';
                         i = i + 1;
                     };
 
@@ -270,26 +277,66 @@
                     var i = 0;
                     while (i < loop2.length) {
                         console.log(loop2[i]);
-                        loop2[i].onmouseover = function () { this.style.color = 'black'; this.style.backgroundColor = 'lavender'; console.log(this) };
-                        loop2[i].onmouseout = function () { this.style.color = 'white'; this.style.backgroundColor = 'black'; console.log(this) };
+                        loop2[i].onmouseover = function () { this.style.color = 'black'; this.style.backgroundColor = 'whitesmoke'; console.log(this) };
+                        loop2[i].onmouseout = function () { this.style.color = 'black'; this.style.backgroundColor = 'white'; console.log(this) };
                         i = i + 1;
                     }
                     var sky = document.querySelectorAll('.skyblue')
                     var i = 0;
                     while (i < sky.length) {
                         console.log(sky[i]);
-                        sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(85, 184, 250)'; }
+                        sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(112, 126, 253)'; }/*'rgb(85, 150, 250)'*/
                         sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
                         i = i + 1
                     }
                     var object2 = document.querySelectorAll('.obj');
                     var i = 0;
                     while (i < object2.length) {
-                        object2[i].style.backgroundColor = 'rgb(85, 200, 250)';
-                        object2[i].style.border = '2px solid whitesmoke'
+                        object2[i].style.backgroundColor = 'rgb(85, 184, 250)';/*'rgb(143, 220, 253)'*/
+                        object2[i].style.border = '2px solid white';
+                        object2[i].style.color = 'black';
                         i = i + 1;
                     }
 
+                } else {
+                    self.value = 'Yellow';
+                    /*target1.style.backgroundColor = 'white';*/
+                    bodybackgroundcolor('white');
+                    notebackgroundcolor('rgb(251, 253, 116)');
+
+                    var th = document.querySelectorAll('th');
+                    var i = 0;
+                    while (i < th.length) {
+                        th[i].style.backgroundColor = 'whitesmoke';
+                        th[i].style.color = 'black';
+                        i = i + 1;
+                    };
+
+
+                    var loop2 = document.querySelectorAll('.loop')
+                    var i = 0;
+                    while (i < loop2.length) {
+                        console.log(loop2[i]);
+                        loop2[i].onmouseover = function () { this.style.color = 'black'; this.style.backgroundColor = 'lavenderblush'; console.log(this) }; 'rgb(112, 126, 253)'
+                        loop2[i].onmouseout = function () { this.style.color = 'black'; this.style.backgroundColor = 'whitesmoke'; console.log(this) };
+                        i = i + 1;
+                    }
+                    var sky = document.querySelectorAll('.skyblue')
+                    var i = 0;
+                    while (i < sky.length) {
+                        console.log(sky[i]);
+                        sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(85, 150, 250)'; }
+                        sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
+                        i = i + 1
+                    }
+                    var object2 = document.querySelectorAll('.obj');
+                    var i = 0;
+                    while (i < object2.length) {
+                        object2[i].style.backgroundColor = 'rgb(143, 220, 253)';
+                        object2[i].style.border = '2px solid whitesmoke'
+                        object2[i].style.color = 'black';
+                        i = i + 1;
+                    }
                 }
             }
         </script>
@@ -624,7 +671,7 @@
             var i = 0;
             while (i < sky.length) {
                 console.log(sky[i]);
-                sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(85, 184, 250)'; }
+                sky[i].onmouseover = function () { this.style.backgroundColor = 'rgb(85, 150, 250)'; }/*'rgb(85, 184, 250)'*/
                 sky[i].onmouseout = function () { this.style.backgroundColor = 'transparent'; }
                 i = i + 1
             }
