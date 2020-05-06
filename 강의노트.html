@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>강의 노트</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <br>
     <span class="note"
@@ -105,7 +107,7 @@
             <ul style=" font-size: smaller;">
                 <li>비교연산자는 좌항과 우항의 관계에 따라서 true/false 둘 중 하나의 값을 만들어낸다.</li>
                 <li>비교연산자의 <span style="font-weight: bold" class="red">Boolean</span> 데이터 타입은 <span
-                    style="font-weight: bold" class="red">true/false</span> 단 2개의 데이터로 이루어져 있다.</li>
+                        style="font-weight: bold" class="red">true/false</span> 단 2개의 데이터로 이루어져 있다.</li>
             </ul>
             <br>
             <br>
@@ -180,7 +182,7 @@
             <li><b>Entity Code :</b> Html 문서에서 특수 문자를 입력하기 위해 사용하는 코드</li>
             <li><span class="red" style="font-weight: bold;">문자식</span> 표현과 <span class="red"
                     style="font-weight: bold;">숫자식</span> 표현이 있고 <u>같은 특수 문자</u>를 나타낸다.</li>
-        </ul> 
+        </ul>
         <br><br>
         <table>
             <tr>
@@ -360,7 +362,204 @@
             </script>
         </div><br>
         <input type="button" value="func code 보기" id="code" onclick="object(this)"><br><br>
-        <div id="object" style="width: 425px;display: inline-block;text-align: left;"></div><br><br><br><br><br><br><br>
+        <div id="object" style="width: 425px;display: inline-block;text-align: left;"></div><br><br><br>
+        <hr>
+        <h1>라이브러리 Library VS 프레임워크 Framework</h1><br>
+        <h3>라이브러리 <a href="https://jquery.com/" target="_blank">jQuery</a></h3><br>
+        <ol>
+            <li><a href="">Download</a> 에서 링크를 클릭하면 jQuery가 다운로드된다.</li><br>
+            <ul style="list-style-type: disc;font-size: smaller;">
+                <li>다운로드된 파일을 프로젝트 폴더 디렉토리로 이동하면 된다.</li>
+                <li>복잡하고 비용이 드는 방법</li>
+            </ul>
+            <br><br><br>
+            <li><a href="https://developers.google.com/speed/libraries/devguide#jquery"
+                    target="_blank"><b>CDN</b></a>(Content
+                Delivery Network)</li><br>
+            <ul style="list-style-type: disc;font-size: smaller;">
+                <li>많은 라이브러리들은 CDN이라는 걸 통해서 자기들의 서버에 파일을 보관해놓는다.</li>
+                <li>우리는 그것을 <span class="blue">script src</span>를 통해서 가져갈 수 있도록 하는 방식</li>
+                <li>script 태그에 src를 통해서 구글에서 제공하는 jQuery라고 하는 라이브러리의 주소가 적혀있다.</li>
+                <li>이 코드를 카피해서 jQuery가 필요한 파일에 붙여넣기하면 jQuery를 다운로드 받지 않고 사용할 수 있다.</li>
+                <li><span class="red"><b>무료</b></span> 서비스</li>
+            </ul>
+            <br><br><br>
+            <li>jQuery</li><br>
+            <ul style="list-style-type: disc;font-size: smaller;">
+                <li>jQuery를 이용하면 반복문을 쓰지 않아도 된다.</li>
+                <li>반복문을 jQuery가 우리 대신에 처리해준다.</li>
+                <li>우리는 한 줄짜리 코드로 이 일을 할 수 있다.</li>
+            </ul>
+        </ol><br><br>
+        <h3>구글에서 제공하는 jQuery 최신버전 코드</h3><br>
+        &lt;<span class="blue">script src</span>="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+        </script><br><br><br>
+        <hr>
+        <h1><a href="keyboard.pdf" target="_blank">단축키</a></h1>
+        <table style="width: 45%;">
+            <tr>
+                <th>에디터 단축키</th>
+                <th>실행</th>
+            </tr>
+            <tr>
+                <td>alt</td>
+                <td>마우스 커서 다중 선택</td>
+            </tr>
+            <tr>
+                <td>에디터에서 Ctrl + /</td>
+                <td>주석 처리</td>
+            </tr>
+            <tr>
+                <td>Ctrl + F</td>
+                <td>찾기 기능</td>
+            </tr>
+            <tr>
+                <td>에디터에서 Ctrl + H</td>
+                <td>바꾸기 기능</td>
+            </tr>
+            <tr>
+                <td>Ctrl + N</td>
+                <td>새 파일 열기</td>
+            </tr>
+            <tr>
+                <td>Ctrl + O</td>
+                <td>파일 열기</td>
+            </tr>
+            <tr>
+                <td>Ctrl + A</td>
+                <td>전체 선택</td>
+            </tr>
+            <tr>
+                <td>에디터에서 Ctrl + A 전체 선택 후 Ctrl 누른 상태에서 K 누르고 F 누르기</td>
+                <td>자동 정렬</td>
+            </tr>
+            <tr>
+                <td>Ctrl + S</td>
+                <td>저장하기</td>
+            </tr>
+            <tr>
+                <td>Ctrl + Z</td>
+                <td>한 단계 이전으로 돌아가기</td>
+            </tr>
+            <tr>
+                <td>Ctrl + C</td>
+                <td>복사하기</td>
+            </tr>
+            <tr>
+                <td>Ctrl + X</td>
+                <td>잘라내기</td>
+            </tr>
+            <tr>
+                <td>Ctrl + V</td>
+                <td>붙여넣기</td>
+            </tr>
+            <tr>
+                <th>검사 창 단축키</th>
+                <th>실행</th>
+            </tr>
+            <tr>
+                <td>Ctrl + Shift + I / F12</td>
+                <td>검사 창 띄우기</td>
+            </tr>
+            <tr>
+                <td>검사 창에서 Dock side</td>
+                <td>화면에서 검사 창 위치 설정하기</td>
+            </tr>
+            <tr>
+                <td>검사 창에서 Esc</td>
+                <td>검사 창에서 콘솔 창 한 화면에 띄우기</td>
+            </tr>
+            <tr>
+                <td>F12(검사 창) - F1(Settings) - Debugger - Disable JavaScript 체크하기</td>
+                <td>크롬 마우스 우클릭 및 드래그</td>
+            </tr>
+            <tr>
+                <td>콘솔에서 Shift + Enter</td>
+                <td>줄바꿈</td>
+            </tr>
+            <tr>
+                <th>파일 및 폴더 단축키</th>
+                <th>실행</th>
+            </tr>
+            <tr>
+                <td>F2</td>
+                <td>파일 이름 바꾸기</td>
+            </tr>
+            <tr>
+                <td>Ctrl 누른 상태에서 클릭해서 파일 선택</td>
+                <td>여러개의 파일 선택할 때, 클릭하는 파일을 하나씩 선택하기</td>
+            </tr>
+            <tr>
+                <td>Shift 누른 상태에서 파일 선택</td>
+                <td>여러개의 파일 선택할 때, 처음과 끝을 지정하여 그 사이의 모든 파일을 연속적으로 선택</td>
+            </tr>
+            <tr>
+                <th>웹 화면 단축키</th>
+                <th>실행</th>
+            </tr>
+            <tr>
+                <td>F5</td>
+                <td>페이지 새로고침</td>
+            </tr>
+            <tr>
+                <td>F6</td>
+                <td>주소창 전체 선택</td>
+            </tr>
+            <tr>
+                <td>크롬에서 Ctrl + K</td>
+                <td>구글 검색하기</td>
+            </tr>
+            <tr>
+                <td>Ctrl + T</td>
+                <td>웹 화면에서 새 탭 열기</td>
+            </tr>
+            <tr>
+                <td>Ctrl + N</td>
+                <td>웹 화면 새 창 열기</td>
+            </tr>
+            <tr>
+                <td>Ctrl + W</td>
+                <td>웹 화면에서 탭 닫기</td>
+            </tr>
+            <tr>
+                <th>기타 단축키</th>
+                <th>실행</th>
+            </tr>
+            <tr>
+                <td>Fn + Prt Sc</td>
+                <td>스크린샷</td>
+            </tr>
+            <tr>
+                <td>Ctrl + Shift + Esc</td>
+                <td>작업 관리자</td>
+            </tr>
+            <tr>
+                <td>Fn + F2 연타</td>
+                <td>윈도우 10 부팅시 BIOS 설정 화면 진입</td>
+            </tr>
+            <tr>
+                <td>파워포인트 Ctrl + C 후에 Ctrl + D</td>
+                <td>유닛이 복사된 후 일정 자리에 옮겨둔 뒤 다시 Ctrl + D 를 해주면 일정 각도/간격을 유지하며 계속 생성된다.</td>
+            </tr>
+        </table><br>
+        <hr>
+        <h1>BIOS(Basic Input/Output System)</h1>
+        <ul>
+            <li>컴퓨터의 가장 기본적인 입출력을 처리하는 소프트웨어</li>
+            <li>PC를 시작할 때, 컴퓨터를 켜서 바탕화면 진입 전까지의 원활한 데이터 처리를 도와주는 것</li>
+            <li>요즘은 UEFI 바이오스로 거의 대체되어 사용되고 있다.</li>
+            <li>부팅 순위 변경/cpu의 온도/CPU, RAM의 오버클럭까지 설정이 가능</li>
+        </ul>
+        <hr>
+        <h1>크롬에서 마우스 우클릭 및 드래그하기</h1>
+        <ol>
+            <li>설정</li>
+            <li>개인정보 및 보안</li>
+            <li>사이트 설정</li>
+            <li>자바스크립트 차단</li>
+            <li>F5</li>
+        </ol>
+        <hr>
     </body>
 
 </html>
