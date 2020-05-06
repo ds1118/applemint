@@ -1,17 +1,66 @@
-/* <body title background color blue : rgb(165, 218, 253)
-<body background color pink : rgb(253, 220, 242)
-<body font-family : cursive */
-
 /* 강의 노트 color change button */
-function bodybackgroundcolor(color) {
-  var target1 = document.querySelector('body')
-  target1.style.backgroundColor = color
+var backgroundColor = {
+  body: function (color) {
+    $('body').css('backgroundColor', color)
+  },
+  note: function (color) {
+    $('.note').css('backgroundColor', color)
+  },
 }
-function notebackgroundcolor(color) {
-  var target2 = document.querySelector('.note')
-  target2.style.backgroundColor = color
+var th = {
+  color: function (color) {
+    $('th').css('color', color)
+  },
+  backgroundColor: function (color) {
+    $('th').css('backgroundColor', color)
+  },
 }
-
+function notetitle(color) {
+  $('#notetitle').css('border', color)
+}
+var hover1 = {
+  loop_color: function (color1, color2) {
+    $('.loop').hover(
+      function () {
+        $(this).css('color', color1)
+      },
+      function () {
+        $(this).css('color', color2)
+      }
+    )
+  },
+  loop_backgroundColor: function (color1, color2) {
+    $('.loop').hover(
+      function () {
+        $(this).css('backgroundColor', color1)
+      },
+      function () {
+        $(this).css('backgroundColor', color2)
+      }
+    )
+  },
+  website_backgroundColor: function (color1, color2) {
+    $('.website').hover(
+      function () {
+        $(this).css('backgroundColor', color1)
+      },
+      function () {
+        $(this).css('backgroundColor', color2)
+      }
+    )
+  },
+}
+var object1 = {
+  color: function (color) {
+    $('.obj').css('color', color)
+  },
+  backgroundColor: function (color) {
+    $('.obj').css('backgroundColor', color)
+  },
+  border: function (color) {
+    $('.obj').css('border', color)
+  },
+}
 function colorchange(self) {
   var btn1 = 'Yellow'
   var btn2 = 'Mint'
@@ -20,162 +69,71 @@ function colorchange(self) {
   /*this는 해당하는 onclick이 포함된 태그를 가리킨다*/
   if (self.value == btn1) {
     self.value = 'Mint'
-    bodybackgroundcolor('mintcream') /*'rgb(150, 250, 160)'*/
-    notebackgroundcolor('rgb(150, 250, 160)')
-    var th = document.querySelectorAll('th')
-    var i = 0
-    while (i < th.length) {
-      th[i].style.backgroundColor = 'white'
-      th[i].style.color = 'black'
-      i = i + 1
-    }
-    var loop1 = document.querySelectorAll('.loop')
-    var i = 0
-    while (i < loop1.length) {
-      loop1[i].onmouseover = function () {
-        this.style.backgroundColor = 'black'
-        this.style.color = 'white'
-      }
-      loop1[i].onmouseout = function () {
-        this.style.backgroundColor = 'white'
-        this.style.color = 'black'
-      }
-      i = i + 1
-    }
-    var sky = document.querySelectorAll('.skyblue')
-    var i = 0
-    while (i < sky.length) {
-      console.log(sky[i])
-      sky[i].onmouseover = function () {
-        this.style.backgroundColor = 'rgba(194, 255, 177, 0.836)'
-      }
-      sky[i].onmouseout = function () {
-        this.style.backgroundColor = 'transparent'
-      }
-      i = i + 1
-    }
-    var object2 = document.querySelectorAll('.obj')
-    var i = 0
-    while (i < object2.length) {
-      object2[i].style.backgroundColor = 'rgb(230, 270, 50)'
-      ;('rgb(150, 250, 110)')
-      object2[i].style.border = '2px solid white'
-      object2[i].style.color = 'black'
-      i = i + 1
-    }
+    backgroundColor.body('mintcream')
+    backgroundColor.note('rgb(150, 250, 160)')
+    th.color('black')
+    th.backgroundColor('white')
+    notetitle('4px solid transparent')
+    hover1.loop_color('white', 'black')
+    hover1.loop_backgroundColor('black', 'white')
+    hover1.website_backgroundColor('rgba(194, 255, 177, 0.836)', 'transparent')
+    object1.color('black')
+    object1.backgroundColor('rgb(230, 270, 50)')
+    object1.border('2px solid white')
   } else if (self.value == btn2) {
     self.value = 'Blue'
-    /*target1.style.backgroundColor = 'white';*/
-    bodybackgroundcolor('rgb(214, 240, 252)')
-    notebackgroundcolor('rgb(85, 200, 250)')
-
-    var th = document.querySelectorAll('th')
-    var i = 0
-    while (i < th.length) {
-      th[i].style.backgroundColor = 'white'
-      th[i].style.color = 'black'
-      i = i + 1
-    }
-
-    var loop2 = document.querySelectorAll('.loop')
-    var i = 0
-    while (i < loop2.length) {
-      console.log(loop2[i])
-      loop2[i].onmouseover = function () {
-        this.style.color = 'black'
-        this.style.backgroundColor = 'whitesmoke'
-        console.log(this)
-      }
-      loop2[i].onmouseout = function () {
-        this.style.color = 'black'
-        this.style.backgroundColor = 'white'
-        console.log(this)
-      }
-      i = i + 1
-    }
-    var sky = document.querySelectorAll('.skyblue')
-    var i = 0
-    while (i < sky.length) {
-      console.log(sky[i])
-      sky[i].onmouseover = function () {
-        this.style.backgroundColor = 'rgb(112, 126, 253)'
-      } /*'rgb(85, 150, 250)'*/
-      sky[i].onmouseout = function () {
-        this.style.backgroundColor = 'transparent'
-      }
-      i = i + 1
-    }
-    var object2 = document.querySelectorAll('.obj')
-    var i = 0
-    while (i < object2.length) {
-      object2[i].style.backgroundColor =
-        'rgb(85, 184, 250)' /*'rgb(143, 220, 253)'*/
-      object2[i].style.border = '2px solid white'
-      object2[i].style.color = 'black'
-      i = i + 1
-    }
+    backgroundColor.body('rgb(214, 240, 252)')
+    backgroundColor.note('rgb(85, 200, 250)')
+    th.color('black')
+    th.backgroundColor('white')
+    notetitle('4px solid white')
+    hover1.loop_color('black', 'black')
+    hover1.loop_backgroundColor('whitesmoke', 'white')
+    hover1.website_backgroundColor('rgb(112, 126, 253)', 'transparent')
+    object1.color('black')
+    object1.backgroundColor('rgb(85, 184, 250)')
+    object1.border('2px solid white')
   } else {
     self.value = 'Yellow'
-    /*target1.style.backgroundColor = 'white';*/
-    bodybackgroundcolor('white')
-    notebackgroundcolor('rgb(251, 253, 116)')
-
-    var th = document.querySelectorAll('th')
-    var i = 0
-    while (i < th.length) {
-      th[i].style.backgroundColor = 'whitesmoke'
-      th[i].style.color = 'black'
-      i = i + 1
-    }
-
-    var loop2 = document.querySelectorAll('.loop')
-    var i = 0
-    while (i < loop2.length) {
-      console.log(loop2[i])
-      loop2[i].onmouseover = function () {
-        this.style.color = 'black'
-        this.style.backgroundColor = 'lavenderblush'
-        console.log(this)
-      }
-      ;('rgb(112, 126, 253)')
-      loop2[i].onmouseout = function () {
-        this.style.color = 'black'
-        this.style.backgroundColor = 'whitesmoke'
-        console.log(this)
-      }
-      i = i + 1
-    }
-    var sky = document.querySelectorAll('.skyblue')
-    var i = 0
-    while (i < sky.length) {
-      console.log(sky[i])
-      sky[i].onmouseover = function () {
-        this.style.backgroundColor = 'rgb(85, 150, 250)'
-      }
-      sky[i].onmouseout = function () {
-        this.style.backgroundColor = 'transparent'
-      }
-      i = i + 1
-    }
-    var object2 = document.querySelectorAll('.obj')
-    var i = 0
-    while (i < object2.length) {
-      object2[i].style.backgroundColor = 'rgb(143, 220, 253)'
-      object2[i].style.border = '2px solid whitesmoke'
-      object2[i].style.color = 'black'
-      i = i + 1
-    }
+    backgroundColor.body('white')
+    backgroundColor.note('rgb(251, 253, 116)')
+    th.color('black')
+    th.backgroundColor('whitesmoke')
+    notetitle('4px solid lavender')
+    hover1.loop_color('black', 'black')
+    hover1.loop_backgroundColor('lavenderblush', 'whitesmoke')
+    hover1.website_backgroundColor('rgb(85, 150, 250)', 'transparent')
+    object1.color('black')
+    object1.backgroundColor('rgb(143, 220, 253)')
+    object1.border('2px solid whitesmoke')
   }
 }
-var sky = document.querySelectorAll('.skyblue')
-var i = 0
-while (i < sky.length) {
-  console.log(sky[i])
-  sky[i].onmouseover = function () {
-    this.style.backgroundColor = 'rgb(85, 150, 250)'
-  } /*'rgb(85, 184, 250)'*/
-  sky[i].onmouseout = function () {
-    this.style.backgroundColor = 'transparent'
-  }
-  i = i + 1
-}
+// var loop1 = document.querySelectorAll('.loop')
+// var i = 0
+// while (i < loop1.length) {
+//   console.log(loop1[i])
+//   loop1[i].onmouseover = function () {
+//     this.style.color = 'black'
+//     this.style.backgroundColor = 'lavenderblush'
+//     console.log(this)
+//   }
+//   ;('rgb(112, 126, 253)')
+//   loop1[i].onmouseout = function () {
+//     this.style.color = 'black'
+//     this.style.backgroundColor = 'whitesmoke'
+//     console.log(this)
+//   }
+//   i = i + 1
+// }
+// var website = document.querySelectorAll('.website')
+// var i = 0
+// while (i < website.length) {
+//   console.log(website[i])
+//   website[i].onmouseover = function () {
+//     this.style.backgroundColor = 'rgb(85, 150, 250)'
+//   }
+//   website[i].onmouseout = function () {
+//     this.style.backgroundColor = 'transparent'
+//   }
+//   i = i + 1
+// }

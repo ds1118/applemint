@@ -1,7 +1,3 @@
-/* 반복문 */
-function writeli(i) {
-  document.write('<li>' + i + '</li>')
-}
 /* 기본 방법 vs 반복문 */
 /* 객체에 (함수) 메소드 담아서 실행시키기 */
 var repeatfunc = {

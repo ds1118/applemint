@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>강의 노트</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -225,6 +226,10 @@
         <br>
         <ul>
             <script>
+                /* 반복문 */
+                function writeli(i) {
+                    document.write('<li>' + i + '</li>')
+                }
                 writeli(1); writeli(2); writeli(3); writeli(4);
             </script>
         </ul>
@@ -305,7 +310,7 @@
             document.write('<ol style="display:inline-block;text-align:left">')
             while (i < website.length) {
                 console.log(i);
-                document.write('<li><a href="https://www.' + website[i] + '.com" target="_blank" class="skyblue">' + website[i] + '</a></li>');
+                document.write('<li><a href="https://www.' + website[i] + '.com" target="_blank" class="website">' + website[i] + '</a></li>');
                 i = i + 1;
             }
             document.write('</ol>')
@@ -367,7 +372,8 @@
         <h1>라이브러리 Library VS 프레임워크 Framework</h1><br>
         <h3>라이브러리 <a href="https://jquery.com/" target="_blank">jQuery</a></h3><br>
         <ol>
-            <li><a href="https://jquery.com/download/" target="_blank" title="jQuery를 다운받는 여러가지 방법">Download</a> 에서 링크를 클릭하면 jQuery가 다운로드된다.</li><br>
+            <li><a href="https://jquery.com/download/" target="_blank" title="jQuery를 다운받는 여러가지 방법">Download</a> 에서 링크를
+                클릭하면 jQuery가 다운로드된다.</li><br>
             <ul style="list-style-type: disc;font-size: smaller;">
                 <li>다운로드된 파일을 프로젝트 폴더 디렉토리로 이동하면 된다.</li>
                 <li>복잡하고 비용이 드는 방법</li>
@@ -578,8 +584,8 @@
             <li>마우스 우클릭 및 드래그를 가능하게 하려면 자바스크립트를 차단해야 한다.</li>
             <li>자바스크립트 차단 후, 웹에서 자바스크립트를 사용하는 일부 기능이 작동하지 않을 수 있다.</li>
             <li>그럴 경우 다시 자바스크립트를 허용하면 된다.</li>
-            </ul><br><br>
-     
+        </ul><br><br>
+
 
 
         <hr>
