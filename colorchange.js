@@ -61,6 +61,16 @@ var object1 = {
     $('.obj').css('border', color)
   },
 }
+function jquery(color1, color2) {
+  $('.jquery').hover(
+    function () {
+      $(this).css('backgroundColor', color1)
+    },
+    function () {
+      $(this).css('backgroundColor', color2)
+    }
+  )
+}
 function colorchange(self) {
   var btn1 = 'Yellow'
   var btn2 = 'Mint'
@@ -80,6 +90,7 @@ function colorchange(self) {
     object1.color('black')
     object1.backgroundColor('rgb(230, 270, 50)')
     object1.border('2px solid white')
+    jquery('rgb(150, 250, 110)', 'transparent')
   } else if (self.value == btn2) {
     self.value = 'Blue'
     backgroundColor.body('rgb(214, 240, 252)')
@@ -93,6 +104,7 @@ function colorchange(self) {
     object1.color('black')
     object1.backgroundColor('rgb(85, 184, 250)')
     object1.border('2px solid white')
+    jquery('rgb(189, 230, 255)', 'transparent')
   } else {
     self.value = 'Yellow'
     backgroundColor.body('white')
@@ -106,6 +118,9 @@ function colorchange(self) {
     object1.color('black')
     object1.backgroundColor('rgb(143, 220, 253)')
     object1.border('2px solid whitesmoke')
+    $('.jquery').on('mouseover', function () {
+      $(this).css('backgroundColor', 'rgb(253, 220, 242)')
+    })
   }
 }
 // var loop1 = document.querySelectorAll('.loop')

@@ -395,8 +395,38 @@
                 <li>jQuery를 이용하면 반복문을 쓰지 않아도 된다.</li>
                 <li>반복문을 jQuery가 우리 대신에 처리해준다.</li>
                 <li>우리는 한 줄짜리 코드로 이 일을 할 수 있다.</li>
+                <li>jQuery는 $로 시작하고 $라는 이름의 함수를 사용한다.</li>
+                <li><b><span class="red">$(' ')</span></b> 괄호안에는 <b><span title="$('태그')"
+                            class="jquery">태그</span>&nbsp;&nbsp;<span title="$('.class')"
+                            class="jquery">.class</span>&nbsp;&nbsp;<span title="$('#id')"
+                            class="jquery">#id</span>&nbsp;&nbsp;<span title="$(this)" class="jquery">this</span></b> 가
+                    올 수 있다. ( 우선순위 : <b>태그 <span class="red">&lt;</span> .class <span class="red">&lt;</span> #id</b> )
+                </li>
+                <li>$('a') 는 이 웹페이지에 있는 모든 a 태그를 jQuery로 제어하겠다는 뜻</li>
+                <li>jQuery CSS를 바꾸고 싶다면 <span title="$(this).css('color','red')" class="jquery2">.css('속성',
+                        '속성값')</span> 함수를 쓰면 된다.</li>
             </ul>
         </ol><br><br>
+        <table style="text-align: left;width: 58%;">
+            <tr>
+                <th style="width: 55%;text-align: center;"><span class="mouse">onmouseover/onmouseout</span> 시 색깔 다르게 지정할 수 있다</th>
+                <th style="width: 45%;text-align: center;"><span class="mouse">마우스 hover</span> 시에 색깔 변화</th>
+            </tr>
+            <tr>
+                <td><span class="func">함수 2개</span><br>
+                    <b>$('span').<span class="onmouse">hover</span></b><span class="blue1">(</span><br>
+                    <span class="func">function ()</span><br>
+                    <span class="red1">{$(this).css('backgroundColor', 'red')}</span><br>
+                    <b>,</b> <span class="func">function ()</span><br> 
+                    <span class="red1">{$(this).css('backgroundColor', 'yellow')}</span><br>
+                    <span class="blue1">)</span><br>
+                    </li>
+                <td><b>$('span').<span class="onmouse">on</span><span class="blue1">(</span><span class="onmouse">'mouseover'</span>,</b> <span class="func">function ()</span><br> 
+                    <span class="red1">{$(this).css('backgroundColor', 'green')}</span><br>
+                    <span class="blue1">)</span><br></td>
+            </tr>
+        </table>
+        <span class="red"></span><span class="blue"></span>
         <h3>구글에서 제공하는 jQuery 최신버전 코드</h3><br>
         &lt;<span class="blue">script src</span>="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </script><br><br><br>

@@ -1,8 +1,4 @@
-/*blue color : rgb(189, 230, 255),rgb(165, 218, 253)
-yellow color : rgb(253, 255, 140)
-pink color : rgb(253, 220, 242)
-rgb(150, 250, 110)
-font-family : cursive*/
+/*font-family : cursive*/
 
 body {
   text-align: center;
@@ -304,4 +300,27 @@ ul {
 }
 .website:hover {
   background-color: rgb(85, 150, 250);
+}
+.jquery:hover {
+  background-color: rgb(253, 220, 242);
+}
+.jquery2:hover {
+  background-color: rgb(253, 255, 140);
+}
+.blue1 {
+  color: blue;
+  font-weight: bold;
+}
+.red1 {
+  color: red;
+  font-weight: bold;
+}
+.onmouse:hover {
+  background-color: rgb(165, 218, 253);
+}
+.func:hover {
+  background-color: lightcyan;
+}
+.mouse:hover {
+  background-color: lightgray;
 }
