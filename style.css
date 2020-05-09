@@ -262,7 +262,7 @@ a.Menu {
 }
 
 #notetitle {
-  border: 4px solid gainsboro;
+  border: 4px solid lightgrey;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   border-top-right-radius: 15px;
