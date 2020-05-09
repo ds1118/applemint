@@ -111,7 +111,7 @@ function colorchange(self) {
     backgroundColor.note('rgb(251, 253, 116)')
     th.color('black')
     th.backgroundColor('whitesmoke')
-    notetitle('4px solid lavender')
+    notetitle('4px solid gainsboro')
     hover1.loop_color('black', 'black')
     hover1.loop_backgroundColor('lavenderblush', 'whitesmoke')
     hover1.website_backgroundColor('rgb(85, 150, 250)', 'transparent')
