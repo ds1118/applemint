@@ -324,3 +324,9 @@ ul {
 .mouse:hover {
   background-color: lightgray;
 }
+.uiapi {
+  background-color: rgb(253, 220, 242);
+}
+.searchjs {
+  text-align: left;
+}

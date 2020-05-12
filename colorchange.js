@@ -71,6 +71,9 @@ function jquery(color1, color2) {
     }
   )
 }
+function uiapi(color) {
+  $('.uiapi').css('backgroundColor', color)
+}
 function colorchange(self) {
   var btn1 = 'Yellow'
   var btn2 = 'Mint'
@@ -91,6 +94,7 @@ function colorchange(self) {
     object1.backgroundColor('rgb(230, 270, 50)')
     object1.border('2px solid white')
     jquery('rgb(150, 250, 110)', 'transparent')
+    uiapi('rgb(140, 260, 160)')
   } else if (self.value == btn2) {
     self.value = 'Blue'
     backgroundColor.body('rgb(214, 240, 252)')
@@ -105,6 +109,7 @@ function colorchange(self) {
     object1.backgroundColor('rgb(85, 184, 250)')
     object1.border('2px solid white')
     jquery('rgb(189, 230, 255)', 'transparent')
+    uiapi('rgb(124, 203, 255)')
   } else {
     self.value = 'Yellow'
     backgroundColor.body('white')
@@ -121,6 +126,7 @@ function colorchange(self) {
     $('.jquery').on('mouseover', function () {
       $(this).css('backgroundColor', 'rgb(253, 220, 242)')
     })
+    uiapi('rgb(253, 220, 242)')
   }
 }
 // var loop1 = document.querySelectorAll('.loop')
