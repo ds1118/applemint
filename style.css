@@ -269,7 +269,17 @@ a.Menu {
   border-bottom-right-radius: 15px;
   padding: 1%;
 }
-
+.note {
+  background-color: rgb(251, 253, 116);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: 50px;
+  font-size: 230%;
+}
+.class {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: 50px;
+  font-size: 230%;
+}
 .obj {
   background-color: rgb(143, 220, 253);
   border: 2px solid whitesmoke;
@@ -329,4 +339,23 @@ ul {
 }
 .searchjs {
   text-align: left;
+}
+.return {
+  float: right;
+  font-size: small;
+}
+
+.return:hover {
+  background-color: transparent;
+  font-weight: bold;
+  float: right;
+  font-size: small;
+}
+#clock {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  color: rgb(3, 3, 3);
+  font-size: 15px;
 }
