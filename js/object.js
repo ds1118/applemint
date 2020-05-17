@@ -73,6 +73,8 @@ function object(txt) {
     document.getElementById('object').innerHTML = ''
   }
 }
+// fetch.html
+// 마우스 오버시 글꼴 색변화
 if ($('.jquery3').hover) {
   $('.jquery3').hover(
     function () {
