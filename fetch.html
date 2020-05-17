@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>fetch API</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <a href="Ajax.html" class="return">이전으로 돌아가기</a>
+    <br />
+    <input
+      type="button"
+      value="fetch"
+      onclick="
+    fetch('fetch').then(
+        function(response)
+    {response.text().then(function(text){alert(text)})}
+    )
+    "
+    />
+  </body>
+</html>
