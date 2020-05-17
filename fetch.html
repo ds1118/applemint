@@ -38,19 +38,19 @@
       type="button"
       value="fetch1"
       onclick="
-    fetch('fetch').then(function(response){response.text().then(function(text){alert(text)})})"
+    fetch('fetch1').then(function(response){response.text().then(function(text){alert(text)})})"
     />
     <input
       type="button"
       value="fetch2"
       onclick="
-    fetch('fetch').then(function(response){response.text().then(function(text){document.querySelector('article').innerHTML=text;})})"
+    fetch('fetch2').then(function(response){response.text().then(function(text){document.querySelector('article').innerHTML=text})})"
     />
     <input
       type="button"
       value="fetch3"
       onclick="
-    fetch('fetch').then(function(response){response.text().then(function(text){$('article').html(text)})})"
+    fetch('fetch3').then(function(response){response.text().then(function(text){$('article').html(text)})})"
     />
     <article></article>
     <br /><br />
