@@ -73,3 +73,15 @@ function object(txt) {
     document.getElementById('object').innerHTML = ''
   }
 }
+if ($('.jquery3').hover) {
+  $('.jquery3').hover(
+    function () {
+      $('.jquery3').css('color', 'red')
+      $('.jquery4').css('color', 'red')
+    },
+    function () {
+      $('.jquery3').css('color', 'black')
+      $('.jquery4').css('color', 'black')
+    }
+  )
+}
