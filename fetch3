@@ -1,3 +1,2 @@
-<h2>Ajax<h2>
-<p>fetch API 사용법</p>
+<h1>Ajax-fetch API 사용법</h1>
 <p>$('article').html(text)</p>
