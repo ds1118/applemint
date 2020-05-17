@@ -311,7 +311,7 @@ ul {
 .website:hover {
   background-color: rgb(85, 150, 250);
 }
-.jquery:hover {
+.jquery1:hover {
   background-color: rgb(253, 220, 242);
 }
 .jquery2:hover {
@@ -344,7 +344,6 @@ ul {
   float: right;
   font-size: small;
 }
-
 .return:hover {
   background-color: transparent;
   font-weight: bold;
@@ -358,4 +357,8 @@ ul {
   line-height: 50px;
   color: rgb(3, 3, 3);
   font-size: 15px;
+}
+.filename {
+  font-size: small;
+  background-color: aquamarine;
 }

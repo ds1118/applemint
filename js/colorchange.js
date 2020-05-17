@@ -62,7 +62,7 @@ var object1 = {
   },
 }
 function jquery(color1, color2) {
-  $('.jquery').hover(
+  $('.jquery1').hover(
     function () {
       $(this).css('backgroundColor', color1)
     },
@@ -123,7 +123,7 @@ function colorchange(self) {
     object1.color('black')
     object1.backgroundColor('rgb(143, 220, 253)')
     object1.border('2px solid whitesmoke')
-    $('.jquery').on('mouseover', function () {
+    $('.jquery1').on('mouseover', function () {
       $(this).css('backgroundColor', 'rgb(253, 220, 242)')
     })
     uiapi('rgb(253, 220, 242)')
