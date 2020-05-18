@@ -22,7 +22,7 @@
     <script src="js/clock.js"></script>
     <script src="js/colorchange.js"></script>
     <br /><br /><br /><br />
-    <h1>Ajax</h1>
+    <h1 id="Ajax">Ajax</h1>
     <ul style="text-align: left; display: inline-block;">
       <li>
         웹 페이지 정보를 <span class="blue">부분적</span>으로 변경/갱신하기
@@ -84,5 +84,61 @@
     <hr />
     <h1><a href="fetch.html">fetch API 사용법</a></h1>
     Ajax를 구현하는 여러가지 방법 중에 최신 방법인 fetch API를 사용할 것이다.
+    <br /><br />
+    <hr />
+    <h1>초기 페이지 구현</h1>
+    <ul>
+      <li>Lorem100 - 100개의 랜덤한 단어가 형성되는 에디터의 기능</li>
+      <li>해시 기능(북마크)</li>
+      <br />
+      <ol>
+        <li>
+          Url을 통해서 웹 페이지의 특정 부분으로 사용자가 접근하게 할 수 있다.
+        </li>
+        <li>식별하고 싶은 것에 id 값을 준다.</li>
+        <li>주소창에 Url#id값을 입력</li>
+        <li>해당 id가 식별하는 부분으로 이동한다.</li>
+      </ol>
+      <br /><br />
+      <input
+        type="button"
+        id="bookmark"
+        value='id="bookmark"'
+        onclick="
+      location.href='#Ajax'"
+      /><span style="font-size: small;">
+        버튼 클릭 후 주소창에 Url#bookmark 입력하세요. 여기로 이동됩니다.</span
+      >
+      <br /><br />
+      <li>
+        #해시값이 무엇이냐에 따라서 Ajax로 다른 페이지를 로드해서, 시작되는
+        페이지를 세팅할 수 있다.
+      </li>
+      <li>Ajax에 Url 부여하는 방법</li>
+      <ol>
+        <li>
+          &lt;a href="#!bookmark">
+        </li>
+        <li>여기서 #(해시)은 북마크 기능, !(뱅)는 해시를 나타낸다.</li>
+        <li>
+          #!를 해시뱅이라고 부른다. !를 붙이지 않아도 해당 부분의 Url은 가진다.
+        </li>
+        <li>Ajax를 사용하면 Url이 바뀌지 않고 내용만 바뀐다.</li>
+        <li>해당 내용에 Url을 붙이면 내용이 바뀔 때마다 Url이 바뀐다.</li>
+        <li>
+          <a href="https://ds1118.github.io/blockchainclass/fetch.html#!welcome"
+            >해당 Url을 공유하여 사용자가 해당 부분으로 바로 접근할 수 있게 하기
+            위함.</a
+          >
+        </li>
+        <li>location.hash는 해시값을 식별한다.</li>
+      </ol>
+      <br />
+    </ul>
+    <br />
+    <img src="img/hash.png" />
+    <img src="img/hash2.png" />
+    <br /><br />
+    <hr />
   </body>
 </html>

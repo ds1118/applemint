@@ -11,6 +11,7 @@
       }
     </style>
   </head>
+
   <body>
     <a href="Ajax.html" class="return">이전으로 돌아가기</a>
     <br /><br />
@@ -67,7 +68,9 @@
     <br /><br />
     <h1>fetch API를 이용해서 목록 만들기</h1>
     <br />
-    <h2>식당 추천</h2>
+    <h2>
+      <a href="#!welcome" onclick="foodmenu('welcome')">식당 추천</a>
+    </h2>
     <table style="width: 30%; border: none; border-collapse: collapse;">
       <tr>
         <td
@@ -80,13 +83,13 @@
           "
         >
           <ol>
-            <li><a onclick="foodmenu(menu[0])">한식</a></li>
+            <li><a href="#!korean" onclick="foodmenu(menu[0])">한식</a></li>
             <br />
-            <li><a onclick="foodmenu(menu[1])">중식</a></li>
+            <li><a href="#!chinese" onclick="foodmenu(menu[1])">중식</a></li>
             <br />
-            <li><a onclick="foodmenu(menu[2])">일식</a></li>
+            <li><a href="#!japanese" onclick="foodmenu(menu[2])">일식</a></li>
             <br />
-            <li><a onclick="foodmenu(menu[3])">양식</a></li>
+            <li><a href="#!western" onclick="foodmenu(menu[3])">양식</a></li>
             <br />
             <script>
               var menu = ['한식', '중식', '일식', '양식']
@@ -96,6 +99,11 @@
                     $('.foodmenu').html(text)
                   })
                 })
+              }
+              if (location.hash) {
+                foodmenu(location.href.substr(2))
+              } else {
+                foodmenu('welcome')
               }
             </script>
           </ol>
