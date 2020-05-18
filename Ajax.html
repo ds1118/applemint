@@ -146,6 +146,8 @@
       </ul>
     </ol>
     <br /><br /><br />
+  </ul>
+  <ul>
     <li>
       리로드했을 때 내용이 바뀌지 않는 Ajax의 여러가지 단점을 보완한 Pjax(pushState + Ajax)라고
       하는 기술을 최근에 많이 사용한다.
@@ -156,33 +158,35 @@
   <hr />
   <h1>fetch API polyfill</h1>
   <ul>
-  <li>어떤 기능이 있을 때 그 기능을 모든 브라우저가 지원하지 않을 수도 있다.</li>
-  <li>그런 경우에 과거의 브라우저를 쓰는 사람들도 그 기능을 사용할 수 있도록 해주는 것이 polyfill.</li> 
-  <li>이걸 이용하면 fetch API가 지원되지 않는 브라우저에서도 fetch가 작동할 수 있다.</li>
-</ul><br> <br>
-<table style="width: 50%;">
-  <tr>
-    <th style="width: 60%;">사이트</th>
-    <th style="width: 40%;">바로가기</th>
-  </tr>
-  <tr>
-    <td>어떤 특정 기능이 어떤 브라우저에서 현재 지원되는가를 볼 수 있는 사이트</td>
-    <td><a href="https://caniuse.com/" target="_blank">https://caniuse.com/</a></td>
-  </tr>
-  <tr>
-    <td>fetch API polyfill 다운받는 사이트</td>
-    <td><a href="https://github.com/github/fetch" target="_blank">https://github.com/github/fetch</a></td>
-  </tr>
-</table>  
-<br>
+    <li>어떤 기능이 있을 때 그 기능을 모든 브라우저가 지원하지 않을 수도 있다.</li>
+    <li>그런 경우에 과거의 브라우저를 쓰는 사람들도 그 기능을 사용할 수 있도록 해주는 것이 polyfill.</li>
+    <li>이걸 이용하면 fetch API가 지원되지 않는 브라우저에서도 fetch가 작동할 수 있다.</li>
+  </ul><br> <br>
+  <table style="width: 50%;">
+    <tr>
+      <th style="width: 60%;">사이트</th>
+      <th style="width: 40%;">바로가기</th>
+    </tr>
+    <tr>
+      <td>어떤 특정 기능이 어떤 브라우저에서 현재 지원되는가를 볼 수 있는 사이트</td>
+      <td><a href="https://caniuse.com/" target="_blank">https://caniuse.com/</a></td>
+    </tr>
+    <tr>
+      <td>fetch API polyfill 다운받는 사이트</td>
+      <td><a href="https://github.com/github/fetch" target="_blank">https://github.com/github/fetch</a></td>
+    </tr>
+  </table>
+  <br>
   <ol>
     <li>caniuse 사이트에서 fetch 검색</li>
     <li>fetch API가 지원되는 브라우저 확인</li>
     <li>해당 API가 지원되지 않는 브라우저가 있다면 polyfill이 필요하다.</li>
     <li>fetch.js 파일(polyfill)을 다운로드 받는다.</li>
     <li>내 웹 서버에 다운받은 파일을 옮긴다.</li>
-    <li><span title="fetch.html 파일에서 fetch.js 파일을 확인할 수 있다">fetch를 사용하는 파일</span>에 <span class="blue">&lt;script src="js/fetch.js">&lt;/script></span> 붙여넣기</li>
+    <li><span title="fetch.html 파일에서 fetch.js 파일을 확인할 수 있다">fetch를 사용하는 파일</span>에 <span class="blue">&lt;script
+        src="js/fetch.js">&lt;/script></span> 붙여넣기</li>
     </li>
   </ol><br><br>
 </body>
+
 </html>
