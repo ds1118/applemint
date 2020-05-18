@@ -1,174 +1,188 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Ajax</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  </head>
 
-  <body onload="printClock()">
-    <a href="note.html" class="return">이전으로 돌아가기</a>
+<head>
+  <meta charset="utf-8" />
+  <title>Ajax</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body onload="printClock()">
+  <a href="note.html" class="return">이전으로 돌아가기</a>
+  <br />
+  <span class="note"> <a href="Ajax.html" id="notetitle">Ajax</a></span><br />
+  <span style="font-size: small;">현재 시간 :</span><span id="clock"></span>
+  <input type="button" value="Yellow" onclick="colorchange(this);" id="changecolor" />
+  <script src="js/clock.js"></script>
+  <script src="js/colorchange.js"></script>
+  <br /><br /><br /><br />
+  <h1 id="Ajax">Ajax</h1>
+  <ul style="text-align: left; display: inline-block;">
+    <li>
+      웹 페이지 정보를 <span class="blue">부분적</span>으로 변경/갱신하기
+    </li>
+    <li>
+      하나의 페이지로 여러 정보들을 표현할 수 있는 Ajax가 적용된 애플리케이션
+      : SPA(Single-Page Application)
+    </li>
+    <li>
+      Ajax는 서버랑 통신해야되기 때문에 보안 문제로 인해서 직접 파일을 열 수
+      없다.
+    </li>
+    <li>Ajax는 웹 서버를 통해서 웹 사이트를 구동해야지만 동작한다.</li>
+    <li>주소창에 localhost / 127.0.0.1 / github 주소 입력</li>
+    <li>
+      Ajax는 웹 브라우저에서 자바 스크립트를 이용해서 웹 서버에 접속하고
+      정보를 가져오는 방법
+    </li>
+  </ul>
+  <br /><br />
+  <div style="width: 45%; display: inline-block; text-align: left;">
+    <h2>검색 엔진 - 추천 검색어 제공</h2>
+    <p>
+      브라우저와 웹 서버가 서로 통신을 주고 받을 때 보는
+      <span class="red">개발자 도구 Network</span>를 살펴 본다. <br />Network
+      탭은 웹 브라우저가 웹 서버와 어떤 정보를 주고 받는가를 모니터링 해주는
+      도구<br />Network에 있는 파일을 클릭하면 내용을 열어볼 수 있다.
+      <br /><br />
+      검색창에 입력할 때마다 웹 브라우저가 Ajax를 통해서 웹 서버와 통신을
+      한다.
+      <br />그리고 추천 검색어를 받아온다. 이것을 가능하게 하는 것이 Ajax.
+    </p>
+    <br /><br />
+    <h2>History</h2>
+    <p>
+      마이크로소프트(MicroSoft,MS)와 넷스케이프(Netscape)가 웹의
+      헤게모니(hegemonie)를 두고 각축전을 벌이던 1999년, 마이크로소프트는 Ajax
+      기술을 처음으로 인터넷 익스플로러(Internet Explorer)에 탑재한다.
+      <br /><br />이어서 다른 경쟁 관계에 있었던 브라우저들도 같은 기능을
+      탑재하기 시작한다. 이때까지만 해도 이 기술은 알려진 이름조차 갖고있지
+      못했다. <br /><br />이 기술의 가능성을 간파한 구글이 Ajax가 등장하고
+      5년이 지난 2004년, 구글은 G-mail 서비스를 시장에 선보였다. G-mail은 마치
+      데스크탑 애플리케이션처럼 페이지의 리로드없이 받은 정보함의 정보를
+      보여줬다. 당시 구글이 선보인 일련의 서비스들은 웹에 대한 사람들의
+      고정관념을 바꿔놓았다. <br /><br />이를 인상적으로 바라본 디자이너 제시
+      제임스 가렛에 의해서
+      <span class="red">Ajax(Asynchronous Javascript And Xml)</span>라는
+      이름이 붙여진다.
+    </p>
+    <br /><br />
+    <h2>목적</h2>
+    <p>
+      Ajax를 이용해서 불필요한 정보까지 끄집어내지 않고, 필요한 정보만을
+      부분적으로 정교하게 낚아챌 수 있다. 클라이언트를 사용하는 사용자에게
+      편리함을 주고, 서버를 운영하는 생산자에게는 지출을 줄여줄 것이다.
+    </p>
+  </div>
+  <br /><br />
+  <hr />
+  <h1><a href="fetch.html">fetch API 사용법</a></h1>
+  Ajax를 구현하는 여러가지 방법 중에 최신 방법인 fetch API를 사용할 것이다.
+  <br /><br />
+  <hr />
+  <h1>초기 페이지 구현</h1>
+  <ul>
+    <li>Lorem100 - 100개의 랜덤한 단어가 형성되는 에디터의 기능</li>
+    <li>해시 기능(북마크)</li>
     <br />
-    <span class="note"> <a href="Ajax.html" id="notetitle">Ajax</a></span
-    ><br />
-    <span style="font-size: small;">현재 시간 :</span><span id="clock"></span>
-    <input
-      type="button"
-      value="Yellow"
-      onclick="colorchange(this);"
-      id="changecolor"
-    />
-    <script src="js/clock.js"></script>
-    <script src="js/colorchange.js"></script>
-    <br /><br /><br /><br />
-    <h1 id="Ajax">Ajax</h1>
-    <ul style="text-align: left; display: inline-block;">
+    <ol>
       <li>
-        웹 페이지 정보를 <span class="blue">부분적</span>으로 변경/갱신하기
+        Url을 통해서 웹 페이지의 특정 부분으로 사용자가 접근하게 할 수 있다.
       </li>
-      <li>
-        하나의 페이지로 여러 정보들을 표현할 수 있는 Ajax가 적용된 애플리케이션
-        : SPA(Single-Page Application)
-      </li>
-      <li>
-        Ajax는 서버랑 통신해야되기 때문에 보안 문제로 인해서 직접 파일을 열 수
-        없다.
-      </li>
-      <li>Ajax는 웹 서버를 통해서 웹 사이트를 구동해야지만 동작한다.</li>
-      <li>주소창에 localhost / 127.0.0.1 / github 주소 입력</li>
-      <li>
-        Ajax는 웹 브라우저에서 자바 스크립트를 이용해서 웹 서버에 접속하고
-        정보를 가져오는 방법
-      </li>
-    </ul>
+      <li>식별하고 싶은 것에 id 값을 준다.</li>
+      <li>주소창에 Url#id값을 입력</li>
+      <li>해당 id가 식별하는 부분으로 이동한다.</li>
+    </ol>
     <br /><br />
-    <div style="width: 45%; display: inline-block; text-align: left;">
-      <h2>검색 엔진 - 추천 검색어 제공</h2>
-      <p>
-        브라우저와 웹 서버가 서로 통신을 주고 받을 때 보는
-        <span class="red">개발자 도구 Network</span>를 살펴 본다. <br />Network
-        탭은 웹 브라우저가 웹 서버와 어떤 정보를 주고 받는가를 모니터링 해주는
-        도구<br />Network에 있는 파일을 클릭하면 내용을 열어볼 수 있다.
-        <br /><br />
-        검색창에 입력할 때마다 웹 브라우저가 Ajax를 통해서 웹 서버와 통신을
-        한다.
-        <br />그리고 추천 검색어를 받아온다. 이것을 가능하게 하는 것이 Ajax.
-      </p>
-      <br /><br />
-      <h2>History</h2>
-      <p>
-        마이크로소프트(MicroSoft,MS)와 넷스케이프(Netscape)가 웹의
-        헤게모니(hegemonie)를 두고 각축전을 벌이던 1999년, 마이크로소프트는 Ajax
-        기술을 처음으로 인터넷 익스플로러(Internet Explorer)에 탑재한다.
-        <br /><br />이어서 다른 경쟁 관계에 있었던 브라우저들도 같은 기능을
-        탑재하기 시작한다. 이때까지만 해도 이 기술은 알려진 이름조차 갖고있지
-        못했다. <br /><br />이 기술의 가능성을 간파한 구글이 Ajax가 등장하고
-        5년이 지난 2004년, 구글은 G-mail 서비스를 시장에 선보였다. G-mail은 마치
-        데스크탑 애플리케이션처럼 페이지의 리로드없이 받은 정보함의 정보를
-        보여줬다. 당시 구글이 선보인 일련의 서비스들은 웹에 대한 사람들의
-        고정관념을 바꿔놓았다. <br /><br />이를 인상적으로 바라본 디자이너 제시
-        제임스 가렛에 의해서
-        <span class="red">Ajax(Asynchronous Javascript And Xml)</span>라는
-        이름이 붙여진다.
-      </p>
-      <br /><br />
-      <h2>목적</h2>
-      <p>
-        Ajax를 이용해서 불필요한 정보까지 끄집어내지 않고, 필요한 정보만을
-        부분적으로 정교하게 낚아챌 수 있다. 클라이언트를 사용하는 사용자에게
-        편리함을 주고, 서버를 운영하는 생산자에게는 지출을 줄여줄 것이다.
-      </p>
-    </div>
+    <input type="button" id="bookmark" value='id="bookmark"' onclick="
+      location.href='#Ajax'" /><span style="font-size: small;">
+      버튼 클릭 후 주소창에 Url#bookmark 입력하세요. 여기로 이동됩니다.</span>
     <br /><br />
-    <hr />
-    <h1><a href="fetch.html">fetch API 사용법</a></h1>
-    Ajax를 구현하는 여러가지 방법 중에 최신 방법인 fetch API를 사용할 것이다.
-    <br /><br />
-    <hr />
-    <h1>초기 페이지 구현</h1>
-    <ul>
-      <li>Lorem100 - 100개의 랜덤한 단어가 형성되는 에디터의 기능</li>
-      <li>해시 기능(북마크)</li>
-      <br />
-      <ol>
-        <li>
-          Url을 통해서 웹 페이지의 특정 부분으로 사용자가 접근하게 할 수 있다.
-        </li>
-        <li>식별하고 싶은 것에 id 값을 준다.</li>
-        <li>주소창에 Url#id값을 입력</li>
-        <li>해당 id가 식별하는 부분으로 이동한다.</li>
-      </ol>
-      <br /><br />
-      <input
-        type="button"
-        id="bookmark"
-        value='id="bookmark"'
-        onclick="
-      location.href='#Ajax'"
-      /><span style="font-size: small;">
-        버튼 클릭 후 주소창에 Url#bookmark 입력하세요. 여기로 이동됩니다.</span
-      >
-      <br /><br />
-      <li>
-        #해시값이 무엇이냐에 따라서 Ajax로 다른 페이지를 로드해서, 시작되는
-        페이지를 세팅할 수 있다.
-      </li>
-      <li>
-        <input
-          type="button"
-          onclick="location.href='fetch.html#!welcome'"
-          value="Ajax에 Url 부여하는 방법"
-          id="ajaxurl"
-          title="참고하기:식당 추천"
-          style="
+    <li>
+      #해시값이 무엇이냐에 따라서 Ajax로 다른 페이지를 로드해서, 시작되는
+      페이지를 세팅할 수 있다.
+    </li>
+    <li>
+      <input type="button" onclick="location.href='fetch.html#!welcome'" value="Ajax에 Url 부여하는 방법" id="ajaxurl"
+        title="참고하기:식당 추천" style="
             background-color: whitesmoke;
             border: none;
             padding: 2px;
             padding-left: 8px;
             padding-right: 8px;
             border-radius: 15px 15px 15px 15px;
-          "
-        />
-        <script>
-          $('#ajaxurl').hover(
-            function () {
-              $('#ajaxurl').css('font-weight', 'bold')
-            },
-            function () {
-              $('#ajaxurl').css('font-weight', 'normal')
-            }
-          )
-        </script>
-      </li>
-      <br />
-      <ol>
-        <li>
-          &lt;a href="#!bookmark">
-        </li>
-        <li>여기서 #(해시)은 북마크 기능, !(뱅)는 해시를 나타낸다.</li>
-        <li>
-          #!를 해시뱅이라고 부른다. !를 붙이지 않아도 해당 부분의 Url은 가진다.
-        </li>
-        <li>Ajax를 사용하면 Url이 바뀌지 않고 내용만 바뀐다.</li>
-        <li>해당 내용에 Url을 붙이면 내용이 바뀔 때마다 Url이 바뀐다.</li>
-        <li>
-          해당 Url을 공유하여 사용자가 해당 부분으로 바로 접근할 수 있게 하기
-          위함.
-        </li>
-        <li>location.hash는 해시값을 식별한다.</li>
-        <br /><br />
-        <ul style="list-style-type: none;">
-          <li><img src="img/hash.png" /> <img src="img/hash2.png" /></li>
-        </ul>
-      </ol>
-      <br /><br /><br />
+          " />
+      <script>
+        $('#ajaxurl').hover(
+          function () {
+            $('#ajaxurl').css('font-weight', 'bold')
+          },
+          function () {
+            $('#ajaxurl').css('font-weight', 'normal')
+          }
+        )
+      </script>
+    </li>
+    <br />
+    <ol>
       <li>
-        리로드했을 때 내용이 바뀌지 않는 Ajax의 여러가지 단점을 보완한 Pjax라고
-        하는 기술을 최근에 많이 사용한다.
+        &lt;a href="#!bookmark">
       </li>
-    </ul>
-    <br /><br />
-    <hr />
-  </body>
+      <li>여기서 #(해시)은 북마크 기능, !(뱅)는 해시를 나타낸다.</li>
+      <li>
+        #!를 해시뱅이라고 부른다. !를 붙이지 않아도 해당 부분의 Url은 가진다.
+      </li>
+      <li>Ajax를 사용하면 Url이 바뀌지 않고 내용만 바뀐다.</li>
+      <li>해당 내용에 Url을 붙이면 내용이 바뀔 때마다 Url이 바뀐다.</li>
+      <li>
+        해당 Url을 공유하여 사용자가 해당 부분으로 바로 접근할 수 있게 하기
+        위함.
+      </li>
+      <li>location.hash는 해시값을 식별한다.</li>
+      <br /><br />
+      <ul style="list-style-type: none;">
+        <li><img src="img/hash.png" /> <img src="img/hash2.png" /></li>
+      </ul>
+    </ol>
+    <br /><br /><br />
+    <li>
+      리로드했을 때 내용이 바뀌지 않는 Ajax의 여러가지 단점을 보완한 Pjax(pushState + Ajax)라고
+      하는 기술을 최근에 많이 사용한다.
+    </li>
+    <li>PWA(Progressive Web Apps)는 SPA를 기반으로 만들어진 웹online에 offline에서도 동작하는 특성을 추가한 것</li>
+  </ul>
+  <br /><br />
+  <hr />
+  <h1>fetch API polyfill</h1>
+  <ul>
+  <li>어떤 기능이 있을 때 그 기능을 모든 브라우저가 지원하지 않을 수도 있다.</li>
+  <li>그런 경우에 과거의 브라우저를 쓰는 사람들도 그 기능을 사용할 수 있도록 해주는 것이 polyfill.</li> 
+  <li>이걸 이용하면 fetch API가 지원되지 않는 브라우저에서도 fetch가 작동할 수 있다.</li>
+</ul><br> <br>
+<table style="width: 50%;">
+  <tr>
+    <th style="width: 60%;">사이트</th>
+    <th style="width: 40%;">바로가기</th>
+  </tr>
+  <tr>
+    <td>어떤 특정 기능이 어떤 브라우저에서 현재 지원되는가를 볼 수 있는 사이트</td>
+    <td><a href="https://caniuse.com/" target="_blank">https://caniuse.com/</a></td>
+  </tr>
+  <tr>
+    <td>fetch API polyfill 다운받는 사이트</td>
+    <td><a href="https://github.com/github/fetch" target="_blank">https://github.com/github/fetch</a></td>
+  </tr>
+</table>  
+<br>
+  <ol>
+    <li>caniuse 사이트에서 fetch 검색</li>
+    <li>fetch API가 지원되는 브라우저 확인</li>
+    <li>해당 API가 지원되지 않는 브라우저가 있다면 polyfill이 필요하다.</li>
+    <li>fetch.js 파일(polyfill)을 다운로드 받는다.</li>
+    <li>내 웹 서버에 다운받은 파일을 옮긴다.</li>
+    <li><span title="fetch.html 파일에서 fetch.js 파일을 확인할 수 있다">fetch를 사용하는 파일</span>에 <span class="blue">&lt;script src="js/fetch.js">&lt;/script></span> 붙여넣기</li>
+    </li>
+  </ol><br><br>
+</body>
 </html>
