@@ -69,8 +69,8 @@
     <h1>fetch API를 이용해서 목록 만들기</h1>
     <br />
     <h2>
-      <a href="#!welcome" onclick="foodmenu('welcome')" id="!welcome"
-        >식당 추천</a
+      <a href="#!welcome" onclick="foodmenu1('welcome')" id="!welcome"
+        >맛집 추천</a
       >
     </h2>
     <table style="width: 30%; border: none; border-collapse: collapse;">
@@ -85,34 +85,130 @@
           "
         >
           <ol>
-            <li><a href="#!korean" onclick="foodmenu(menu[0])">한식</a></li>
+            <li>
+              <a href="#!korean" onclick="foodmenu1(menu[0])" id="!korean"
+                >한식</a
+              >
+            </li>
             <br />
-            <li><a href="#!chinese" onclick="foodmenu(menu[1])">중식</a></li>
+            <li>
+              <a href="#!chinese" onclick="foodmenu1(menu[1])" id="!chinese"
+                >중식</a
+              >
+            </li>
             <br />
-            <li><a href="#!japanese" onclick="foodmenu(menu[2])">일식</a></li>
+            <li>
+              <a href="#!japanese" onclick="foodmenu1(menu[2])" id="!japanese"
+                >일식</a
+              >
+            </li>
             <br />
-            <li><a href="#!western" onclick="foodmenu(menu[3])">양식</a></li>
+            <li>
+              <a href="#!western" onclick="foodmenu1(menu[3])" id="!western"
+                >양식</a
+              >
+            </li>
             <br />
-            <script>
-              var menu = ['korean', 'chinese', 'japanese', 'western']
-              function foodmenu(name) {
-                fetch(name).then(function (response) {
-                  response.text().then(function (text) {
-                    $('.foodmenu').html(text)
-                  })
-                })
-              }
-              if (location.hash) {
-                foodmenu(location.hash.substr(2))
-              } else {
-                foodmenu('welcome')
-              }
-            </script>
           </ol>
         </td>
-        <td class="foodmenu" style="width: 70%; border: none;"></td>
+        <td id="foodmenu1" style="width: 70%; border: none;"></td>
       </tr>
     </table>
+    <br />
+    <h2>
+      <a href="#!welcome2" onclick="foodmenu2('welcome')" id="!welcome2"
+        ><span id="eng_kor">English Version</span></a
+      >
+
+      <input
+        type="button"
+        value="영어"
+        id="engkor"
+        onclick="engkorchange(this)"
+        style="background-color: whitesmoke; border: none;"
+      />
+    </h2>
+    <table style="width: 30%; border: none; border-collapse: collapse;">
+      <tr>
+        <td
+          style="
+            width: 30%;
+            background-color: rgb(220, 235, 252);
+            border: transparent;
+            border-right: 5px solid lightsteelblue;
+            border-radius: 30px 0px 0px 30px;
+          "
+        >
+          <ol id="foodcourt"></ol>
+        </td>
+        <td id="foodmenu2" style="width: 70%; border: none;"></td>
+      </tr>
+    </table>
+    <br /><br />
+    <script>
+      var menu = ['korean', 'chinese', 'japanese', 'western']
+      function foodmenu1(name) {
+        fetch(name).then(function (response) {
+          response.text().then(function (text) {
+            $('#foodmenu1').html(text)
+          })
+        })
+      }
+      if (location.hash) {
+        foodmenu1(location.hash.substr(2))
+      } else {
+        foodmenu1('welcome')
+      }
+      function foodmenu2(name) {
+        fetch(name).then(function (response) {
+          response.text().then(function (text) {
+            $('#foodmenu2').html(text)
+          })
+        })
+      }
+      function engkor(name2) {
+        fetch(name2).then(function (response) {
+          response.text().then(function (text) {
+            console.log(text)
+            var items = text.split(',')
+            console.log(items)
+            var i = 0
+            var foods = ''
+            while (i < items.length) {
+              var item = items[i]
+              item = item.trim()
+              console.log(item)
+              var food =
+                '<li><a onclick="foodmenu2(\'' +
+                item +
+                '\')">' +
+                item +
+                '</a></li><br />'
+              foods = foods + food
+              i = i + 1
+            }
+            $('#foodcourt').html(foods)
+          })
+        })
+        if (location.hash) {
+          foodmenu2('welcome')
+        } else {
+          foodmenu2('welcome')
+        }
+      }
+      engkor('list-eng')
+      function engkorchange(self) {
+        if (self.value == '영어') {
+          self.value = 'Kor'
+          engkor('list-kor')
+          document.querySelector('#eng_kor').innerHTML = '한국어 버전'
+        } else {
+          self.value = '영어'
+          engkor('list-eng')
+          document.querySelector('#eng_kor').innerHTML = 'English Version'
+        }
+      }
+    </script>
     <script src="js/object.js"></script>
   </body>
 </html>
