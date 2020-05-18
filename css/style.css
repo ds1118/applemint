@@ -362,3 +362,11 @@ ul {
   font-size: small;
   background-color: aquamarine;
 }
+#bookmark {
+  border: snow;
+  background-color: aqua;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 15px 15px 15px 15px;
+}
