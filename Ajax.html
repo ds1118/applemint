@@ -114,7 +114,33 @@
         #해시값이 무엇이냐에 따라서 Ajax로 다른 페이지를 로드해서, 시작되는
         페이지를 세팅할 수 있다.
       </li>
-      <li>Ajax에 Url 부여하는 방법</li>
+      <li>
+        <input
+          type="button"
+          onclick="location.href='fetch.html#!welcome'"
+          value="Ajax에 Url 부여하는 방법"
+          id="ajaxurl"
+          title="참고하기:식당 추천"
+          style="
+            background-color: whitesmoke;
+            border: none;
+            padding: 2px;
+            padding-left: 8px;
+            padding-right: 8px;
+            border-radius: 15px 15px 15px 15px;
+          "
+        />
+        <script>
+          $('#ajaxurl').hover(
+            function () {
+              $('#ajaxurl').css('font-weight', 'bold')
+            },
+            function () {
+              $('#ajaxurl').css('font-weight', 'normal')
+            }
+          )
+        </script>
+      </li>
       <ol>
         <li>
           &lt;a href="#!bookmark">
@@ -126,10 +152,8 @@
         <li>Ajax를 사용하면 Url이 바뀌지 않고 내용만 바뀐다.</li>
         <li>해당 내용에 Url을 붙이면 내용이 바뀔 때마다 Url이 바뀐다.</li>
         <li>
-          <a href="fetch.html#!welcome"
-            >해당 Url을 공유하여 사용자가 해당 부분으로 바로 접근할 수 있게 하기
-            위함.</a
-          >
+          해당 Url을 공유하여 사용자가 해당 부분으로 바로 접근할 수 있게 하기
+          위함.
         </li>
         <li>location.hash는 해시값을 식별한다.</li>
       </ol>

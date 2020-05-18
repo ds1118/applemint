@@ -94,7 +94,7 @@
             <li><a href="#!western" onclick="foodmenu(menu[3])">양식</a></li>
             <br />
             <script>
-              var menu = ['한식', '중식', '일식', '양식']
+              var menu = ['korean', 'chinese', 'japanese', 'western']
               function foodmenu(name) {
                 fetch(name).then(function (response) {
                   response.text().then(function (text) {
