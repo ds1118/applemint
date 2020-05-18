@@ -69,7 +69,9 @@
     <h1>fetch API를 이용해서 목록 만들기</h1>
     <br />
     <h2>
-      <a href="#!welcome" onclick="foodmenu('welcome')">식당 추천</a>
+      <a href="#!welcome" onclick="foodmenu('welcome')" id="!welcome"
+        >식당 추천</a
+      >
     </h2>
     <table style="width: 30%; border: none; border-collapse: collapse;">
       <tr>
@@ -101,7 +103,7 @@
                 })
               }
               if (location.hash) {
-                foodmenu(location.href.substr(2))
+                foodmenu(location.hash.substr(2))
               } else {
                 foodmenu('welcome')
               }
