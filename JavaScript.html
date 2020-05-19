@@ -54,6 +54,15 @@
                 <td>"".trim()</td>
                 <td>문자열의 앞/뒤 공백 없애줌</td>
             </tr>
+            <tr>
+                <td>"".split(',')</td>
+                <td>,를 기준으로 문자열을 배열로 만들어줌</td>
+            </tr>
+            <tr>
+                <td>"".substr(숫자)</td>
+                <td>문자열에서 부분적으로 제거해줌</td>
+            </tr>
+           
         </table>
         <br><br>
         <img src="img/string.png" />
@@ -140,38 +149,47 @@
         <br>
         <h3>1) 문법 Syntax</h3>
         <h4>배열 만들기</h4>
+        <p>
         <span class='red'>var <b>fruit</b> = ['apple','grape']</span>
         <script>
             var fruit = ['apple', 'grape']
         </script>
-        <br>
+        </p>
         <br>
         <h3>2) add</h3>
         <h4>배열에 데이터 추가하기</h4>
+        <p>
         <span class='blue'><b>fruit.push</b>('banana');</span><br>
         <span class='blue'><b>fruit.push</b>('orange');</span><br>
         <script>
             fruit.push('banana');
             fruit.push('orange');
         </script>
+        </p>
         <br>
         <h3>3) get</h3>
         <h4>배열에서 데이터 가져오기</h4>
+        <p>
         <script>
             function write(i) { document.write("<span class='blue'>document.write(<b>fruit[" + i + "]</b>+'&lt;br&gt;')</span>&nbsp;" + fruit[i] + "<br>") }
             write(0); write(1); write(2); write(3);
         </script>
+        </p>
         <br>
         <h3>4) count</h3>
         <h4>배열에 들어있는 데이터 개수</h4>
+        <p>
         <script>
             document.write("<span class='blue'>document.write(<b>fruit.length</b>)</span>&nbsp;" + fruit.length + '<br>')
         </script>
+        </p>
         <br>
         <h3>5) 전체 배열 확인</h3>
+        <p>
         <script>
             document.write("<span class='blue'>document.write(<b>fruit</b>)</span>&nbsp;" + fruit + '<br>')
         </script>
+        </p>
         <br><br>
         <hr>
         <h1><a href="https://entitycode.com/" target="_blank">특수기호 Entity Code</a></h1>
@@ -425,8 +443,8 @@
             </tr>
         </table>
         <h3>구글에서 제공하는 jQuery 최신버전 코드</h3><br>
-        &lt;<span class="blue">script src</span>="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-        &lt;/script><br><br><br>
+        <div>&lt;<span class="blue">script src</span>="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">&lt;script></div>
+        <br><br>
         <hr>
         <h1><a href="files/keyboard.pdf" target="_blank" title="더 많은 단축키 보기">단축키</a></h1>
         <table style="width: 45%;">
