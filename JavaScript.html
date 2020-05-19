@@ -6,721 +6,729 @@
     <title>JavaScript</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        p {
+            display: inline-block;
+        }
+    </style>
 </head>
+
 <body onload="printClock()">
     <a href="note.html" class="return">이전으로 돌아가기</a>
     <br>
     <span class="note">
         <a href="JavaScript.html" id="notetitle">JavaScript</a></span><br>
 
-    
-        <span style="font-size: small">현재 시간 :</span><span id="clock"></span>
-        <input type="button" value="Yellow" onclick="colorchange(this);" id="changecolor">
-        <script src="js/clock.js"></script>
-        <script src="js/colorchange.js"></script>
-        <br><br><br><br>
-        <h1><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
-                target="_blank">문자열 String</a>
-        </h1>
-        <ul style="font-size: small;">
-            <li><strong>자바스크립트는 <span class="red">큰 따옴표""</span> or <span class="red">작은 따옴표''</span> 안에
-                    들어있는
-                    문자를
-                    문자열로 인식한다.</strong></li>
-            <li><strong>문자열은 <span class="red">0번째</span>부터 시작한다.</strong></li>
-        </ul><br>
-        <table style="width: 45%;">
-            <tr>
-                <th style="width:30%">Properties</th>
-                <th style="width:70%">실행</th>
-            </tr>
-            <tr>
-                <td>"".length</td>
-                <td>문자열 몇글자인지 알려줌</td>
-            </tr>
-            <tr>
-                <th>Methods</th>
-                <th>실행</th>
-            </tr>
-            <tr>
-                <td>"".toUpperCase()</td>
-                <td>문자열을 전부 대문자로 바꿔줌</td>
-            </tr>
-            <tr>
-                <td>"".indexOf('문자')</td>
-                <td>문자열에서 괄호 안의 문자가 몇번째 문자인지 알려줌</td>
-            </tr>
-            <tr>
-                <td>"".trim()</td>
-                <td>문자열의 앞/뒤 공백 없애줌</td>
-            </tr>
-            <tr>
-                <td>"".split(',')</td>
-                <td>,를 기준으로 문자열을 배열로 만들어줌</td>
-            </tr>
-            <tr>
-                <td>"".substr(숫자)</td>
-                <td>문자열에서 부분적으로 제거해줌</td>
-            </tr>
-           
-        </table>
-        <br><br>
-        <img src="img/string.png" />
-        <br><br><br>
-        <hr>
-        <h1>
-            IP 주소
-        </h1>
-        <br>
-        <p>
-        <h2>자신의 PC(Personal Computer) 서버로 접속하기</h2>
-        <ol style="font-size: smaller;">
-            <li>웹 브라우저를 띄운다</li>
-            <li>주소창에 localhost 혹은 127.0.0.1이라고 입력 한다.</li>
-            <li>주소창에 내 PC의 IP 주소를 입력 한다.</li>
-        </ol>
-        <br><br>
-        <h2>내 PC에 설치된 웹 서버의 IP 주소 : <span class="IP">127.0.0.1</span> = <span class="IP">localhost</span></h2>
-        <ul style="font-size: smaller;">
-            <li>127.0.0.1은 예약된 IP 주소로 인터넷상에 일반 IP로는 쓰일 수 없는 주소이다.</li>
-            <li>운영체제(OS,Operating System) 자체적으로 제공</li>
-            <li>항상 고정되어 있는 IP(127.0.0.1) 과 호스트네임(localhost)을 갖는다.</li>
-        </ul>
-        <br><br>
-        <h2>내 PC의 IP 주소 확인하기</h2>
-        <ol style="font-size: smaller;">
-            <li>작업표시줄에서 네트워크 아이콘을 마우스 오른쪽 버튼으로 클릭</li>
-            <li>네트워크 및 인터넷 설정 열기</li>
-            <li>제어판 - 네트워크 및 공유 센터</li>
-            <li>연결 클릭</li>
-            <li>자세히 클릭</li>
-            <li>IPv4 주소를 확인</li>
-        </ol>
-        </p><br>
-        <hr>
-        <h1>비교 연산자와 불리언</h1>
-        <h3>Comparison Operators & Boolean</h3>
-        <p><br>
-            1===1
-            <script>document.write(1 === 1)</script><br>
-            1===2
-            <script>document.write(1 === 2)</script><br>
-            1&lt;2
-            <script>document.write(1 < 2)</script><br>
-            1&gt;2
-            <script>document.write(1 > 2)</script><br>
-            <br>
-        <ul style=" font-size: smaller;">
-            <li>비교연산자는 좌항과 우항의 관계에 따라서 true/false 둘 중 하나의 값을 만들어낸다.</li>
-            <li>비교연산자의 <span class="red1">Boolean</span> 데이터 타입은
-                <span class="red1">true/false</span> 단 2개의 데이터로 이루어져 있다.</li>
-        </ul>
-        <br>
-        <br>
-        </p>
-        <hr>
-        <h1>조건문</h1>
-        <h3>Conditional Statements</h3>
-        <ul>
-            <li>Program - 시간의 흐름에 따른 순서</li>
-            <li>Programming - 순서를 만드는 행위</li>
-            <li>Programmer - 순서를 만드는 사람</li>
-        </ul>
-        <h3>if/else 조건문</h3><br>
-        <a href="조건문.html" title="예제" class="ifelse">if(Boolean 데이터 타입) {1} else {2}</span></a><br><br>
-        <ul>
-            <li>if(<span class="blue">true</span>) {<span class="red">1</span>} else {<span class="red">2</span>} - 1 실행
-                2
-                무시
-            </li>
-            <li>if(<span class="blue">false</span>) {<span class="red">1</span>} else {<span class="red">2</span>} - 1
-                무시 2
-                실행
-            </li>
-        </ul><br><br>
-        <hr>
-        <h1><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array"
-                target="_blank">
-                배열 Array</a></h1>
-        <ul style="font-size: small;">
-            <li>index를 정할 때 : <b>index[0]</b>은 첫번째 자리에 있는 값, <b>index[1]</b>은 두번째 자리에 있는 값</li>
-            <li>배열에 들어있는 데이터가 몇 개인가를 체크할 때 : 개수는 1부터 센다 <b>length</b></li>
-        </ul>
-        <br>
-        <h3>1) 문법 Syntax</h3>
-        <h4>배열 만들기</h4>
-        <p>
+
+    <span style="font-size: small">현재 시간 :</span><span id="clock"></span>
+    <input type="button" value="Yellow" onclick="colorchange(this);" id="changecolor">
+    <script src="js/clock.js"></script>
+    <script src="js/colorchange.js"></script>
+    <br><br><br><br>
+    <h1><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+            target="_blank">문자열 String</a>
+    </h1>
+    <ul style="font-size: small;">
+        <li><strong>자바스크립트는 <span class="red">큰 따옴표""</span> or <span class="red">작은 따옴표''</span> 안에
+                들어있는
+                문자를
+                문자열로 인식한다.</strong></li>
+        <li><strong>문자열은 <span class="red">0번째</span>부터 시작한다.</strong></li>
+    </ul><br>
+    <table style="width: 45%;">
+        <tr>
+            <th style="width:30%">Properties</th>
+            <th style="width:70%">실행</th>
+        </tr>
+        <tr>
+            <td>"".length</td>
+            <td>문자열 몇글자인지 알려줌</td>
+        </tr>
+        <tr>
+            <th>Methods</th>
+            <th>실행</th>
+        </tr>
+        <tr>
+            <td>"".toUpperCase()</td>
+            <td>문자열을 전부 대문자로 바꿔줌</td>
+        </tr>
+        <tr>
+            <td>"".indexOf('문자')</td>
+            <td>문자열에서 괄호 안의 문자가 몇번째 문자인지 알려줌</td>
+        </tr>
+        <tr>
+            <td>"".trim()</td>
+            <td>문자열의 앞/뒤 공백 없애줌</td>
+        </tr>
+        <tr>
+            <td>"".split(',')</td>
+            <td>,를 기준으로 문자열을 배열로 만들어줌</td>
+        </tr>
+        <tr>
+            <td>"".substr(숫자)</td>
+            <td>문자열에서 부분적으로 제거해줌</td>
+        </tr>
+
+    </table>
+    <br><br>
+    <img src="img/string.png" />
+    <br><br><br>
+    <hr>
+    <h1>
+        IP 주소
+    </h1>
+    <p>
+    <h2>자신의 PC(Personal Computer) 서버로 접속하기</h2>
+    <ol style="font-size: smaller;">
+        <li>웹 브라우저를 띄운다</li>
+        <li>주소창에 localhost 혹은 127.0.0.1이라고 입력 한다.</li>
+        <li>주소창에 내 PC의 IP 주소를 입력 한다.</li>
+    </ol>
+    </p><br>
+    <p>
+    <h2>내 PC에 설치된 웹 서버의 IP 주소 : <span class="IP">127.0.0.1</span> = <span class="IP">localhost</span></h2>
+    <ul style="font-size: smaller;">
+        <li>127.0.0.1은 예약된 IP 주소로 인터넷상에 일반 IP로는 쓰일 수 없는 주소이다.</li>
+        <li>운영체제(OS,Operating System) 자체적으로 제공</li>
+        <li>항상 고정되어 있는 IP(127.0.0.1) 과 호스트네임(localhost)을 갖는다.</li>
+    </ul>
+    </p><br>
+    <p>
+    <h2>내 PC의 IP 주소 확인하기</h2>
+    <ol style="font-size: smaller;">
+        <li>작업표시줄에서 네트워크 아이콘을 마우스 오른쪽 버튼으로 클릭</li>
+        <li>네트워크 및 인터넷 설정 열기</li>
+        <li>제어판 - 네트워크 및 공유 센터</li>
+        <li>연결 클릭</li>
+        <li>자세히 클릭</li>
+        <li>IPv4 주소를 확인</li>
+    </ol>
+    </p><br><br>
+    <hr>
+    <h1>비교 연산자와 불리언</h1>
+    <h3>Comparison Operators & Boolean</h3>
+    <p>
+        1===1
+        <script>document.write(1 === 1)</script><br>
+        1===2
+        <script>document.write(1 === 2)</script><br>
+        1&lt;2
+        <script>document.write(1 < 2)</script><br>
+        1&gt;2
+        <script>document.write(1 > 2)</script><br>
+    </p>
+    <br>
+    <ul style=" font-size: smaller;">
+        <li>비교연산자는 좌항과 우항의 관계에 따라서 true/false 둘 중 하나의 값을 만들어낸다.</li>
+        <li>비교연산자의 <span class="red1">Boolean</span> 데이터 타입은
+            <span class="red1">true/false</span> 단 2개의 데이터로 이루어져 있다.</li>
+    </ul>
+    <br>
+    <br>
+
+    <hr>
+    <h1>조건문</h1>
+    <h3>Conditional Statements</h3>
+    <ul>
+        <li>Program - 시간의 흐름에 따른 순서</li>
+        <li>Programming - 순서를 만드는 행위</li>
+        <li>Programmer - 순서를 만드는 사람</li>
+    </ul>
+    <h3>if/else 조건문</h3><br>
+    <a href="조건문.html" title="예제" class="ifelse">if(Boolean 데이터 타입) {1} else {2}</span></a><br><br>
+    <ul>
+        <li>if(<span class="blue">true</span>) {<span class="red">1</span>} else {<span class="red">2</span>} - 1 실행
+            2
+            무시
+        </li>
+        <li>if(<span class="blue">false</span>) {<span class="red">1</span>} else {<span class="red">2</span>} - 1
+            무시 2
+            실행
+        </li>
+    </ul><br><br>
+    <hr>
+    <h1><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">
+            배열 Array</a></h1>
+    <ul style="font-size: small;">
+        <li>index를 정할 때 : <b>index[0]</b>은 첫번째 자리에 있는 값, <b>index[1]</b>은 두번째 자리에 있는 값</li>
+        <li>배열에 들어있는 데이터가 몇 개인가를 체크할 때 : 개수는 1부터 센다 <b>length</b></li>
+    </ul>
+    <br>
+    <h3>1) 문법 Syntax</h3>
+    <h4>배열 만들기</h4>
+    <p>
         <span class='red'>var <b>fruit</b> = ['apple','grape']</span>
         <script>
             var fruit = ['apple', 'grape']
         </script>
-        </p>
-        <br>
-        <h3>2) add</h3>
-        <h4>배열에 데이터 추가하기</h4>
-        <p>
+    </p>
+    <br>
+    <h3>2) add</h3>
+    <h4>배열에 데이터 추가하기</h4>
+    <p>
         <span class='blue'><b>fruit.push</b>('banana');</span><br>
         <span class='blue'><b>fruit.push</b>('orange');</span><br>
         <script>
             fruit.push('banana');
             fruit.push('orange');
         </script>
-        </p>
-        <br>
-        <h3>3) get</h3>
-        <h4>배열에서 데이터 가져오기</h4>
-        <p>
+    </p>
+    <br>
+    <h3>3) get</h3>
+    <h4>배열에서 데이터 가져오기</h4>
+    <p>
         <script>
             function write(i) { document.write("<span class='blue'>document.write(<b>fruit[" + i + "]</b>+'&lt;br&gt;')</span>&nbsp;" + fruit[i] + "<br>") }
             write(0); write(1); write(2); write(3);
         </script>
-        </p>
-        <br>
-        <h3>4) count</h3>
-        <h4>배열에 들어있는 데이터 개수</h4>
-        <p>
+    </p>
+    <br>
+    <h3>4) count</h3>
+    <h4>배열에 들어있는 데이터 개수</h4>
+    <p>
         <script>
             document.write("<span class='blue'>document.write(<b>fruit.length</b>)</span>&nbsp;" + fruit.length + '<br>')
         </script>
-        </p>
-        <br>
-        <h3>5) 전체 배열 확인</h3>
-        <p>
+    </p>
+    <br>
+    <h3>5) 전체 배열 확인</h3>
+    <p>
         <script>
             document.write("<span class='blue'>document.write(<b>fruit</b>)&nbsp;</span>" + fruit + '<br>')
         </script>
-        </p>
-        <br><br>
-        <hr>
-        <h1><a href="https://entitycode.com/" target="_blank">특수기호 Entity Code</a></h1>
-        <ul style="font-size: small;">
-            <li><b>Entity Code :</b> Html 문서에서 특수 문자를 입력하기 위해 사용하는 코드</li>
-            <li><span class="red1">문자식</span> 표현과
-                <span class="red1">숫자식</span> 표현이 있고 <u>같은 특수 문자</u>를 나타낸다.</li>
-        </ul>
-        <br><br>
-        <table>
-            <tr>
-                <th>기호</th>
-                <th>Entity Name</th>
-                <th>Entity Number</th>
-            </tr>
-            <tr>
-                <td>&lt;</td>
-                <td>&amp;lt;</td>
-                <td>&amp;#60;</td>
-            </tr>
-            <tr>
-                <td>&gt;</td>
-                <td>&amp;gt;</td>
-                <td>&amp;#62;</td>
-            </tr>
-            <tr>
-                <td>&amp;</td>
-                <td>&amp;amp;</td>
-                <td>&amp;#38;</td>
-            </tr>
-            <tr>
-                <td>&quot;</td>
-                <td>&amp;quot;</td>
-                <td>&amp;#34;</td>
-            </tr>
-            <tr>
-                <td>띄어쓰기</td>
-                <td>&amp;nbsp;</td>
-                <td>&amp;#160;</td>
-            </tr>
-        </table>
-        <br><br>
-        <hr>
-        <h1>반복문 Loop</h1>
-        <span style="font-size: small;">순서대로 실행되는 어떤 기능들 하나하나<br>
-            순서대로 실행되는 것이 프로그램의 기본적인 실행 순서<br>
-            반복문은 <span class="blue">조건문(if문)</span>과 함께 순서대로 실행되는 프로그램의 실행 순서의 흐름을 제어하는 제어문</span>
-        <br>
-        <ul>
-            <script>
-                /* 반복문 */
-                function writeli(i) {
-                    document.write('<li>' + i + '</li>')
-                }
-                writeli(1); writeli(2); writeli(3); writeli(4);
-            </script>
-        </ul>
-        <br>
-        <h3>반복문의 기본 문법 - for/while 반복문의 키워드</h3>
-        <ol style="font-size: small;">
-            <li>if문과 같이 <span class="red">while()</span>문도 괄호 안에 <span class="red">true/false</span> 둘 중 하나가 들어간다.</li>
-            <li>true인 동안은 중괄호 안에 있는 코드들이 하나하나 실행된다.</li>
-            <li>반복되는 코드가 몇 번 실행되는지 적어놓는 역할을 하는 것이 변수 i</li>
-            <li>i = i + 1; 반복문이 실행될 때마다 i 값을 1씩 증가시키는 것.</li>
-            <li>i(새로운 i 값) = i(기존의 i 값) + 1</li>
-            <li>기존의 i 값에 1을 더한 결과를 i의 새로운 값으로 준다는 뜻</li>
-            <li>마지막까지 가면 다시 괄호 안의 값이 true/false 인지 확인한 후 역시나 true면 반복적으로 실행된다.</li>
-            <li>while(false)가 되면 그때 끝나면서 while문 바깥쪽에 있는 코드가 실행된다.</li>
-        </ol>
-        <br><br>
-        <div style="display: inline-block;">
-            <span style="font-size: small;">ex) 2번째와 3번째에 실행되어야 되는 명령을 3번 반복해서 실행하기</span>
-        </div>
-        <br><br>
-        <table>
-            <tr>
-                <th onclick="repeatfunc.normal()" class="loop">기본 방법</th>
-                <th onclick="repeatfunc.loop()" class="loop">반복문</th>
-            </tr>
-            <tr>
-                <td style="text-align: left;padding: 20px;" title="기본 방법 code">
-                    &lt;ul><br>
-                    &lt;script><br>
-                    document.write('&lt;li>1&lt;/li>');<br>
-                    document.write('&lt;li>2&lt;/li>');<br>
-                    document.write('&lt;li>3&lt;/li>');<br>
-                    document.write('&lt;li>2&lt;/li>');<br>
-                    document.write('&lt;li>3&lt;/li>');<br>
-                    document.write('&lt;li>2&lt;/li>');<br>
-                    document.write('&lt;li>3&lt;/li>');<br>
-                    document.write('&lt;li>4&lt;/li>');<br>
-                    &lt;/script><br>
-                    &lt;/ul>
-                </td>
-                <td style="text-align: left;padding: 20px;" title="반복문 code">
-                    &lt;ul><br>
-                    &lt;script><br>
-                    document.write('&lt;li>1</li>');<br>
-                    var i = 0;<br>
-                    while(i &lt; 3){ document.write('&lt;li>2</li>');<br>
-                    document.write('&lt;li>3</li>');<br>
-                    i = i + 1;<br>
-                    }<br>
-                    document.write('&lt;li>4</li>');<br>
-                    &lt;/script><br>
-                    &lt;/ul><br>
-                </td>
-            </tr>
-        </table>
-        <br><br>
-        <hr>
-        <h1>배열 + 반복문</h1><br>
-        <span><b>배열</b></span><br>
+    </p>
+    <br><br>
+    <hr>
+    <h1><a href="https://entitycode.com/" target="_blank">특수기호 Entity Code</a></h1>
+    <ul style="font-size: small;">
+        <li><b>Entity Code :</b> Html 문서에서 특수 문자를 입력하기 위해 사용하는 코드</li>
+        <li><span class="red1">문자식</span> 표현과
+            <span class="red1">숫자식</span> 표현이 있고 <u>같은 특수 문자</u>를 나타낸다.</li>
+    </ul>
+    <br><br>
+    <table>
+        <tr>
+            <th>기호</th>
+            <th>Entity Name</th>
+            <th>Entity Number</th>
+        </tr>
+        <tr>
+            <td>&lt;</td>
+            <td>&amp;lt;</td>
+            <td>&amp;#60;</td>
+        </tr>
+        <tr>
+            <td>&gt;</td>
+            <td>&amp;gt;</td>
+            <td>&amp;#62;</td>
+        </tr>
+        <tr>
+            <td>&amp;</td>
+            <td>&amp;amp;</td>
+            <td>&amp;#38;</td>
+        </tr>
+        <tr>
+            <td>&quot;</td>
+            <td>&amp;quot;</td>
+            <td>&amp;#34;</td>
+        </tr>
+        <tr>
+            <td>띄어쓰기</td>
+            <td>&amp;nbsp;</td>
+            <td>&amp;#160;</td>
+        </tr>
+    </table>
+    <br><br>
+    <hr>
+    <h1>반복문 Loop</h1>
+    <span style="font-size: small;">순서대로 실행되는 어떤 기능들 하나하나<br>
+        순서대로 실행되는 것이 프로그램의 기본적인 실행 순서<br>
+        반복문은 <span class="blue">조건문(if문)</span>과 함께 순서대로 실행되는 프로그램의 실행 순서의 흐름을 제어하는 제어문</span>
+    <br>
+    <ul>
         <script>
-            var website = ['naver', 'google', 'daum', 'facebook'];
-            document.write('<ol style="display:inline-block;text-align:left">');
-            function writewebsite(i) { document.write('<li>' + website[i] + '</li>'); }
-            writewebsite(0);
-            writewebsite(1);
-            writewebsite(2);
-            writewebsite(3);
-            document.write('</ol>');
-        </script>
-        <br><br>
-        <span><b>배열 + 반복문</b></span><br>
-        <script>
-            website.push('nate', 'youtube')
-            website.splice(2, 1)
-        </script>
-        <script>
-            var i = 0;
-            document.write('<ol style="display:inline-block;text-align:left">')
-            while (i < website.length) {
-                console.log(i);
-                document.write('<li><a href="https://www.' + website[i] + '.com" target="_blank" class="website">' + website[i] + '</a></li>');
-                i = i + 1;
+            /* 반복문 */
+            function writeli(i) {
+                document.write('<li>' + i + '</li>')
             }
-            document.write('</ol>')
+            writeli(1); writeli(2); writeli(3); writeli(4);
         </script>
+    </ul>
+    <br>
+    <h3>반복문의 기본 문법 - for/while 반복문의 키워드</h3>
+    <ol style="font-size: small;">
+        <li>if문과 같이 <span class="red">while()</span>문도 괄호 안에 <span class="red">true/false</span> 둘 중 하나가 들어간다.</li>
+        <li>true인 동안은 중괄호 안에 있는 코드들이 하나하나 실행된다.</li>
+        <li>반복되는 코드가 몇 번 실행되는지 적어놓는 역할을 하는 것이 변수 i</li>
+        <li>i = i + 1; 반복문이 실행될 때마다 i 값을 1씩 증가시키는 것.</li>
+        <li>i(새로운 i 값) = i(기존의 i 값) + 1</li>
+        <li>기존의 i 값에 1을 더한 결과를 i의 새로운 값으로 준다는 뜻</li>
+        <li>마지막까지 가면 다시 괄호 안의 값이 true/false 인지 확인한 후 역시나 true면 반복적으로 실행된다.</li>
+        <li>while(false)가 되면 그때 끝나면서 while문 바깥쪽에 있는 코드가 실행된다.</li>
+    </ol>
+    <br><br>
+    <div style="display: inline-block;">
+        <span style="font-size: small;">ex) 2번째와 3번째에 실행되어야 되는 명령을 3번 반복해서 실행하기</span>
+    </div>
+    <br><br>
+    <table>
+        <tr>
+            <th onclick="repeatfunc.normal()" class="loop">기본 방법</th>
+            <th onclick="repeatfunc.loop()" class="loop">반복문</th>
+        </tr>
+        <tr>
+            <td style="text-align: left;padding: 20px;" title="기본 방법 code">
+                &lt;ul><br>
+                &lt;script><br>
+                document.write('&lt;li>1&lt;/li>');<br>
+                document.write('&lt;li>2&lt;/li>');<br>
+                document.write('&lt;li>3&lt;/li>');<br>
+                document.write('&lt;li>2&lt;/li>');<br>
+                document.write('&lt;li>3&lt;/li>');<br>
+                document.write('&lt;li>2&lt;/li>');<br>
+                document.write('&lt;li>3&lt;/li>');<br>
+                document.write('&lt;li>4&lt;/li>');<br>
+                &lt;/script><br>
+                &lt;/ul>
+            </td>
+            <td style="text-align: left;padding: 20px;" title="반복문 code">
+                &lt;ul><br>
+                &lt;script><br>
+                document.write('&lt;li>1</li>');<br>
+                var i = 0;<br>
+                while(i &lt; 3){ document.write('&lt;li>2</li>');<br>
+                document.write('&lt;li>3</li>');<br>
+                i = i + 1;<br>
+                }<br>
+                document.write('&lt;li>4</li>');<br>
+                &lt;/script><br>
+                &lt;/ul><br>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <hr>
+    <h1>배열 + 반복문</h1><br>
+    <span><b>배열</b></span><br>
+    <script>
+        var website = ['naver', 'google', 'daum', 'facebook'];
+        document.write('<ol style="display:inline-block;text-align:left">');
+        function writewebsite(i) { document.write('<li>' + website[i] + '</li>'); }
+        writewebsite(0);
+        writewebsite(1);
+        writewebsite(2);
+        writewebsite(3);
+        document.write('</ol>');
+    </script>
+    <br><br>
+    <span><b>배열 + 반복문</b></span><br>
+    <script>
+        website.push('nate', 'youtube')
+        website.splice(2, 1)
+    </script>
+    <script>
+        var i = 0;
+        document.write('<ol style="display:inline-block;text-align:left">')
+        while (i < website.length) {
+            console.log(i);
+            document.write('<li><a href="https://www.' + website[i] + '.com" target="_blank" class="website">' + website[i] + '</a></li>');
+            i = i + 1;
+        }
+        document.write('</ol>')
+    </script>
 
-        <br><br>
-        <hr>
-        <h1>함수 Function & 객체 Object</h1><br>
-        <h3>함수</h3>
-        <h3></h3>
-        <ul>
-            <li>function 함수이름(매개변수){실행되는 코드들;}</li>
-            <li>var 함수이름 = function(매개변수) {}</li>
-            <li>매개변수로 this를 사용하여 함수가 담긴 해당 태그를 선택한다.</li>
-        </ul><br><br>
-        <h3>객체</h3>
-        <p id="object1"></p>
-        <input class="obj" type="button" value="1"
-            onclick="clickme('객체에 담긴 함수를 Method / 객체에 담긴 데이터를 가지고 오는 key값을 Property라고 한다.')">
-        <input class="obj" type="button" value="2" onclick="clickme('객체는 중괄호{ } 안에 담긴다.')">
-        <input class="obj" type="button" value="3"
-            onclick="clickme('var 객체이름 = {&lsquo;Property1&rsquo; : 데이터1, &lsquo;Property2&rsquo; : 데이터2}')">
-        <input class="obj" type="button" value="4" onclick="clickme('객체내 Property는 , 로 구분한다.')">
-        <input class="obj" type="button" value="5" onclick="clickme('데이터 값으로 숫자, 문자열, 배열, 함수 등을 담을 수 있다.')">
-        <input class="obj" type="button" value="6"
-            onclick="clickme('for(var key in 객체이름) {코드;} : 객체의 모든 property를 가져와서 중괄호 내의 코드를 실행한다.')">
-        <input class="obj" type="button" value="7"
-            onclick="clickme('객체내 데이터 가져오기 : 객체이름.Property(띄어쓰기 안됨) / 객체이름[&lsquo;Property(띄어쓰기 됨)&rsquo;]')">
-        <input class="obj" type="button" value="8"
-            onclick="clickme('객체 데이터에 함수 담기 : 객체이름.함수이름 = function(){코드;} / 객체이름[&lsquo;함수이름&rsquo;] = function(){코드;}')">
-        <input class="obj" type="button" value="9" onclick="clickme('함수 실행하기 : 객체이름.함수이름();')">
-        <input class="obj" type="button" value="10" onclick="clickme('객체를 사용해서 복잡하고 많은 함수들을 정리정돈 한다.')">
+    <br><br>
+    <hr>
+    <h1>함수 Function & 객체 Object</h1><br>
+    <h3>함수</h3>
+    <h3></h3>
+    <ul>
+        <li>function 함수이름(매개변수){실행되는 코드들;}</li>
+        <li>var 함수이름 = function(매개변수) {}</li>
+        <li>매개변수로 this를 사용하여 함수가 담긴 해당 태그를 선택한다.</li>
+    </ul><br><br>
+    <h3>객체</h3>
+    <p id="object1"></p>
+    <input class="obj" type="button" value="1"
+        onclick="clickme('객체에 담긴 함수를 Method / 객체에 담긴 데이터를 가지고 오는 key값을 Property라고 한다.')">
+    <input class="obj" type="button" value="2" onclick="clickme('객체는 중괄호{ } 안에 담긴다.')">
+    <input class="obj" type="button" value="3"
+        onclick="clickme('var 객체이름 = {&lsquo;Property1&rsquo; : 데이터1, &lsquo;Property2&rsquo; : 데이터2}')">
+    <input class="obj" type="button" value="4" onclick="clickme('객체내 Property는 , 로 구분한다.')">
+    <input class="obj" type="button" value="5" onclick="clickme('데이터 값으로 숫자, 문자열, 배열, 함수 등을 담을 수 있다.')">
+    <input class="obj" type="button" value="6"
+        onclick="clickme('for(var key in 객체이름) {코드;} : 객체의 모든 property를 가져와서 중괄호 내의 코드를 실행한다.')">
+    <input class="obj" type="button" value="7"
+        onclick="clickme('객체내 데이터 가져오기 : 객체이름.Property(띄어쓰기 안됨) / 객체이름[&lsquo;Property(띄어쓰기 됨)&rsquo;]')">
+    <input class="obj" type="button" value="8"
+        onclick="clickme('객체 데이터에 함수 담기 : 객체이름.함수이름 = function(){코드;} / 객체이름[&lsquo;함수이름&rsquo;] = function(){코드;}')">
+    <input class="obj" type="button" value="9" onclick="clickme('함수 실행하기 : 객체이름.함수이름();')">
+    <input class="obj" type="button" value="10" onclick="clickme('객체를 사용해서 복잡하고 많은 함수들을 정리정돈 한다.')">
 
 
-        <br><br><br><br>
-        <h3>객체 book</h3>
-        <script src="js/object.js"></script>
+    <br><br><br><br>
+    <h3>객체 book</h3>
+    <script src="js/object.js"></script>
+    <script>
+        document.write('<ol style="display: inline-block;">')
+        for (var key in book) {
+            document.write('<li><b>도서명 : </b>' + key + ' &nbsp;<b>저자 : </b>' + book[key] + '</li>')
+        }
+        document.write('</ol>')
+        document.write('<br>')
+    </script>
+    <br>
+    <input type="button" value="book code 보기" onclick="code()"><br><br><br><br>
+    <h3>객체 func</h3><br>
+    <div>
         <script>
-            document.write('<ol style="display: inline-block;">')
-            for (var key in book) {
-                document.write('<li><b>도서명 : </b>' + key + ' &nbsp;<b>저자 : </b>' + book[key] + '</li>')
-            }
-            document.write('</ol>')
-            document.write('<br>')
+            func.date(); func.br()
+            func.write(); func.br()
+            func.bookfunction(); func.br()
         </script>
-        <br>
-        <input type="button" value="book code 보기" onclick="code()"><br><br><br><br>
-        <h3>객체 func</h3><br>
-        <div>
-            <script>
-                func.date(); func.br()
-                func.write(); func.br()
-                func.bookfunction(); func.br()
-            </script>
-        </div><br>
-        <input type="button" value="func code 보기" id="code" onclick="object(this)"><br><br>
-        <div id="object" style="width: 425px;display: inline-block;text-align: left;"></div><br><br><br>
-        <hr>
-        <h1>라이브러리 Library VS 프레임워크 Framework</h1><br>
-        <h3>라이브러리 <a href="https://jquery.com/" target="_blank">jQuery</a></h3><br>
-        <ol>
-            <li><a href="https://jquery.com/download/" target="_blank" title="jQuery를 다운받는 여러가지 방법">Download</a> 에서 링크를
-                클릭하면 jQuery가 다운로드된다.</li><br>
-            <ul style="list-style-type: disc;font-size: smaller;">
-                <li>다운로드된 파일을 프로젝트 폴더 디렉토리로 이동하면 된다.</li>
-                <li>복잡하고 비용이 드는 방법</li>
-            </ul>
-            <br><br><br>
-            <li><a href="https://developers.google.com/speed/libraries/devguide#jquery"
-                    target="_blank"><b>CDN</b></a>(Content
-                Delivery Network)</li><br>
-            <ul style="list-style-type: disc;font-size: smaller;">
-                <li>많은 라이브러리들은 CDN이라는 걸 통해서 자기들의 서버에 파일을 보관해놓는다.</li>
-                <li>우리는 그것을 <span class="blue">script src</span>를 통해서 가져갈 수 있도록 하는 방식</li>
-                <li>script 태그에 src를 통해서 구글에서 제공하는 jQuery라고 하는 라이브러리의 주소가 적혀있다.</li>
-                <li>이 코드를 카피해서 jQuery가 필요한 파일에 붙여넣기하면 jQuery를 다운로드 받지 않고 사용할 수 있다.</li>
-                <li><span class="red1">무료</span> 서비스</li>
-            </ul>
-            <br><br><br>
-            <li>jQuery</li><br>
-            <ul style="list-style-type: disc;font-size: smaller;">
-                <li>jQuery를 이용하면 반복문을 쓰지 않아도 된다.</li>
-                <li>반복문을 jQuery가 우리 대신에 처리해준다.</li>
-                <li>우리는 한 줄짜리 코드로 이 일을 할 수 있다.</li>
-                <li>jQuery는 $로 시작하고 $라는 이름의 함수를 사용한다.</li>
-                <li><span class="red1">$(' ')</span> 괄호안에는 <b><span title="$('태그')"
-                            class="jquery1">태그</span>&nbsp;&nbsp;<span title="$('.class')"
-                            class="jquery1">.class</span>&nbsp;&nbsp;<span title="$('#id')"
-                            class="jquery1">#id</span>&nbsp;&nbsp;<span title="$(this)" class="jquery1">this</span></b> 가
-                    올 수 있다. ( 우선순위 : <b>태그 <span class="red">&lt;</span> .class <span class="red">&lt;</span> #id</b> )
+    </div><br>
+    <input type="button" value="func code 보기" id="code" onclick="object(this)"><br><br>
+    <div id="object" style="width: 425px;display: inline-block;text-align: left;"></div><br><br><br>
+    <hr>
+    <h1>라이브러리 Library VS 프레임워크 Framework</h1><br>
+    <h3>라이브러리 <a href="https://jquery.com/" target="_blank">jQuery</a></h3><br>
+    <ol>
+        <li><a href="https://jquery.com/download/" target="_blank" title="jQuery를 다운받는 여러가지 방법">Download</a> 에서 링크를
+            클릭하면 jQuery가 다운로드된다.</li><br>
+        <ul style="list-style-type: disc;font-size: smaller;">
+            <li>다운로드된 파일을 프로젝트 폴더 디렉토리로 이동하면 된다.</li>
+            <li>복잡하고 비용이 드는 방법</li>
+        </ul>
+        <br><br><br>
+        <li><a href="https://developers.google.com/speed/libraries/devguide#jquery"
+                target="_blank"><b>CDN</b></a>(Content
+            Delivery Network)</li><br>
+        <ul style="list-style-type: disc;font-size: smaller;">
+            <li>많은 라이브러리들은 CDN이라는 걸 통해서 자기들의 서버에 파일을 보관해놓는다.</li>
+            <li>우리는 그것을 <span class="blue">script src</span>를 통해서 가져갈 수 있도록 하는 방식</li>
+            <li>script 태그에 src를 통해서 구글에서 제공하는 jQuery라고 하는 라이브러리의 주소가 적혀있다.</li>
+            <li>이 코드를 카피해서 jQuery가 필요한 파일에 붙여넣기하면 jQuery를 다운로드 받지 않고 사용할 수 있다.</li>
+            <li><span class="red1">무료</span> 서비스</li>
+        </ul>
+        <br><br><br>
+        <li>jQuery</li><br>
+        <ul style="list-style-type: disc;font-size: smaller;">
+            <li>jQuery를 이용하면 반복문을 쓰지 않아도 된다.</li>
+            <li>반복문을 jQuery가 우리 대신에 처리해준다.</li>
+            <li>우리는 한 줄짜리 코드로 이 일을 할 수 있다.</li>
+            <li>jQuery는 $로 시작하고 $라는 이름의 함수를 사용한다.</li>
+            <li><span class="red1">$(' ')</span> 괄호안에는 <b><span title="$('태그')"
+                        class="jquery1">태그</span>&nbsp;&nbsp;<span title="$('.class')"
+                        class="jquery1">.class</span>&nbsp;&nbsp;<span title="$('#id')"
+                        class="jquery1">#id</span>&nbsp;&nbsp;<span title="$(this)" class="jquery1">this</span></b> 가
+                올 수 있다. ( 우선순위 : <b>태그 <span class="red">&lt;</span> .class <span class="red">&lt;</span> #id</b> )
+            </li>
+            <li>$('a') 는 이 웹 페이지에 있는 모든 a 태그를 jQuery로 제어하겠다는 뜻</li>
+            <li>jQuery CSS를 바꾸고 싶다면 <span title="$(this).css('color','red')" class="jquery2">.css('속성',
+                    '속성값')</span> 함수를 쓰면 된다.</li>
+        </ul>
+    </ol><br><br>
+    <table style="text-align: left;width: 58%;">
+        <tr>
+            <th style="width: 55%;text-align: center;"><span class="mouse">onmouseover/onmouseout</span> 시 색깔 다르게
+                지정할 수 있다</th>
+            <th style="width: 45%;text-align: center;"><span class="mouse">마우스 hover</span> 시에 색깔 변화</th>
+        </tr>
+        <tr>
+            <td><span class="func">함수 2개</span><br>
+                <b>$('span').<span class="onmouse">hover</span></b><span class="blue1">(</span><br>
+                <span class="func">function ()</span><br>
+                <span class="red1">{$(this).css('backgroundColor', 'red')}</span><br>
+                <b>,</b> <span class="func">function ()</span><br>
+                <span class="red1">{$(this).css('backgroundColor', 'yellow')}</span><br>
+                <span class="blue1">)</span><br>
                 </li>
-                <li>$('a') 는 이 웹 페이지에 있는 모든 a 태그를 jQuery로 제어하겠다는 뜻</li>
-                <li>jQuery CSS를 바꾸고 싶다면 <span title="$(this).css('color','red')" class="jquery2">.css('속성',
-                        '속성값')</span> 함수를 쓰면 된다.</li>
-            </ul>
-        </ol><br><br>
-        <table style="text-align: left;width: 58%;">
-            <tr>
-                <th style="width: 55%;text-align: center;"><span class="mouse">onmouseover/onmouseout</span> 시 색깔 다르게
-                    지정할 수 있다</th>
-                <th style="width: 45%;text-align: center;"><span class="mouse">마우스 hover</span> 시에 색깔 변화</th>
-            </tr>
-            <tr>
-                <td><span class="func">함수 2개</span><br>
-                    <b>$('span').<span class="onmouse">hover</span></b><span class="blue1">(</span><br>
-                    <span class="func">function ()</span><br>
-                    <span class="red1">{$(this).css('backgroundColor', 'red')}</span><br>
-                    <b>,</b> <span class="func">function ()</span><br>
-                    <span class="red1">{$(this).css('backgroundColor', 'yellow')}</span><br>
-                    <span class="blue1">)</span><br>
-                    </li>
-                <td><b>$('span').<span class="onmouse">on</span><span class="blue1">(</span><span
-                            class="onmouse">'mouseover'</span>,</b> <span class="func">function ()</span><br>
-                    <span class="red1">{$(this).css('backgroundColor', 'green')}</span><br>
-                    <span class="blue1">)</span><br></td>
-            </tr>
-        </table>
-        <h3>구글에서 제공하는 jQuery 최신버전 코드</h3><br>
-        <div style="display: inline-block;">&lt;<span class="blue">script src</span>="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">&lt;script></div>
-        <br><br>
-        <hr>
-        <h1><a href="files/keyboard.pdf" target="_blank" title="더 많은 단축키 보기">단축키</a></h1>
-        <table style="width: 45%;">
-            <tr>
-                <th>에디터 단축키</th>
-                <th>실행</th>
-            </tr>
-            <tr>
-                <td>alt</td>
-                <td>마우스 커서 다중 선택</td>
-            </tr>
-            <tr>
-                <td>에디터에서 Ctrl + /</td>
-                <td>주석 처리</td>
-            </tr>
-            <tr>
-                <td>Ctrl + F</td>
-                <td>찾기 기능</td>
-            </tr>
-            <tr>
-                <td>에디터에서 Ctrl + H</td>
-                <td>바꾸기 기능</td>
-            </tr>
-            <tr>
-                <td>Ctrl + N</td>
-                <td>새 파일 열기</td>
-            </tr>
-            <tr>
-                <td>Ctrl + O</td>
-                <td>파일 열기</td>
-            </tr>
-            <tr>
-                <td>Ctrl + A</td>
-                <td>전체 선택</td>
-            </tr>
-            <tr>
-                <td>에디터에서 Ctrl + A 전체 선택 후 Ctrl 누른 상태에서 K 누르고 F 누르기</td>
-                <td>자동 정렬</td>
-            </tr>
-            <tr>
-                <td>Ctrl + S</td>
-                <td>저장하기</td>
-            </tr>
-            <tr>
-                <td>Ctrl + Z</td>
-                <td>한 단계 이전으로 돌아가기</td>
-            </tr>
-            <tr>
-                <td>Ctrl + C</td>
-                <td>복사하기</td>
-            </tr>
-            <tr>
-                <td>Ctrl + X</td>
-                <td>잘라내기</td>
-            </tr>
-            <tr>
-                <td>Ctrl + V</td>
-                <td>붙여넣기</td>
-            </tr>
-            <tr>
-                <th>검사 창 단축키</th>
-                <th>실행</th>
-            </tr>
-            <tr>
-                <td>Ctrl + Shift + I / F12</td>
-                <td>검사 창 띄우기</td>
-            </tr>
-            <tr>
-                <td>검사 창에서 Dock side</td>
-                <td>화면에서 검사 창 위치 설정하기</td>
-            </tr>
-            <tr>
-                <td>검사 창에서 Esc</td>
-                <td>검사 창에서 콘솔 창 한 화면에 띄우기</td>
-            </tr>
-            <tr>
-                <td>콘솔에서 Shift + Enter</td>
-                <td>줄바꿈</td>
-            </tr>
-            <tr>
-                <th>파일 및 폴더 단축키</th>
-                <th>실행</th>
-            </tr>
-            <tr>
-                <td>F2</td>
-                <td>파일 이름 바꾸기</td>
-            </tr>
-            <tr>
-                <td>Ctrl 누른 상태에서 클릭해서 파일 선택</td>
-                <td>여러개의 파일 선택할 때, 클릭하는 파일을 하나씩 선택하기</td>
-            </tr>
-            <tr>
-                <td>Shift 누른 상태에서 파일 선택</td>
-                <td>여러개의 파일 선택할 때, 처음과 끝을 지정하여 그 사이의 모든 파일을 연속적으로 선택</td>
-            </tr>
-            <tr>
-                <th>웹 화면 단축키</th>
-                <th>실행</th>
-            </tr>
-            <tr>
-                <td>F5</td>
-                <td>페이지 새로고침</td>
-            </tr>
-            <tr>
-                <td>F6</td>
-                <td>주소창 전체 선택</td>
-            </tr>
-            <tr>
-                <td>크롬에서 Ctrl + K</td>
-                <td>구글 검색하기</td>
-            </tr>
-            <tr>
-                <td>Ctrl + T</td>
-                <td>웹 화면에서 새 탭 열기</td>
-            </tr>
-            <tr>
-                <td>Ctrl + N</td>
-                <td>웹 화면 새 창 열기</td>
-            </tr>
-            <tr>
-                <td>Ctrl + W</td>
-                <td>웹 화면에서 탭 닫기</td>
-            </tr>
-            <tr>
-                <th>기타 단축키</th>
-                <th>실행</th>
-            </tr>
-            <tr>
-                <td>Fn + Prt Sc</td>
-                <td>스크린샷</td>
-            </tr>
-            <tr>
-                <td>Ctrl + Shift + Esc</td>
-                <td>작업 관리자</td>
-            </tr>
-            <tr>
-                <td>Fn + F2 연타</td>
-                <td>윈도우 10 부팅시 BIOS 설정 화면 진입</td>
-            </tr>
-            <tr>
-                <td>파워포인트 Ctrl + C 후에 Ctrl + D</td>
-                <td>유닛이 복사된 후 일정 자리에 옮겨둔 뒤 다시 Ctrl + D 를 해주면 일정 각도/간격을 유지하며 계속 생성된다.</td>
-            </tr>
-        </table><br>
-        <hr>
-        <h1>BIOS(Basic Input/Output System)</h1>
-        <ul>
-            <li>컴퓨터의 가장 기본적인 입출력을 처리하는 소프트웨어</li>
-            <li>PC를 시작할 때, 컴퓨터를 켜서 바탕화면 진입 전까지의 원활한 데이터 처리를 도와주는 것</li>
-            <li>요즘은 UEFI 바이오스로 거의 대체되어 사용되고 있다.</li>
-            <li>부팅 순위 변경/cpu의 온도/CPU, RAM의 오버클럭까지 설정이 가능</li>
-        </ul>
-        <hr>
-        <h1>크롬에서 마우스 우클릭 및 드래그하기</h1><br>
-        <table style="width: 30%;">
-            <tr>
-                <th>반영구적 방법</th>
-                <th>일시적 방법</th>
-            </tr>
-            <tr>
-                <td>
-                    <ol>
-                        <li>설정</li>
-                        <li>개인정보 및 보안</li>
-                        <li>사이트 설정</li>
-                        <li>자바스크립트 차단</li>
-                        <li>F5</li>
-                    </ol>
-                </td>
-                <td>
-                    <ol>
-                        <li>F12 검사 창</li>
-                        <li>F1 Settings</li>
-                        <li>Debugger</li>
-                        <li>Disable JavaScript 체크하기</li>
-                    </ol>
-                </td>
-            </tr>
-        </table><br><br>
-        <ul style="font-size: small;">
-            <li>마우스 우클릭 및 드래그를 제한하는 자바스크립트를 이용해서 게시물 무단 복제 및 도용을 방지한다.</li>
-            <li>마우스 우클릭 및 드래그를 가능하게 하려면 자바스크립트를 차단해야 한다.</li>
-            <li>자바스크립트 차단 후, 웹에서 자바스크립트를 사용하는 일부 기능이 작동하지 않을 수 있다.</li>
-            <li>그럴 경우 다시 자바스크립트를 허용하면 된다.</li>
+            <td><b>$('span').<span class="onmouse">on</span><span class="blue1">(</span><span
+                        class="onmouse">'mouseover'</span>,</b> <span class="func">function ()</span><br>
+                <span class="red1">{$(this).css('backgroundColor', 'green')}</span><br>
+                <span class="blue1">)</span><br></td>
+        </tr>
+    </table>
+    <h3>구글에서 제공하는 jQuery 최신버전 코드</h3><br>
+    <div style="display: inline-block;">&lt;<span class="blue">script
+            src</span>="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">&lt;script></div>
+    <br><br>
+    <hr>
+    <h1><a href="files/keyboard.pdf" target="_blank" title="더 많은 단축키 보기">단축키</a></h1>
+    <table style="width: 45%;">
+        <tr>
+            <th>에디터 단축키</th>
+            <th>실행</th>
+        </tr>
+        <tr>
+            <td>alt</td>
+            <td>마우스 커서 다중 선택</td>
+        </tr>
+        <tr>
+            <td>에디터에서 Ctrl + /</td>
+            <td>주석 처리</td>
+        </tr>
+        <tr>
+            <td>Ctrl + F</td>
+            <td>찾기 기능</td>
+        </tr>
+        <tr>
+            <td>에디터에서 Ctrl + H</td>
+            <td>바꾸기 기능</td>
+        </tr>
+        <tr>
+            <td>Ctrl + N</td>
+            <td>새 파일 열기</td>
+        </tr>
+        <tr>
+            <td>Ctrl + O</td>
+            <td>파일 열기</td>
+        </tr>
+        <tr>
+            <td>Ctrl + A</td>
+            <td>전체 선택</td>
+        </tr>
+        <tr>
+            <td>에디터에서 Ctrl + A 전체 선택 후 Ctrl 누른 상태에서 K 누르고 F 누르기</td>
+            <td>자동 정렬</td>
+        </tr>
+        <tr>
+            <td>Ctrl + S</td>
+            <td>저장하기</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Z</td>
+            <td>한 단계 이전으로 돌아가기</td>
+        </tr>
+        <tr>
+            <td>Ctrl + C</td>
+            <td>복사하기</td>
+        </tr>
+        <tr>
+            <td>Ctrl + X</td>
+            <td>잘라내기</td>
+        </tr>
+        <tr>
+            <td>Ctrl + V</td>
+            <td>붙여넣기</td>
+        </tr>
+        <tr>
+            <th>검사 창 단축키</th>
+            <th>실행</th>
+        </tr>
+        <tr>
+            <td>Ctrl + Shift + I / F12</td>
+            <td>검사 창 띄우기</td>
+        </tr>
+        <tr>
+            <td>검사 창에서 Dock side</td>
+            <td>화면에서 검사 창 위치 설정하기</td>
+        </tr>
+        <tr>
+            <td>검사 창에서 Esc</td>
+            <td>검사 창에서 콘솔 창 한 화면에 띄우기</td>
+        </tr>
+        <tr>
+            <td>콘솔에서 Shift + Enter</td>
+            <td>줄바꿈</td>
+        </tr>
+        <tr>
+            <th>파일 및 폴더 단축키</th>
+            <th>실행</th>
+        </tr>
+        <tr>
+            <td>F2</td>
+            <td>파일 이름 바꾸기</td>
+        </tr>
+        <tr>
+            <td>Ctrl 누른 상태에서 클릭해서 파일 선택</td>
+            <td>여러개의 파일 선택할 때, 클릭하는 파일을 하나씩 선택하기</td>
+        </tr>
+        <tr>
+            <td>Shift 누른 상태에서 파일 선택</td>
+            <td>여러개의 파일 선택할 때, 처음과 끝을 지정하여 그 사이의 모든 파일을 연속적으로 선택</td>
+        </tr>
+        <tr>
+            <th>웹 화면 단축키</th>
+            <th>실행</th>
+        </tr>
+        <tr>
+            <td>F5</td>
+            <td>페이지 새로고침</td>
+        </tr>
+        <tr>
+            <td>F6</td>
+            <td>주소창 전체 선택</td>
+        </tr>
+        <tr>
+            <td>크롬에서 Ctrl + K</td>
+            <td>구글 검색하기</td>
+        </tr>
+        <tr>
+            <td>Ctrl + T</td>
+            <td>웹 화면에서 새 탭 열기</td>
+        </tr>
+        <tr>
+            <td>Ctrl + N</td>
+            <td>웹 화면 새 창 열기</td>
+        </tr>
+        <tr>
+            <td>Ctrl + W</td>
+            <td>웹 화면에서 탭 닫기</td>
+        </tr>
+        <tr>
+            <th>기타 단축키</th>
+            <th>실행</th>
+        </tr>
+        <tr>
+            <td>Fn + Prt Sc</td>
+            <td>스크린샷</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Shift + Esc</td>
+            <td>작업 관리자</td>
+        </tr>
+        <tr>
+            <td>Fn + F2 연타</td>
+            <td>윈도우 10 부팅시 BIOS 설정 화면 진입</td>
+        </tr>
+        <tr>
+            <td>파워포인트 Ctrl + C 후에 Ctrl + D</td>
+            <td>유닛이 복사된 후 일정 자리에 옮겨둔 뒤 다시 Ctrl + D 를 해주면 일정 각도/간격을 유지하며 계속 생성된다.</td>
+        </tr>
+    </table><br>
+    <hr>
+    <h1>BIOS(Basic Input/Output System)</h1>
+    <ul>
+        <li>컴퓨터의 가장 기본적인 입출력을 처리하는 소프트웨어</li>
+        <li>PC를 시작할 때, 컴퓨터를 켜서 바탕화면 진입 전까지의 원활한 데이터 처리를 도와주는 것</li>
+        <li>요즘은 UEFI 바이오스로 거의 대체되어 사용되고 있다.</li>
+        <li>부팅 순위 변경/cpu의 온도/CPU, RAM의 오버클럭까지 설정이 가능</li>
+    </ul>
+    <hr>
+    <h1>크롬에서 마우스 우클릭 및 드래그하기</h1><br>
+    <table style="width: 30%;">
+        <tr>
+            <th>반영구적 방법</th>
+            <th>일시적 방법</th>
+        </tr>
+        <tr>
+            <td>
+                <ol>
+                    <li>설정</li>
+                    <li>개인정보 및 보안</li>
+                    <li>사이트 설정</li>
+                    <li>자바스크립트 차단</li>
+                    <li>F5</li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                    <li>F12 검사 창</li>
+                    <li>F1 Settings</li>
+                    <li>Debugger</li>
+                    <li>Disable JavaScript 체크하기</li>
+                </ol>
+            </td>
+        </tr>
+    </table><br><br>
+    <ul style="font-size: small;">
+        <li>마우스 우클릭 및 드래그를 제한하는 자바스크립트를 이용해서 게시물 무단 복제 및 도용을 방지한다.</li>
+        <li>마우스 우클릭 및 드래그를 가능하게 하려면 자바스크립트를 차단해야 한다.</li>
+        <li>자바스크립트 차단 후, 웹에서 자바스크립트를 사용하는 일부 기능이 작동하지 않을 수 있다.</li>
+        <li>그럴 경우 다시 자바스크립트를 허용하면 된다.</li>
+    </ul><br><br>
+    <hr>
+    <h1>UI/API</h1>
+    <ol>
+        <li>UI (User Interface)</li>
+        <ul style="list-style-type: disc;font-size: small;">
+            <li>사용자가 시스템을 제어하기 위해서 사용하는 조작 장치</li>
+            <li>웹 앱을 이용하려고 하는 사용자가 <span title="UI" class="uiapi">버튼</span>과 같은 조작 장치를 이용해서 우리의 웹 애플리케이션을 사용한다</li>
         </ul><br><br>
-        <hr>
-        <h1>UI/API</h1>
-        <ol>
-            <li>UI (User Interface)</li>
-            <ul style="list-style-type: disc;font-size: small;">
-                <li>사용자가 시스템을 제어하기 위해서 사용하는 조작 장치</li>
-                <li>웹 앱을 이용하려고 하는 사용자가 <span title="UI" class="uiapi">버튼</span>과 같은 조작 장치를 이용해서 우리의 웹 애플리케이션을 사용한다</li>
-            </ul><br><br>
-            <li>API (Application Programming Interface)</li>
-            <ul style="list-style: disc;font-size: small;">
-                <li>애플리케이션을 만들기 위해서 프로그래밍을 할 때 사용하는 조작 장치</li>
-                <li><span title="API" class="uiapi">함수 alert('')</span> 은 경고창을 실행하는 조작 장치</li>
-            </ul>
-        </ol>
-        <br><br>
-        <hr>
-        <h1>JavaScript 검색어 추천</h1>
-        <table style="width: 50%;">
-            <tr>
-                <th style="width: 30%;">검색어</th>
-                <th>목적</th>
-            </tr>
-            <tr>
-                <td>document/DOM 객체</td>
-                <td class="searchjs">
-                    <li>웹 페이지에 있는 어떤 태그를 삭제할 때</li>
-                    <li>어떤 태그에 자식 태그를 추가할 때</li>
-                    <li>document 객체 안에 필요한 메소드가 포함되있다.</li>
-                    <li>document 객체는 DOM(Document Object Model) 객체의 일부</li>
-                </td>
-            </tr>
-            <tr>
-                <td>window 객체</td>
-                <td class="searchjs">
-                    <li>웹 페이지가 아니라 웹 브라우저 자체를 제어해야 할 때</li>
-                    <li>현재 열려있는 웹 페이지의 주소를 알아낼 때</li>
-                    <li>새 창을 열 때</li>
-                    <li>웹 브라우저의 화면 크기를 JavaScript를 통해 알아야 할 때</li>
-                    <li>window 객체에 속한 프로퍼티/메소드</li>
-                </td>
-            </tr>
-            <tr>
-                <td>ajax</td>
-                <td class="searchjs">
-                    <li>웹 페이지를 리로드하지 않고 정보를 변경</li>
-                    <li>현대적인 웹 앱을 만드는 데 필수적인 테크닉</li>
-                </td>
-            </tr>
-            <tr>
-                <td>cookie</td>
-                <td class="searchjs">
-                    <li>웹 페이지가 리로드되어도 현재 상태를 유지</li>
-                    <li>사용자를 위한 개인화된 서비스를 제공</li>
-                </td>
-            </tr>
-            <tr>
-                <td>offline web application</td>
-                <td class="searchjs">
-                    <li>인터넷이 끊겨도 동작하는 웹 페이지를 만들 때</li>
-                </td>
-            </tr>
-            <tr>
-                <td>webRTC</td>
-                <td class="searchjs">
-                    <li>화상 통신 웹 앱을 만들 떄</li>
-                </td>
-            </tr>
-            <tr>
-                <td>speech API</td>
-                <td class="searchjs">
-                    <li>사용자의 음성을 인식</li>
-                    <li>음성으로 정보를 전달</li>
-                </td>
-            </tr>
-            <tr>
-                <td>webGL</td>
-                <td class="searchjs">
-                    <li>3차원 그래픽으로 게임과 같은 것을 만들 때</li>
-                </td>
-            </tr>
-            <tr>
-                <td>webVR</td>
-                <td class="searchjs">
-                    <li>가상 현실</li>
-                </td>
-            </tr>
-        </table>
-        <br><br>
-        
+        <li>API (Application Programming Interface)</li>
+        <ul style="list-style: disc;font-size: small;">
+            <li>애플리케이션을 만들기 위해서 프로그래밍을 할 때 사용하는 조작 장치</li>
+            <li><span title="API" class="uiapi">함수 alert('')</span> 은 경고창을 실행하는 조작 장치</li>
+        </ul>
+    </ol>
+    <br><br>
+    <hr>
+    <h1>JavaScript 검색어 추천</h1>
+    <table style="width: 50%;">
+        <tr>
+            <th style="width: 30%;">검색어</th>
+            <th>목적</th>
+        </tr>
+        <tr>
+            <td>document/DOM 객체</td>
+            <td class="searchjs">
+                <li>웹 페이지에 있는 어떤 태그를 삭제할 때</li>
+                <li>어떤 태그에 자식 태그를 추가할 때</li>
+                <li>document 객체 안에 필요한 메소드가 포함되있다.</li>
+                <li>document 객체는 DOM(Document Object Model) 객체의 일부</li>
+            </td>
+        </tr>
+        <tr>
+            <td>window 객체</td>
+            <td class="searchjs">
+                <li>웹 페이지가 아니라 웹 브라우저 자체를 제어해야 할 때</li>
+                <li>현재 열려있는 웹 페이지의 주소를 알아낼 때</li>
+                <li>새 창을 열 때</li>
+                <li>웹 브라우저의 화면 크기를 JavaScript를 통해 알아야 할 때</li>
+                <li>window 객체에 속한 프로퍼티/메소드</li>
+            </td>
+        </tr>
+        <tr>
+            <td>ajax</td>
+            <td class="searchjs">
+                <li>웹 페이지를 리로드하지 않고 정보를 변경</li>
+                <li>현대적인 웹 앱을 만드는 데 필수적인 테크닉</li>
+            </td>
+        </tr>
+        <tr>
+            <td>cookie</td>
+            <td class="searchjs">
+                <li>웹 페이지가 리로드되어도 현재 상태를 유지</li>
+                <li>사용자를 위한 개인화된 서비스를 제공</li>
+            </td>
+        </tr>
+        <tr>
+            <td>offline web application</td>
+            <td class="searchjs">
+                <li>인터넷이 끊겨도 동작하는 웹 페이지를 만들 때</li>
+            </td>
+        </tr>
+        <tr>
+            <td>webRTC</td>
+            <td class="searchjs">
+                <li>화상 통신 웹 앱을 만들 떄</li>
+            </td>
+        </tr>
+        <tr>
+            <td>speech API</td>
+            <td class="searchjs">
+                <li>사용자의 음성을 인식</li>
+                <li>음성으로 정보를 전달</li>
+            </td>
+        </tr>
+        <tr>
+            <td>webGL</td>
+            <td class="searchjs">
+                <li>3차원 그래픽으로 게임과 같은 것을 만들 때</li>
+            </td>
+        </tr>
+        <tr>
+            <td>webVR</td>
+            <td class="searchjs">
+                <li>가상 현실</li>
+            </td>
+        </tr>
+    </table>
+    <br><br>
 
 
-    </body>
+
+</body>
 
 </html>
